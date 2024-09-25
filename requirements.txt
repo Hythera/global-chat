@@ -1,0 +1,8 @@
+python-dotenv
+discord
+colorama
+requests
+aiomysql
+aiofiles
+pytz
+asyncio

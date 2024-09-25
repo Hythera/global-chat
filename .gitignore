@@ -1,0 +1,8 @@
+__pycache__
+.env
+.venv
+config.json
+
+/testing
+/venv
+/json
