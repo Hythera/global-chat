@@ -1,8 +1,10 @@
+from ast import Global
 import discord
 from discord.ext import commands
 from discord import app_commands
 import json
 
+from database.models import GlobalChannel
 from languages import Translator
 translator = Translator()
 
@@ -21,6 +23,22 @@ class channel_commands(commands.Cog):
     async def channel_set(self, interaction: discord.Interaction, channel: discord.TextChannel = None):
         if not channel:
             channel = interaction.channel
-        await interaction.response.send_message(f"<#{channel.id}>", ephemeral=True)
+        global_channel = await GlobalChannel(channel.id, interaction.guild.id).load()
+        if global_channel.stored == False:
+            invite = str(await channel.create_invite())
+            await global_channel.add(invite)
+            await interaction.response.send_message("✅", ephemeral=True)
+        else:
+            await interaction.response.send_message("❌", ephemeral=True)
+    
+    @channel_command.command(name=discord.app_commands.locale_str("channel_remove"), description=discord.app_commands.locale_str("channel_remove_description"))
+    async def channel_remove(self, interaction: discord.Interaction):
+        global_channel = await GlobalChannel(guild_id=interaction.guild.id).load()
+        if global_channel.stored == False:
+            await interaction.response.send_message("❌", ephemeral=True)
+        else:
+            await global_channel.remove()
+            await interaction.response.send_message("✅", ephemeral=True)
+            
 async def setup(client:commands.Bot) -> None:
     await client.add_cog(channel_commands(client))

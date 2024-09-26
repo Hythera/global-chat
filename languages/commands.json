@@ -1,20 +1,26 @@
 {
     "en-US": {
         "channel": "channel",
+        "channel_description": "Channel command",
+
         "channel_set": "set",
         "param_channel": "channel",
-
-        "channel_description": "Channel command",
         "channel_set_description": "Set the global chat channel",
-        "channel_set_describe.channel": "The channel you want to set as a global chat"
+        "channel_set_describe_channel": "The channel you want to set as a global chat",
+
+        "channel_remove": "remove",
+        "channel_remove_description": "Remove the global chat from your server"
     },
     "de": {
         "channel": "kanal",
+        "channel_description": "Kanal Befehl",
+
         "channel_set": "setzen",
         "param_channel": "kanal",
-
-        "channel_description": "Kanal Befehl",
         "channel_set_description": "Setze den Global Chat Kanal",
-        "channel_set_describe_channel": "Der Kanal, den du als globalen Chat festlegen möchtest"
+        "channel_set_describe_channel": "Der Kanal, den du als globalen Chat festlegen möchtest",
+
+        "channel_remove": "entfernen",
+        "channel_remove_description": "Entferne den globalen Chat Kanal von deinem Server"
     }
 }

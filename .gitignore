@@ -3,6 +3,8 @@ __pycache__
 .venv
 config.json
 
-/testing
+/.VSCodeCounter
+/.vscode
 /venv
+/testing
 /json

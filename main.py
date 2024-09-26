@@ -2,6 +2,9 @@ import os
 from dotenv import load_dotenv
 import json
 from pathlib import Path
+import aiofiles
+from aiomysql import Pool
+import asyncio
 
 import discord
 from discord.ext import commands
@@ -11,6 +14,7 @@ from datetime import datetime
 from colorama import Fore, Back, Style
 import platform
 
+from database import get_pool
 from languages import CommandTranslator
 
 load_dotenv()
@@ -27,6 +31,20 @@ if not os.path.exists("json/list_images.json"):
     with open("json/list_images.json", 'w', encoding='utf-8') as file:
         json.dump({}, file, ensure_ascii=False, indent=4)
 
+async def init_db():
+    pool: Pool = await get_pool()
+    async with aiofiles.open('database/structure.sql') as file:
+        sql = await file.read()
+    async with pool.acquire() as connection:
+        async with connection.cursor() as cursor:
+            for statement in sql.split(';'):
+                try:
+                    await cursor.execute(statement)
+                except Exception as e:
+                    continue
+    pool.close()
+    await pool.wait_closed()
+
 
 class Client(commands.Bot):
     def __init__(self):
@@ -34,6 +52,7 @@ class Client(commands.Bot):
         intents.message_content = True
         super().__init__(command_prefix='/disabled', intents=intents)
 
+        asyncio.run(init_db())
         self.cogslist = ['.'.join(file.relative_to('cogs').with_suffix('').parts) for file in Path('cogs').rglob('*.py') if not file.name.startswith('__')]
         with open("json/list_emojis.json", 'r', encoding='utf-8') as file:
             self.emoji_list = json.load(file)
