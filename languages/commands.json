@@ -1,0 +1,18 @@
+{
+    "en-US": {
+        "command_channel": "channel",
+        "command_channel_set": "set",
+
+        "command_channel_description": "Channel command",
+        "command_channel_set.description": "Set the global chat channel",
+        "command_channel_set_describe.channel": "The channel you want to set as a global chat"
+    },
+    "de": {
+        "command_channel": "kanal",
+        "command_channel_set": "setzen",
+
+        "command_channel_description": "Kanal Befehl",
+        "command_channel_set_description": "Setze den Global Chat Kanal",
+        "command_channel_set_describe_channel": "Der Kanal, den du als globalen Chat festlegen möchtest"
+    }
+}

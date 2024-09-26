@@ -11,6 +11,8 @@ from datetime import datetime
 from colorama import Fore, Back, Style
 import platform
 
+from languages import CommandTranslator
+
 load_dotenv()
 with open("config.json", 'r', encoding='utf-8') as file:
     config = json.load(file)
@@ -51,11 +53,12 @@ class Client(commands.Bot):
         print(prfx + " Discord Version " + Fore.BLUE+ discord.__version__)
         print(prfx + " Python Version " + Fore.BLUE + str(platform.python_version()))
         print (prfx + " Cogs Loaded " + Fore.BLUE + str(len(self.cogslist)))
+        await self.tree.set_translator(CommandTranslator())
         global_commands = await self.tree.sync()
         guild_commands = await self.tree.sync(guild=discord.Object(id=config["admin_guild_id"]))
         print(prfx + " Slash CMDs Synced " + Fore.BLUE + str(len(guild_commands)+len(global_commands)) + " Commands")
         print("")
-        await client.change_presence(activity = discord.CustomActivity(name=config["custom_bot_statu"]))
+        await client.change_presence(activity = discord.CustomActivity(name=config["custom_bot_status"]))
 
 if __name__ == "__main__":
     client = Client()

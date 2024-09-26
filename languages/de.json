@@ -1,0 +1,3 @@
+{
+    "hello": "Hallo <@$user_id>. Dein Nutzername ist `$username`"
+}
