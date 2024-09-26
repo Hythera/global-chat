@@ -1,4 +1,5 @@
 from ast import Global
+from multiprocessing import Value
 import discord
 from discord.ext import commands
 from discord import app_commands
@@ -27,18 +28,39 @@ class channel_commands(commands.Cog):
         if global_channel.stored == False:
             invite = str(await channel.create_invite())
             await global_channel.add(invite)
-            await interaction.response.send_message("✅", ephemeral=True)
+            try:
+                await channel.edit(slowmode_delay=5)
+            except:
+                pass
+
+            success_embed= discord.Embed(
+                title=f"{config["emojis"]["check_circle_green"]} "+translator.translate(interaction.locale.value, "command.channel.set.success_embed.title"),
+                description=translator.translate(interaction.locale.value, "command.channel.set.success_embed.description", channel_id=channel.id),
+                color=0x57F287)
+            await interaction.response.send_message(embed=success_embed, ephemeral=True)
         else:
-            await interaction.response.send_message("❌", ephemeral=True)
+            error_embed = discord.Embed(
+                title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(interaction.locale.value, "command.channel.set.error_embed.title"),
+                description=translator.translate(interaction.locale.value, "command.channel.set.error_embed.description"),
+                color=0xED4245)
+            await interaction.response.send_message(embed=error_embed, ephemeral=True)
     
     @channel_command.command(name=discord.app_commands.locale_str("channel_remove"), description=discord.app_commands.locale_str("channel_remove_description"))
     async def channel_remove(self, interaction: discord.Interaction):
         global_channel = await GlobalChannel(guild_id=interaction.guild.id).load()
         if global_channel.stored == False:
-            await interaction.response.send_message("❌", ephemeral=True)
+            error_embed = discord.Embed(
+                title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(interaction.locale.value, "command.channel.remove.error_embed.title"),
+                description=translator.translate(interaction.locale.value, "command.channel.remove.error_embed.description"),
+                color=0xED4245)
+            await interaction.response.send_message(embed=error_embed, ephemeral=True)
         else:
             await global_channel.remove()
-            await interaction.response.send_message("✅", ephemeral=True)
+            success_embed= discord.Embed(
+                title=f"{config["emojis"]["check_circle_green"]} "+translator.translate(interaction.locale.value, "command.channel.remove.success_embed.title"),
+                description=translator.translate(interaction.locale.value, "command.channel.remove.success_embed.description"),
+                color=0x57F287)
+            await interaction.response.send_message(embed=success_embed, ephemeral=True)
             
 async def setup(client:commands.Bot) -> None:
     await client.add_cog(channel_commands(client))

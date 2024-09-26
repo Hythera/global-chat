@@ -1,3 +1,11 @@
 {
-    "hello": "Hallo <@$user_id>. Dein Nutzername ist `$username`"
+    "command.channel.set.success_embed.title": "GLOBAL CHAT GESETZT",
+    "command.channel.set.success_embed.description": "> **Global Chat Erfolgreich Gesetzt**\n> Du hast den Global Chat auf deinem Server erfolgreich im <#$channel_id> eingerichtet. Bitte stelle sicher, dass dieser Kanal einen 5-Sekunden-Slowmode hat.",
+    "command.channel.set.error_embed.title": "FEHLER",
+    "command.channel.set.error_embed.description": "> **Global Chat Existiert Bereits**\n> Dein Server hat bereits einen Global Chat. Bitte beachte, dass jeder Server nur einen Global Chat haben kann. Entferne den bestehenden Global Chat zuerst, wenn du den Kanal ändern möchtest.",
+    
+    "command.channel.remove.success_embed.title": "GLOBAL CHAT ENTFERNT",
+    "command.channel.remove.success_embed.description": "> **Global Chat Erfolgreich Entfernt**\n> Du hast den Global Chat erfolgreich von deinem Server entfernt. Du kannst ihn jederzeit wieder hinzufügen.",
+    "command.channel.remove.error_embed.title": "FEHLER",
+    "command.channel.remove.error_embed.description": "> **Kein Global Chat Vorhanden**\n> Dein Server hat keinen Global Chat, der entfernt werden kann, oder der Global Chat wurde bereits entfernt. Du kannst jederzeit den Global Chat wieder hinzufügen."
 }
