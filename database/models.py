@@ -3,6 +3,7 @@ from database import get_pool
 from datetime import datetime, timedelta
 
 global_channels = "global_channels"
+message_ids = "message_ids"
 
 class GlobalChannel:
     def __init__(self, channel_id: int = None, guild_id: int = None, invite: str = None):
@@ -56,16 +57,44 @@ class GlobalChannel:
         channels = {}
         async with pool.acquire() as connection:
             async with connection.cursor() as cursor:
-                await cursor.execute(f"SELECT `channel_id`, `model` FROM `{ai_channels_table}` WHERE `guild_id` = %s", (self.guild_id,))
+                await cursor.execute(f"SELECT `channel_id`, `guild_id`, `invite` FROM `{global_channels}`")
                 results = await cursor.fetchall()
                 
+                channels = []
                 for result in results:
                     channel_id = result[0]
-                    model = result[1]
-                    channels[channel_id] = {
-                        'model': model
-                    }
+                    guild_id = result[1]
+                    invite = result[2]
+                    channels.append({
+                        'channel_id': channel_id,
+                        'guild_id': guild_id,
+                        'invite': invite
+                    })
                     
         pool.close()
         await pool.wait_closed()
         return channels
+    
+class Message:
+    def __init__(self):
+        pass
+  
+    async def add(self, uuid:str, message_id: int, guild_id: int):
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"INSERT INTO `{message_ids}` (`uuid`, `message_id`, `guild_id`) VALUES (%s, %s, %s)", (uuid, message_id, guild_id))
+        pool.close()
+        await pool.wait_closed()
+        return self
+    
+    async def get(self, uuid:str) -> dict:
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"SELECT `channel_id`, `guild_id`, `invite` FROM `{global_channels}` WHERE `uuid` = %s", uuid)
+                result = {message_id: guild_id for message_id, guild_id in cursor.fetchall()}
+                    
+        pool.close()
+        await pool.wait_closed()
+        return result

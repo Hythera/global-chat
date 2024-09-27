@@ -21,15 +21,8 @@ load_dotenv()
 with open("config.json", 'r', encoding='utf-8') as file:
     config = json.load(file)
 
-
 if not os.path.exists("json"):
     os.makedirs("json")
-if not os.path.exists("json/list_emojis.json"):
-    with open("json/list_emojis.json", 'w', encoding='utf-8') as file:
-        json.dump({}, file, ensure_ascii=False, indent=4)
-if not os.path.exists("json/list_images.json"):
-    with open("json/list_images.json", 'w', encoding='utf-8') as file:
-        json.dump({}, file, ensure_ascii=False, indent=4)
 
 async def init_db():
     pool: Pool = await get_pool()
@@ -54,11 +47,6 @@ class Client(commands.Bot):
 
         asyncio.run(init_db())
         self.cogslist = ['.'.join(file.relative_to('cogs').with_suffix('').parts) for file in Path('cogs').rglob('*.py') if not file.name.startswith('__')]
-        with open("json/list_emojis.json", 'r', encoding='utf-8') as file:
-            self.emoji_list = json.load(file)
-        with open("json/list_images.json", 'r', encoding='utf-8') as file:
-            self.image_list = json.load(file)
-
 
     async def setup_hook(self):
         for cog in self.cogslist:
