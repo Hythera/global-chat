@@ -1,6 +1,11 @@
 {
     "global_chat.message.embed.description.footer": "\n\n**Links & Hilfe**\n[Support Server]($support_server) • [Server Einladung]($invite)",
 
+    "command.help.embed.title": "HILFE",
+    "command.help.embed.description": "> **Was ist die Global Chat App?**\n> Die Global Chat App ist eine Open-Source-Discord-App, die dir erlaubt, dich mit anderen Servern zu vernetzen und Nachrichten serverübergreifend zu versenden.\n\n> **Source Code**\n> Wenn du deine eigene Global Chat App erstellen möchtest, kannst du dir gerne den Code vom offiziellen [GitHub Repository](https://github.com/Blackstonecoden/Global-Chat) herunterladen.\n\n> **Fehler melden**\n> Wenn du einen Fehler in unserer App melden möchtest, tritt gerne unserem Support-Server bei.",
+    "command.help.embed.button.invite_app": "App Einladen",
+    "command.help.embed.button.support_server": "Support Server",
+
     "command.channel.set.success_embed.title": "GLOBAL CHAT GESETZT",
     "command.channel.set.success_embed.description": "> **Global Chat Erfolgreich Gesetzt**\n> Du hast den Global Chat auf deinem Server erfolgreich im <#$channel_id> eingerichtet. Bitte stelle sicher, dass dieser Kanal einen 5-Sekunden-Slowmode hat.",
     "command.channel.set.error_embed.title": "FEHLER",

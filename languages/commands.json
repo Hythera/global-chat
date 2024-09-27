@@ -1,5 +1,6 @@
 {
     "en-US": {
+        "help": "help",
         "channel": "channel",
         "set": "set",
         "remove": "remove",
@@ -8,7 +9,7 @@
         "list": "list",
         "delete_message": "Delete Message",
 
-
+        "help_description": "Shows you assistance for the Global Chat",
         "channel_description": "Channel command",
         "channel_set_description": "Set the global chat channel",
         "channel_remove_description": "Remove the global chat from your server",
@@ -22,6 +23,7 @@
         "role_set_describe_role": "The role you want to give to the user"
     },
     "de": {
+        "help": "hilfe",
         "channel": "kanal",
         "set": "setzen",
         "remove": "entfernen",
@@ -30,7 +32,8 @@
         "list": "auflisten",
         "delete_message": "Nachricht Löschen",
 
-
+        
+        "help_description": "Zeigt dir eine Hilfestellung zum Global Chat",
         "channel_description": "Kanal Befehl",
         "channel_set_description": "Setze den Global Chat Kanal",
         "channel_remove_description": "Entferne den globalen Chat Kanal von deinem Server",

@@ -65,7 +65,7 @@ class Client(commands.Bot):
         guild_commands = await self.tree.sync(guild=discord.Object(id=config["admin_guild_id"]))
         print(prfx + " Slash CMDs Synced " + Fore.BLUE + str(len(guild_commands)+len(global_commands)) + " Commands")
         print("")
-        await client.change_presence(activity = discord.CustomActivity(name=config["custom_bot_status"]))
+        await client.change_presence(activity = discord.CustomActivity(name=config["custom_app_status"]))
 
 if __name__ == "__main__":
     client = Client()

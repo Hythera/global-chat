@@ -80,7 +80,7 @@ class message(commands.Cog):
 
     async def send(self, channel: discord.TextChannel, author: discord.Member, role: str, member_count:int, invite:str, guild: discord.Guild, content: str):
         embed=discord.Embed(
-            description=content+translator.translate(guild.preferred_locale, "global_chat.message.embed.description.footer", support_server=config["support_server"], invite=invite),
+            description=content+translator.translate(guild.preferred_locale, "global_chat.message.embed.description.footer", support_server=config["upport_server_url"], invite=invite),
             color=int(config["roles"][role]["color"], 16))
         if role != "default":
             embed.title = config["roles"][role]["display_name"]
