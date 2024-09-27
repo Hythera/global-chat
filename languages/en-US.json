@@ -1,4 +1,6 @@
 {
+    "global_chat.message.embed.description.footer": "\n\n**Links & Help**\n[Support Server]($support_server) • [Server Invite]($invite)",
+
     "command.channel.set.success_embed.title": "GLOBAL CHAT SET",
     "command.channel.set.success_embed.description": "> **Global Chat Successfully Set**\n> You have successfully set up the Global Chat on your server in <#$channel_id>. Please make sure that this channel has a 5-second slow mode enabled.",
     "command.channel.set.error_embed.title": "ERROR",
@@ -13,8 +15,15 @@
     "command.role.set.success_removed_embed.description": "> **Role Successfully Removed**\n> The role of the specified user has been successfully removed.\n\n> **Changes**\n> User: <@$user_id>\n> Role: `$role`",
     "command.role.set.success_embed.title": "ROLE CHANGED",
     "command.role.set.success_embed.description": "> **Role Successfully Changed**\n> The role of the specified user has been successfully changed.\n\n> **Changes**\n> User: <@$user_id>\n> Role: `$role`",
+    "command.role.set.same_role_error_embed.title": "ERROR",
+    "command.role.set.same_role_error_embed.description": "> **No Role Change**\n> The specified user already has the `$role` role. If you think this is a mistake, please contact the administrators of this app.",    
     "command.role.set.user_is_default_error_embed.title": "ERROR",
     "command.role.set.user_is_default_error_embed.description": "> **Role Error**\n> The role of the specified user is already set to the default role. If you believe this is a mistake, please contact the administrators of this app.",
     "command.role.set.permission_error_embed.title": "ERROR",
-    "command.role.set.permission_error_embed.description": "> **Permission Error**\n> Your permission level is not high enough to change the role of other users. If you think this is an error, please contact the administrators of this app."
+    "command.role.set.permission_error_embed.description": "> **Permission Error**\n> Your permission level is not high enough to change the role of other users. If you think this is an error, please contact the administrators of this app.",
+
+    "command.role.list.embed.title": "ROLES",
+    "command.role.list.embed.description": "> **Users with Roles**\n> This is a list of all users who have a special role.\n> ",
+    "command.role.list.permission_error_embed.title": "ERROR",
+    "command.role.list.permission_error_embed.description": "> **Permission Error**\n> Your permission level is not high enough to view the roles of other users. If you believe this is an error, please contact the administrators of this app."
 }

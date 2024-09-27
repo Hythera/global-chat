@@ -1,4 +1,6 @@
 {
+    "global_chat.message.embed.description.footer": "\n\n**Links & Hilfe**\n[Support Server]($support_server) • [Server Einladung]($invite)",
+
     "command.channel.set.success_embed.title": "GLOBAL CHAT GESETZT",
     "command.channel.set.success_embed.description": "> **Global Chat Erfolgreich Gesetzt**\n> Du hast den Global Chat auf deinem Server erfolgreich im <#$channel_id> eingerichtet. Bitte stelle sicher, dass dieser Kanal einen 5-Sekunden-Slowmode hat.",
     "command.channel.set.error_embed.title": "FEHLER",
@@ -13,8 +15,15 @@
     "command.role.set.success_removed_embed.description": "> **Rolle Erfolgreich Entfernt**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich entfernt.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`",
     "command.role.set.success_embed.title": "ROLLE GEÄNDERT",
     "command.role.set.success_embed.description": "> **Rolle Erfolgreich Geändert**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich geändert.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`",
+    "command.role.set.same_role_error_embed.title": "FEHLER",
+    "command.role.set.same_role_error_embed.description": "> **Keine Rollenänderung**\n> Der angegebene Nutzer hat bereits die angegebene Rolle. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "command.role.set.user_is_default_error_embed.title": "FEHLER",
     "command.role.set.user_is_default_error_embed.description": "> **Rollen Fehler**\n> Die Rolle des angegebenen Nutzers ist bereits auf die Standardrolle gesetzt. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "command.role.set.permission_error_embed.title": "FEHLER",
-    "command.role.set.permission_error_embed.description": "> **Berechtigungs Fehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um die Rolle von anderen Nutzern zu ändern. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App."
+    "command.role.set.permission_error_embed.description": "> **Berechtigungs Fehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um die Rolle von anderen Nutzern zu ändern. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+
+    "command.role.list.embed.title": "ROLLEN",
+    "command.role.list.embed.description": "> **Nutzer Mit Rollen**\n> Das ist eine Liste von allen Nutzern, die eine spezielle Rolle haben.\n> ",
+    "command.role.list.permission_error_embed.title": "FEHLER",
+    "command.role.list.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um die Rollen anderer Nutzer einzusehen. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App."
 }

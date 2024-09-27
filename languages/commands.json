@@ -5,6 +5,7 @@
         "remove": "remove",
         "role": "role",
         "user": "user",
+        "list": "list",
 
 
         "channel_description": "Channel command",
@@ -12,6 +13,7 @@
         "channel_remove_description": "Remove the global chat from your server",
         "role_description": "Role command",
         "role_set_description": "Change the role of a user",
+        "role_list_description": "Shows you all users with a role.",
 
 
         "channel_set_describe_channel": "The channel you want to set as a global chat",
@@ -24,6 +26,7 @@
         "remove": "entfernen",
         "role": "rolle",
         "user": "nutzer",
+        "list": "auflisten",
 
 
         "channel_description": "Kanal Befehl",
@@ -31,6 +34,7 @@
         "channel_remove_description": "Entferne den globalen Chat Kanal von deinem Server",
         "role_description": "Rollen Befehl",
         "role_set_description": "Ändere die Rolle eines Nutzers",
+        "role_list_description": "Zeigt dir alle Nutzer mit eine Rolle an",
 
 
         "channel_set_describe_channel": "Der Kanal, den du als globalen Chat festlegen möchtest",

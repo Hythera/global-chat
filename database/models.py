@@ -145,3 +145,14 @@ class UserRole:
         pool.close()
         await pool.wait_closed()
         return self    
+    
+    async def list(self) -> list:
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"SELECT `user_id`, `role` FROM `{user_roles}`")
+                result = [{"user_id": row[0], "role": row[1]} for row in await cursor.fetchall()]
+
+        pool.close()
+        await pool.wait_closed()
+        return result
