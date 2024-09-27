@@ -70,13 +70,13 @@ class role_commands(commands.Cog):
             for user in users:
                 staff_dict[user["role"]].append(f"> - <@{user["user_id"]}>")
             formatted_text = ""
-            roles = list(staff_dict.keys())  
+            roles = list(staff_dict.keys())
             for i, role in enumerate(roles):
                 members = staff_dict[role]
                 if members:
                     formatted_text += f"\n> **{config['roles'][role]['display_name']} - {len(members)}**\n"
                     formatted_text += "\n ".join(members)
-                    if i < len(roles) - 1:
+                    if i < sum(1 for users in staff_dict.values() if users)-1:
                         formatted_text += "\n > "
 
             embed = discord.Embed(
