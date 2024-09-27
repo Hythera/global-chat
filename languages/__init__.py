@@ -36,6 +36,10 @@ class CommandTranslator(discord.app_commands.Translator):
 
         message_key = string.message  
         if locale.value in translations:
-            return translations.get(locale.value, {}).get(message_key, None)
+            translation = translations.get(locale.value, {}).get(message_key, None)
+            if translation:
+                return translation
+            else:
+                return translations.get("en-US", {}).get(message_key, None)
         else:
             return translations.get("en-US", {}).get(message_key, None)

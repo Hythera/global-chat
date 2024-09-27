@@ -11,4 +11,10 @@ CREATE TABLE IF NOT EXISTS `message_ids` (
     `guild_id` BIGINT NOT NULL,
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`message_id`)
+);
+CREATE TABLE IF NOT EXISTS `user_roles` (
+    `user_id` BIGINT NOT NULL,
+    `role` VARCHAR(255) NOT NULL,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`user_id`)
 )

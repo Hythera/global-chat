@@ -1,26 +1,40 @@
 {
     "en-US": {
         "channel": "channel",
+        "set": "set",
+        "remove": "remove",
+        "role": "role",
+        "user": "user",
+
+
         "channel_description": "Channel command",
-
-        "channel_set": "set",
-        "param_channel": "channel",
         "channel_set_description": "Set the global chat channel",
-        "channel_set_describe_channel": "The channel you want to set as a global chat",
+        "channel_remove_description": "Remove the global chat from your server",
+        "role_description": "Role command",
+        "role_set_description": "Change the role of a user",
 
-        "channel_remove": "remove",
-        "channel_remove_description": "Remove the global chat from your server"
+
+        "channel_set_describe_channel": "The channel you want to set as a global chat",
+        "role_set_describe_user": "The user whose role you want to change",
+        "role_set_describe_role": "The role you want to give to the user"
     },
     "de": {
         "channel": "kanal",
+        "set": "setzen",
+        "remove": "entfernen",
+        "role": "rolle",
+        "user": "nutzer",
+
+
         "channel_description": "Kanal Befehl",
-
-        "channel_set": "setzen",
-        "param_channel": "kanal",
         "channel_set_description": "Setze den Global Chat Kanal",
-        "channel_set_describe_channel": "Der Kanal, den du als globalen Chat festlegen möchtest",
+        "channel_remove_description": "Entferne den globalen Chat Kanal von deinem Server",
+        "role_description": "Rollen Befehl",
+        "role_set_description": "Ändere die Rolle eines Nutzers",
 
-        "channel_remove": "entfernen",
-        "channel_remove_description": "Entferne den globalen Chat Kanal von deinem Server"
+
+        "channel_set_describe_channel": "Der Kanal, den du als globalen Chat festlegen möchtest",
+        "role_set_describe_user": "Der Nutzer, dessen Rolle du ändern möchtest",
+        "role_set_describe_role": "Die Rolle, die du dem Nutzer geben möchtes"
     }
 }

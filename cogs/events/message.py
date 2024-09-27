@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 import string
 import random
+import asyncio
 
 from database.models import GlobalChannel, Message
 
@@ -45,7 +46,7 @@ class message(commands.Cog):
         
 
         channel: discord.TextChannel = self.client.get_channel(message.channel.id)
-        sent_message = await self.send(channel, message.content)
+        sent_message = await self.send(channel, message.author, message.guild, message.content)
         messages = await Message().add(uuid, sent_message.id, sent_message.guild.id)
 
         for entry in channels:
@@ -57,13 +58,22 @@ class message(commands.Cog):
                         try:
                             perms: discord.Permissions = channel.permissions_for(guild.get_member(self.client.user.id))
                             if perms.send_messages:
-                                sent_message = await self.send(channel, message.content)
+                                sent_message = await self.send(channel, message.author, message.guild, message.content)
                                 await messages.add(uuid, sent_message.id, sent_message.guild.id)
+                                await asyncio.sleep(0.054)
                         except:
                             pass
 
-    async def send(self, channel: discord.TextChannel, content: str):
-        return await channel.send(content=content)
+    async def send(self, channel: discord.TextChannel, author: discord.User, guild: discord.Guild, content: str):
+        embed=discord.Embed(
+            description=content,
+            color=0x4e5058)
+        embed.set_author(name=author.name, icon_url=author.avatar.url)
+        if guild.icon:
+            embed.set_footer(text=f"{guild.name} - 0", icon_url=guild.icon.url)
+        else:
+            embed.set_footer(text=f"{guild.name} - 0") #TODO
+        return await channel.send(embed=embed)
     
 async def setup(client:commands.Bot) -> None:
     await client.add_cog(message(client))

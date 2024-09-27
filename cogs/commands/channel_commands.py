@@ -1,5 +1,3 @@
-from ast import Global
-from multiprocessing import Value
 import discord
 from discord.ext import commands
 from discord import app_commands
@@ -18,9 +16,9 @@ class channel_commands(commands.Cog):
 
     channel_command = app_commands.Group(name=discord.app_commands.locale_str("channel"), description=discord.app_commands.locale_str("channel_description"), default_permissions=discord.Permissions(administrator=True), guild_only=True)
 
-    @channel_command.command(name=discord.app_commands.locale_str("channel_set"), description=discord.app_commands.locale_str("channel_set_description"))
+    @channel_command.command(name=discord.app_commands.locale_str("set"), description=discord.app_commands.locale_str("channel_set_description"))
     @app_commands.describe(channel=discord.app_commands.locale_str("channel_set_describe_channel"))
-    @app_commands.rename(channel=discord.app_commands.locale_str("param_channel"))
+    @app_commands.rename(channel=discord.app_commands.locale_str("channel"))
     async def channel_set(self, interaction: discord.Interaction, channel: discord.TextChannel = None):
         if not channel:
             channel = interaction.channel
@@ -33,7 +31,7 @@ class channel_commands(commands.Cog):
             except:
                 pass
 
-            success_embed= discord.Embed(
+            success_embed = discord.Embed(
                 title=f"{config["emojis"]["check_circle_green"]} "+translator.translate(interaction.locale.value, "command.channel.set.success_embed.title"),
                 description=translator.translate(interaction.locale.value, "command.channel.set.success_embed.description", channel_id=channel.id),
                 color=0x57F287)
@@ -45,7 +43,7 @@ class channel_commands(commands.Cog):
                 color=0xED4245)
             await interaction.response.send_message(embed=error_embed, ephemeral=True)
     
-    @channel_command.command(name=discord.app_commands.locale_str("channel_remove"), description=discord.app_commands.locale_str("channel_remove_description"))
+    @channel_command.command(name=discord.app_commands.locale_str("remove"), description=discord.app_commands.locale_str("channel_remove_description"))
     async def channel_remove(self, interaction: discord.Interaction):
         global_channel = await GlobalChannel(guild_id=interaction.guild.id).load()
         if global_channel.stored == False:

@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 
 global_channels = "global_channels"
 message_ids = "message_ids"
+user_roles = "user_roles"
 
 class GlobalChannel:
     def __init__(self, channel_id: int = None, guild_id: int = None, invite: str = None):
@@ -98,3 +99,49 @@ class Message:
         pool.close()
         await pool.wait_closed()
         return result
+    
+class UserRole:
+    def __init__(self, user_id):
+        self.user_id = user_id
+        self.role = None
+        self.stored = False
+
+    async def load(self):
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"SELECT * FROM `{user_roles}` WHERE `user_id`= %s", self.user_id)
+                result = await cursor.fetchone()
+                if result:
+                    self.role = result[1]
+                    self.stored = True
+                else:
+                    self.stored = False
+
+        pool.close()
+        await pool.wait_closed()
+        return self
+    
+    async def change(self, role: str):
+        self.role = role
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                if self.stored == False:
+                    await cursor.execute(f"INSERT INTO `{user_roles}` (`user_id`, `role`) VALUES (%s, %s)", (self.user_id, self.role))
+                else:
+                    await cursor.execute(f"UPDATE `{user_roles}` SET `role` = %s WHERE `user_id` = %s", (self.role, self.user_id))
+
+        pool.close()
+        await pool.wait_closed()
+        return self
+    
+    async def remove(self):
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"DELETE FROM `{user_roles}` WHERE `user_id`= %s", (self.user_id))
+                
+        pool.close()
+        await pool.wait_closed()
+        return self    

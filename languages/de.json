@@ -7,5 +7,14 @@
     "command.channel.remove.success_embed.title": "GLOBAL CHAT ENTFERNT",
     "command.channel.remove.success_embed.description": "> **Global Chat Erfolgreich Entfernt**\n> Du hast den Global Chat erfolgreich von deinem Server entfernt. Du kannst ihn jederzeit wieder hinzufügen.",
     "command.channel.remove.error_embed.title": "FEHLER",
-    "command.channel.remove.error_embed.description": "> **Kein Global Chat Vorhanden**\n> Dein Server hat keinen Global Chat, der entfernt werden kann, oder der Global Chat wurde bereits entfernt. Du kannst jederzeit den Global Chat wieder hinzufügen."
+    "command.channel.remove.error_embed.description": "> **Kein Global Chat Vorhanden**\n> Dein Server hat keinen Global Chat, der entfernt werden kann, oder der Global Chat wurde bereits entfernt. Du kannst jederzeit den Global Chat wieder hinzufügen.",
+    
+    "command.role.set.success_removed_embed.title": "ROLLE ENTFERNT",
+    "command.role.set.success_removed_embed.description": "> **Rolle Erfolgreich Entfernt**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich entfernt.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`",
+    "command.role.set.success_embed.title": "ROLLE GEÄNDERT",
+    "command.role.set.success_embed.description": "> **Rolle Erfolgreich Geändert**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich geändert.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`",
+    "command.role.set.user_is_default_error_embed.title": "FEHLER",
+    "command.role.set.user_is_default_error_embed.description": "> **Rollen Fehler**\n> Die Rolle des angegebenen Nutzers ist bereits auf die Standardrolle gesetzt. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+    "command.role.set.permission_error_embed.title": "FEHLER",
+    "command.role.set.permission_error_embed.description": "> **Berechtigungs Fehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um die Rolle von anderen Nutzern zu ändern. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App."
 }
