@@ -76,7 +76,7 @@ class GlobalChannel:
         await pool.wait_closed()
         return channels
     
-class Message:
+class GlobalMessage:
     def __init__(self):
         pass
   
@@ -89,12 +89,26 @@ class Message:
         await pool.wait_closed()
         return self
     
+    async def get_uuid(self, message_id:int) -> str:
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"SELECT `uuid` FROM `{message_ids}` WHERE `message_id` = %s", (message_id))
+                result = await cursor.fetchone()
+
+        pool.close()
+        await pool.wait_closed()
+        if result:
+            return result[0]
+        else: 
+            return None
+    
     async def get(self, uuid:str) -> dict:
         pool: Pool = await get_pool()
         async with pool.acquire() as connection:
             async with connection.cursor() as cursor:
-                await cursor.execute(f"SELECT `channel_id`, `guild_id`, `invite` FROM `{global_channels}` WHERE `uuid` = %s", uuid)
-                result = {message_id: guild_id for message_id, guild_id in cursor.fetchall()}
+                await cursor.execute("SELECT m.message_id, m.guild_id, g.channel_id FROM message_ids m JOIN global_channels g ON m.guild_id = g.guild_id WHERE m.uuid = %s", (uuid,))
+                result = [{"message_id": row[0], "guild_id": row[1], "channel_id": row[2]} for row in await cursor.fetchall()]
                     
         pool.close()
         await pool.wait_closed()

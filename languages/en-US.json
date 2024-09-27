@@ -25,5 +25,12 @@
     "command.role.list.embed.title": "ROLES",
     "command.role.list.embed.description": "> **Users with Roles**\n> This is a list of all users who have a special role.\n> ",
     "command.role.list.permission_error_embed.title": "ERROR",
-    "command.role.list.permission_error_embed.description": "> **Permission Error**\n> Your permission level is not high enough to view the roles of other users. If you believe this is an error, please contact the administrators of this app."
+    "command.role.list.permission_error_embed.description": "> **Permission Error**\n> Your permission level is not high enough to view the roles of other users. If you believe this is an error, please contact the administrators of this app.",
+
+    "menu.database_message.success_embed.title": "MESSAGE DELETED",
+    "menu.database_message.success_embed.description": "> **Message successfully deleted**\n> The selected message was successfully deleted from the Global Chat.\n\n> **Information**\n> Instances deleted: `$count`\n> Time: `$duration`",
+    "menu.database_message.permission_error_embed.title": "ERROR",
+    "menu.delete_message.database_error_embed.description": "> **Message not found**\n> The selected message could not be found in the database. This might be because the message was not sent in the Global Chat or an error has occurred. If you believe this is a mistake, please contact the administrators of this app.",
+    "menu.delete_message.permission_error_embed.title": "ERROR",
+    "menu.delete_message.permission_error_embed.description": "> **Permission Error**\n> Your permission level is not high enough to delete messages from the Global Chat. If you believe this is an error, please contact the administrators of this app."
 }

@@ -6,7 +6,7 @@ import random
 import asyncio
 import json
 
-from database.models import GlobalChannel, Message, UserRole
+from database.models import GlobalChannel, GlobalMessage, UserRole
 from languages import Translator
 translator = Translator()
 
@@ -61,7 +61,7 @@ class message(commands.Cog):
 
         channel: discord.TextChannel = self.client.get_channel(message.channel.id)
         sent_message = await self.send(channel, message.author, role, member_count, global_channel.invite, message.guild, message.content)
-        messages = await Message().add(uuid, sent_message.id, sent_message.guild.id)
+        messages = await GlobalMessage().add(uuid, sent_message.id, sent_message.guild.id)
 
         for entry in channels:
             if entry["guild_id"] != message.guild.id:
@@ -74,7 +74,7 @@ class message(commands.Cog):
                             if perms.send_messages:
                                 sent_message = await self.send(channel, message.author, role, member_count, global_channel.invite, message.guild, message.content)
                                 await messages.add(uuid, sent_message.id, sent_message.guild.id)
-                                await asyncio.sleep(0.054)
+                                await asyncio.sleep(0.05)
                         except:
                             pass
 

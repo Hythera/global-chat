@@ -76,7 +76,7 @@ class role_commands(commands.Cog):
                 if members:
                     formatted_text += f"\n> **{config['roles'][role]['display_name']} - {len(members)}**\n"
                     formatted_text += "\n ".join(members)
-                    if i < sum(1 for users in staff_dict.values() if users)-1:
+                    if i/2 < sum(1 for users in staff_dict.values() if users)-1:
                         formatted_text += "\n > "
 
             embed = discord.Embed(

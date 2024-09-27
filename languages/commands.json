@@ -6,6 +6,7 @@
         "role": "role",
         "user": "user",
         "list": "list",
+        "delete_message": "Delete Message",
 
 
         "channel_description": "Channel command",
@@ -27,6 +28,7 @@
         "role": "rolle",
         "user": "nutzer",
         "list": "auflisten",
+        "delete_message": "Nachricht Löschen",
 
 
         "channel_description": "Kanal Befehl",
