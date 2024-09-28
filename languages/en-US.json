@@ -39,6 +39,11 @@
     "command.role.list.permission_error_embed.title": "ERROR",
     "command.role.list.permission_error_embed.description": "> **Permission Error**\n> Your permission level is not high enough to view the roles of other users. If you believe this is an error, please contact the administrators of this app.",
 
+    "command.message_delete.success_embed.title": "MESSAGE DELETED",
+    "command.message_delete.success_embed.description": "> **Message Successfully Deleted**\n> The selected message was successfully deleted from the Global Chat.\n\n> **Information**\n> Instances deleted: `$count`\n> Time: `$duration`",
+    "command.message_delete.database_error_embed.title": "ERROR",
+    "command.message_delete.database_error_embed.description": "> **Message Not Found**\n> The selected message could not be found in the database. This might be because the message was not sent in the Global Chat or an error has occurred. If you believe this is a mistake, please contact the administrators of this app.",
+
     "menu.delete_message.success_embed.title": "MESSAGE DELETED",
     "menu.delete_message.success_embed.description": "> **Message Successfully Deleted**\n> The selected message was successfully deleted from the Global Chat.\n\n> **Information**\n> Instances deleted: `$count`\n> Time: `$duration`",
     "menu.delete_message.database_error_embed.title": "ERROR",

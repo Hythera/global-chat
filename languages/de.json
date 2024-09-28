@@ -39,6 +39,11 @@
     "command.role.list.permission_error_embed.title": "FEHLER",
     "command.role.list.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um die Rollen anderer Nutzer einzusehen. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
 
+    "command.message_delete.success_embed.title": "NACHRICHT GELÖSCHT",
+    "command.message_delete.success_embed.description": "> **Nachricht Erfolgreich Gelöscht**\n> Die ausgewählte Nachricht wurde erfolgreich aus dem Global Chat gelöscht.\n\n> **Informationen**\n> Instanzen gelöscht: `$count`\n> Zeit: `$duration`",
+    "command.message_delete.database_error_embed.title": "FEHLER",
+    "command.message_delete.database_error_embed.description": "> **Nachricht Nicht Gefunden**\n> Die ausgewählte Nachricht konnte in der Datenbank nicht gefunden werden. Dies könnte daran liegen, dass die Nachricht nicht im Global Chat gesendet wurde oder ein Fehler aufgetreten ist. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+
     "menu.delete_message.success_embed.title": "NACHRICHT GELÖSCHT",
     "menu.delete_message.success_embed.description": "> **Nachricht Erfolgreich Gelöscht**\n> Die ausgewählte Nachricht wurde erfolgreich aus dem Global Chat gelöscht.\n\n> **Informationen**\n> Instanzen gelöscht: `$count`\n> Zeit: `$duration`",
     "menu.delete_message.database_error_embed.title": "FEHLER",
