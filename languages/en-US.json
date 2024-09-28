@@ -44,6 +44,19 @@
     "command.message_delete.database_error_embed.title": "ERROR",
     "command.message_delete.database_error_embed.description": "> **Message Not Found**\n> The selected message could not be found in the database. This might be because the message was not sent in the Global Chat or an error has occurred. If you believe this is a mistake, please contact the administrators of this app.",
 
+    "command.mute.add.succes_embed.translation.permanent": "`Permanent`",
+    "command.mute.add.success_embed.title": "USER MUTED",
+    "command.mute.add.success_embed.description": "> **User Successfully Muted**\n> The specified user has been successfully muted.\n\n> **Information**\n> User: <@$user_id>\n> Expires: $time\n> Reason: `$reason`\n> Team member: <@$staff_id>",
+    "command.mute.add.user_exists_error_embed.title": "ERROR",
+    "command.mute.add.user_exists_error_embed.description": "> **User Already Muted**\n> The specified user is already muted. If you want to change the duration of the mute, please unmute the user first and then change the time. If you believe this is a mistake, please contact the administrators of this app.",
+    "command.mute.add.permission_error_embed.title": "ERROR",
+    "command.mute.add.permission_error_embed.description": "> **Permission Error**\n> Your permission level is not high enough to mute other users. If you believe this is a mistake, please contact the administrators of this app.",
+  
+    "command.mute.remove.success_embed.title": "USER UNMUTED",
+    "command.mute.remove.success_embed.description": "> **Mute successfully removed**\n> The mute for the specified user has been successfully removed.",
+    "command.mute.remove.user_not_exists_error_embed.title": "ERROR",
+    "command.mute.remove.user_not_exists_error_embed.description": "> **User not muted**\n> The specified user is already unmuted. If you believe this is a mistake, please contact the administrators of this app.",
+
     "menu.delete_message.success_embed.title": "MESSAGE DELETED",
     "menu.delete_message.success_embed.description": "> **Message Successfully Deleted**\n> The selected message was successfully deleted from the Global Chat.\n\n> **Information**\n> Instances deleted: `$count`\n> Time: `$duration`",
     "menu.delete_message.database_error_embed.title": "ERROR",

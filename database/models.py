@@ -1,10 +1,11 @@
 from aiomysql import Pool
 from database import get_pool
-from datetime import datetime, timedelta
+import datetime
 
 global_channels = "global_channels"
 message_ids = "message_ids"
 user_roles = "user_roles"
+mutes = "mutes"
 
 class GlobalChannel:
     def __init__(self, channel_id: int = None, guild_id: int = None, invite: str = None):
@@ -115,7 +116,7 @@ class GlobalMessage:
         return result
     
 class UserRole:
-    def __init__(self, user_id):
+    def __init__(self, user_id: int):
         self.user_id = user_id
         self.role = None
         self.stored = False
@@ -166,6 +167,67 @@ class UserRole:
             async with connection.cursor() as cursor:
                 await cursor.execute(f"SELECT `user_id`, `role` FROM `{user_roles}`")
                 result = [{"user_id": row[0], "role": row[1]} for row in await cursor.fetchall()]
+
+        pool.close()
+        await pool.wait_closed()
+        return result
+
+class Mutes:
+    def __init__(self, user_id: int):
+        self.user_id = user_id
+        self.staff_id = 8
+        self.reason = None
+        self.exipires_at = None
+        self.stored = False
+
+    async def load(self):
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"SELECT * FROM `{mutes}` WHERE `user_id`= %s", self.user_id)
+                result = await cursor.fetchone()
+                if result:
+                    self.staff_id = result[2]
+                    self.reason = result[3]
+                    self.exipires_at = result[4]
+                    self.stored = True
+                else:
+                    self.stored = False
+
+        pool.close()
+        await pool.wait_closed()
+        return self
+    
+    async def add(self, staff_id: int, reason: str, expires_at):
+        self.staff_id = staff_id
+        self.reason = reason
+        self.exipires_at = expires_at
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"INSERT INTO `{mutes}` (`user_id`, `staff_id`, `reason`, `expires_at`) VALUES (%s, %s, %s, %s)", (self.user_id, self.staff_id, self.reason, self.exipires_at))
+
+
+        pool.close()
+        await pool.wait_closed()
+        return self
+    
+    async def remove(self):
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"DELETE FROM `{mutes}` WHERE `user_id`= %s", (self.user_id))
+                
+        pool.close()
+        await pool.wait_closed()
+        return self    
+    
+    async def list(self) -> list:
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"SELECT `user_id`, `expires_at` FROM `{mutes}` WHERE `expires_at` IS NOT NULL")
+                result = [{"user_id": row[0], "expires_at": row[1]} for row in await cursor.fetchall()]
 
         pool.close()
         await pool.wait_closed()

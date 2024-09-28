@@ -48,6 +48,8 @@ async def on_tree_error(interaction: discord.Interaction, error: app_commands.Ap
             description=translator.translate(interaction.locale.value, "on_tree_error.cooldown_error_embed.description", time=round(time.time()+error.retry_after)),  
             color=0xED4245)
         await interaction.response.send_message(embed=cooldown_error_embed, ephemeral=True)
+    else:
+        print(error)
 
 class Client(commands.Bot):
     def __init__(self):

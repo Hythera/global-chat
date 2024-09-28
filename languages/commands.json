@@ -9,8 +9,14 @@
         "list": "list",
         "message": "message",
         "delete": "delete",
+        "mute": "mute",
+        "time": "time",
+        "reason": "reason",
+        "add": "add",
+
         "delete_message": "Delete Message",
         "report_message": "Report Message",
+
 
         "help_description": "Shows you assistance for the Global Chat",
         "channel_description": "Channel command",
@@ -21,12 +27,28 @@
         "role_list_description": "Shows you all users with a role.",
         "message_description": "Message command",
         "message_delete_description": "Delete a message from the Global Chat",
+        "mute_description": "Mute command",
+        "mute_add_description": "Mute a specific user",
+        "mute_remove_description": "Unmute a specific user",
 
 
         "channel_set_describe_channel": "The channel you want to set as a global chat",
         "role_set_describe_user": "The user whose role you want to change",
         "role_set_describe_role": "The role you want to give to the user",
-        "message_delete_describe_uuid": "The UUID of the message you want to delete"
+        "message_delete_describe_uuid": "The UUID of the message you want to delete",
+        "mute_add_describe_user": "The user who should be muted",
+        "mute_add_describe_time": "How long the user should be muted",
+        "mute_add_describe_reason": "The reason for the mute",
+        "mute_remove_describe_user": "The user whose mute you want to remove",
+
+
+        "choice_mute_add_15m": "15 minutes",
+        "choice_mute_add_1h": "1 hour",
+        "choice_mute_add_6h": "6 hours",
+        "choice_mute_add_12h": "12 hours",
+        "choice_mute_add_1d": "1 day",
+        "choice_mute_add_7d": "7 days",
+        "choice_mute_add_permanent": "Permanent"
     },
     "de": {
         "help": "hilfe",
@@ -38,6 +60,11 @@
         "list": "auflisten",
         "message": "nachricht",
         "delete": "löschen",
+        "mute": "mute",
+        "add": "hinzufügen",
+        "time": "zeit",
+        "reason": "grund",
+
         "delete_message": "Nachricht Löschen",
         "report_message": "Nachricht Melden",
 
@@ -51,11 +78,27 @@
         "role_list_description": "Zeigt dir alle Nutzer mit eine Rolle an",
         "message_description": "Nachrichten Befehl",
         "message_delete_description": "Lösche eine Nachricht aus dem Global Chat",
+        "mute_description": "Stummschalt Befehl",
+        "mute_add_description": "Schalte einen bestimmten Nutzer stumm",
+        "mute_remove_description": "Hebe die Stummschaltung eines bestimmten Nutzers auf",
 
 
         "channel_set_describe_channel": "Der Kanal, den du als globalen Chat festlegen möchtest",
         "role_set_describe_user": "Der Nutzer, dessen Rolle du ändern möchtest",
         "role_set_describe_role": "Die Rolle, die du dem Nutzer geben möchtes",
-        "message_delete_describe_uuid": "Die UUID der Nachricht, die du löschen möchtest"
+        "message_delete_describe_uuid": "Die UUID der Nachricht, die du löschen möchtest",
+        "mute_add_describe_user": "Der Nutzer, der stummgeschaltet werden soll",
+        "mute_add_describe_time": "Wie lange der Nutzer stummgeschaltet werden soll",
+        "mute_add_describe_reason": "Der Grund für die Stummschaltung",
+        "mute_remove_describe_user": "Den Nutzer, dessen Stummschaltung du aufheben möchtest",
+      
+
+        "choice_mute_add_15m": "15 Minuten",
+        "choice_mute_add_1h": "1 Stunde",
+        "choice_mute_add_6h": "6 Stunden",
+        "choice_mute_add_12h": "12 Stunden",
+        "choice_mute_add_1d": "1 Tag",
+        "choice_mute_add_7d": "7 Tage",
+        "choice_mute_add_permanent": "Permanent"
     }
 }

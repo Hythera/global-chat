@@ -44,6 +44,19 @@
     "command.message_delete.database_error_embed.title": "FEHLER",
     "command.message_delete.database_error_embed.description": "> **Nachricht Nicht Gefunden**\n> Die ausgewählte Nachricht konnte in der Datenbank nicht gefunden werden. Dies könnte daran liegen, dass die Nachricht nicht im Global Chat gesendet wurde oder ein Fehler aufgetreten ist. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
 
+    "command.mute.add.succes_embed.translation.permanent": "`Permanent`",
+    "command.mute.add.success_embed.title": "NUTZER STUMMGESCHALTEN",
+    "command.mute.add.success_embed.description": "> **Nutzer Erfolgreich Stummgeschaltet**\n> Der angegebene Benutzer wurde erfolgreich stummgeschaltet.\n\n> **Informationen**\n> Nutzer: <@$user_id>\n> Läuft ab: $time\n> Grund: `$reason`\n> Teammitglied: <@$staff_id>",
+    "command.mute.add.user_exists_error_embed.title": "FEHLER",
+    "command.mute.add.user_exists_error_embed.description": "> **Nutzer Schon Stummgeschaltet**\n> angegebene Benutzer ist bereits stummgeschaltet. Wenn du die Dauer der Stummschaltung ändern möchtest, entstumme den Nutzer zuerst und ändere dann die Zeit. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+    "command.mute.add.permission_error_embed.title": "FEHLER",
+    "command.mute.add.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um andere Nutzer stummzuschalten. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+  
+    "command.mute.remove.success_embed.title": "STUMMGESCHALTUNG AUFGEHOBEN",
+    "command.mute.remove.success_embed.description": "> **Stummschaltung Erfolgreich Aufgehoben**\n> Die Stummschaltung des angegebenen Nutzers wurde erfolgreich aufgehoben.",
+    "command.mute.remove.user_not_exists_error_embed.title": "FEHLER",
+    "command.mute.remove.user_not_exists_error_embed.description": "> **Nutzer Nicht Stummgeschaltet**\n> Der angegebene Benutzer ist bereits nicht stummgeschaltet. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+
     "menu.delete_message.success_embed.title": "NACHRICHT GELÖSCHT",
     "menu.delete_message.success_embed.description": "> **Nachricht Erfolgreich Gelöscht**\n> Die ausgewählte Nachricht wurde erfolgreich aus dem Global Chat gelöscht.\n\n> **Informationen**\n> Instanzen gelöscht: `$count`\n> Zeit: `$duration`",
     "menu.delete_message.database_error_embed.title": "FEHLER",

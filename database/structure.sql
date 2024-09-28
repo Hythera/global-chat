@@ -17,4 +17,12 @@ CREATE TABLE IF NOT EXISTS `user_roles` (
     `role` VARCHAR(255) NOT NULL,
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`user_id`)
-)
+);
+CREATE TABLE IF NOT EXISTS `mutes` (
+    `user_id` BIGINT NOT NULL,
+    `staff_id` BIGINT NOT NULL,
+    `reason` VARCHAR(1024) NOT NULL,
+    `expires_at` TIMESTAMP NULL,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`user_id`)
+);
