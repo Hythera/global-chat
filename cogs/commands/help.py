@@ -16,6 +16,7 @@ class help_command(commands.Cog):
 
     @app_commands.command(name=discord.app_commands.locale_str("help"), description=discord.app_commands.locale_str("help_description"))
     async def help(self, interaction: discord.Interaction):
+        await interaction.response.defer(ephemeral=True)
         top_image = discord.File("images/banner/global_chat.png")
         top_embed = discord.Embed(color=0x4e5058)
         top_embed.set_image(url="attachment://global_chat.png")
@@ -27,7 +28,7 @@ class help_command(commands.Cog):
             color=0x4e5058)
         embed.set_image(url="attachment://line.png")
 
-        await interaction.response.send_message(embeds=[top_embed, embed], files=[top_image, line_image], view=HelpButtons(interaction), ephemeral=True)
+        await interaction.edit_original_response(embeds=[top_embed, embed], attachments=[top_image, line_image], view=HelpButtons(interaction))
 
 class HelpButtons(discord.ui.View):
     def __init__(self, interaction: discord.Interaction):
