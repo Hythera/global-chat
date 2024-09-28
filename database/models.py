@@ -80,11 +80,11 @@ class GlobalMessage:
     def __init__(self):
         pass
   
-    async def add(self, uuid:str, message_id: int, guild_id: int):
+    async def add(self, uuid:str, message_id: int, channel_id: int):
         pool: Pool = await get_pool()
         async with pool.acquire() as connection:
             async with connection.cursor() as cursor:
-                await cursor.execute(f"INSERT INTO `{message_ids}` (`uuid`, `message_id`, `guild_id`) VALUES (%s, %s, %s)", (uuid, message_id, guild_id))
+                await cursor.execute(f"INSERT INTO `{message_ids}` (`uuid`, `message_id`, `channel_id`) VALUES (%s, %s, %s)", (uuid, message_id, channel_id))
         pool.close()
         await pool.wait_closed()
         return self
@@ -107,8 +107,8 @@ class GlobalMessage:
         pool: Pool = await get_pool()
         async with pool.acquire() as connection:
             async with connection.cursor() as cursor:
-                await cursor.execute("SELECT m.message_id, m.guild_id, g.channel_id FROM message_ids m JOIN global_channels g ON m.guild_id = g.guild_id WHERE m.uuid = %s", (uuid,))
-                result = [{"message_id": row[0], "guild_id": row[1], "channel_id": row[2]} for row in await cursor.fetchall()]
+                await cursor.execute(f"SELECT `message_id`, `channel_id` FROM `{message_ids}` WHERE uuid = %s", (uuid,))
+                result = [{"message_id": row[0], "channel_id": row[1]} for row in await cursor.fetchall()]
                     
         pool.close()
         await pool.wait_closed()

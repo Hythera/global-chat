@@ -1,5 +1,12 @@
 {
-    "global_chat.message.embed.description.footer": "\n\n**Links & Help**\n[Support Server]($support_server) • [Server Invite]($invite)",
+    "log.reports.log_embed.title": "MESSAGE REPORTED",
+    "log.reports.log_embed.description": "> **A message was reported**\n> A message in the Global Chat has just been reported. More information is provided below.\n\n> **Information**\n> - Reported by: <@$reported_by>\n> - Message author: <@$message_author>\n> - Message ID: `$message_id`\n> - Message UUID: `$message_uuid`\n\n> **Content**\n> ```$message_content```",
+    
+    "on_tree_error.cooldown_error_embed.title": "COOLDOWN",
+    "on_tree_error.cooldown_error_embed.description": "> **This command has a cooldown**\n> The command is currently unavailable because it has a cooldown. You can use the command again <t:$time:R>. If you believe this is a mistake, please contact the administrators of this app.",
+
+    "global_chat.message.embed.field.name": "Links & Help",
+    "global_chat.message.embed.field.value": "[Support Server]($support_server) • [Server Invite]($invite)",
 
     "command.help.embed.title": "HELP",
     "command.help.embed.description": "> **What is the Global Chat App?**\n> The Global Chat App is an open-source Discord app that allows you to connect with other servers and send messages across servers.\n\n> **Source Code**\n> If you would like to create your own Global Chat App, feel free to download the code from the official [GitHub Repository](https://github.com/Blackstonecoden/Global-Chat).\n\n> **Report a Bug**\n> If you would like to report a bug in our app, feel free to join our support server.",
@@ -28,14 +35,19 @@
     "command.role.set.permission_error_embed.description": "> **Permission Error**\n> Your permission level is not high enough to change the role of other users. If you think this is an error, please contact the administrators of this app.",
 
     "command.role.list.embed.title": "ROLES",
-    "command.role.list.embed.description": "> **Users with Roles**\n> This is a list of all users who have a special role.\n> ",
+    "command.role.list.embed.description": "> **Users With Roles**\n> This is a list of all users who have a special role.\n> ",
     "command.role.list.permission_error_embed.title": "ERROR",
     "command.role.list.permission_error_embed.description": "> **Permission Error**\n> Your permission level is not high enough to view the roles of other users. If you believe this is an error, please contact the administrators of this app.",
 
-    "menu.database_message.success_embed.title": "MESSAGE DELETED",
-    "menu.database_message.success_embed.description": "> **Message successfully deleted**\n> The selected message was successfully deleted from the Global Chat.\n\n> **Information**\n> Instances deleted: `$count`\n> Time: `$duration`",
-    "menu.database_message.permission_error_embed.title": "ERROR",
-    "menu.delete_message.database_error_embed.description": "> **Message not found**\n> The selected message could not be found in the database. This might be because the message was not sent in the Global Chat or an error has occurred. If you believe this is a mistake, please contact the administrators of this app.",
+    "menu.delete_message.success_embed.title": "MESSAGE DELETED",
+    "menu.delete_message.success_embed.description": "> **Message Successfully Deleted**\n> The selected message was successfully deleted from the Global Chat.\n\n> **Information**\n> Instances deleted: `$count`\n> Time: `$duration`",
+    "menu.delete_message.database_error_embed.title": "ERROR",
+    "menu.delete_message.database_error_embed.description": "> **Message Not Found**\n> The selected message could not be found in the database. This might be because the message was not sent in the Global Chat or an error has occurred. If you believe this is a mistake, please contact the administrators of this app.",
     "menu.delete_message.permission_error_embed.title": "ERROR",
-    "menu.delete_message.permission_error_embed.description": "> **Permission Error**\n> Your permission level is not high enough to delete messages from the Global Chat. If you believe this is an error, please contact the administrators of this app."
+    "menu.delete_message.permission_error_embed.description": "> **Permission Error**\n> Your permission level is not high enough to delete messages from the Global Chat. If you believe this is an error, please contact the administrators of this app.",
+
+    "menu.report_message.success_embed.title": "REPORTED",
+    "menu.report_message.success_embed.description": "> **Message Successfully Reported**\n> You have successfully reported this message in the Global Chat. Thank you for contributing to the safety of the Global Chat. Please be patient while a team member takes care of it.",
+    "menu.report_message.database_error_embed.title": "ERROR",
+    "menu.report_message.database_error_embed.description": "> **Message Not Found**\n> The selected message could not be found in the database. This might be because the message was not sent in the Global Chat or an error has occurred. If you believe this is a mistake, please contact the administrators of this app."
 }

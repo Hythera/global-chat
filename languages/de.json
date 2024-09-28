@@ -1,5 +1,12 @@
 {
-    "global_chat.message.embed.description.footer": "\n\n**Links & Hilfe**\n[Support Server]($support_server) • [Server Einladung]($invite)",
+    "log.reports.log_embed.title": "NACHRICHT GEMELDET",
+    "log.reports.log_embed.description": "> **Eine Nachricht wurde gemeldet**\n> Eine Nachricht im Global Chat wurde gerade gemeldet. Weitere Informationen stehen unten.\n\n> **Informationen**\n> - Gemeldet von: <@$reported_by>\n> - Nachrichtenautor: <@$message_author>\n> - Nachrichten-ID: `$message_id`\n> - Nachrichten-UUID: `$message_uuid`\n\n> **Inhalt**\n> ```$message_content```",
+    
+    "on_tree_error.cooldown_error_embed.title": "ABKLINGZEIT",
+    "on_tree_error.cooldown_error_embed.description": "> **Dieser Befehl hat eine Abklingzeit**\n> Der Befehl ist zurzeit nicht verwendbar, da er eine Abklingzeit hat. Du kannst den Befehl <t:$time:R> wieder verwenden. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+
+    "global_chat.message.embed.field.name": "Links & Hilfe",
+    "global_chat.message.embed.field.value": "[Support Server]($support_server) • [Server Einladung]($invite)",
 
     "command.help.embed.title": "HILFE",
     "command.help.embed.description": "> **Was ist die Global Chat App?**\n> Die Global Chat App ist eine Open-Source-Discord-App, die dir erlaubt, dich mit anderen Servern zu vernetzen und Nachrichten serverübergreifend zu versenden.\n\n> **Source Code**\n> Wenn du deine eigene Global Chat App erstellen möchtest, kannst du dir gerne den Code vom offiziellen [GitHub Repository](https://github.com/Blackstonecoden/Global-Chat) herunterladen.\n\n> **Fehler melden**\n> Wenn du einen Fehler in unserer App melden möchtest, tritt gerne unserem Support-Server bei.",
@@ -32,10 +39,15 @@
     "command.role.list.permission_error_embed.title": "FEHLER",
     "command.role.list.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um die Rollen anderer Nutzer einzusehen. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
 
-    "menu.database_message.success_embed.title": "NACHRICHT GELÖSCHT",
-    "menu.database_message.success_embed.description": "> **Nachricht erfolgreich gelöscht**\n> Die ausgewählte Nachricht wurde erfolgreich aus dem Global Chat gelöscht.\n\n> **Informationen**\n> Instanzen gelöscht: `$count`\n> Zeit: `$duration`",
-    "menu.database_message.permission_error_embed.title": "FEHLER",
-    "menu.delete_message.database_error_embed.description": "> **Nachricht nicht gefunden**\n> Die ausgewählte Nachricht konnte in der Datenbank nicht gefunden werden. Dies könnte daran liegen, dass die Nachricht nicht im Global Chat gesendet wurde oder ein Fehler aufgetreten ist. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+    "menu.delete_message.success_embed.title": "NACHRICHT GELÖSCHT",
+    "menu.delete_message.success_embed.description": "> **Nachricht Erfolgreich Gelöscht**\n> Die ausgewählte Nachricht wurde erfolgreich aus dem Global Chat gelöscht.\n\n> **Informationen**\n> Instanzen gelöscht: `$count`\n> Zeit: `$duration`",
+    "menu.delete_message.database_error_embed.title": "FEHLER",
+    "menu.delete_message.database_error_embed.description": "> **Nachricht Nicht Gefunden**\n> Die ausgewählte Nachricht konnte in der Datenbank nicht gefunden werden. Dies könnte daran liegen, dass die Nachricht nicht im Global Chat gesendet wurde oder ein Fehler aufgetreten ist. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "menu.delete_message.permission_error_embed.title": "FEHLER",
-    "menu.delete_message.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um Nachrichten aus dem Global Chat zu löschen. Wenn du glaubst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App."
+    "menu.delete_message.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um Nachrichten aus dem Global Chat zu löschen. Wenn du glaubst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+
+    "menu.report_message.success_embed.title": "GEMELDET",
+    "menu.report_message.success_embed.description": "> **Nachricht Erfolgreich Gemeldet**\n> Du hast diese Nachricht im Global Chat erfolgreich gemeldet. Vielen Dank, dass du zur Sicherheit im Global Chat beiträgst. Bitte habe etwas Geduld, bis sich ein Teammitglied darum kümmert.",
+    "menu.report_message.database_error_embed.title": "FEHLER",
+    "menu.report_message.database_error_embed.description": "> **Nachricht Nicht Gefunden**\n> Die ausgewählte Nachricht konnte in der Datenbank nicht gefunden werden. Dies könnte daran liegen, dass die Nachricht nicht im Global Chat gesendet wurde oder ein Fehler aufgetreten ist. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App."
 }

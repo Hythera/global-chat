@@ -8,3 +8,5 @@ config.json
 /venv
 /testing
 /json
+
+hidden.*

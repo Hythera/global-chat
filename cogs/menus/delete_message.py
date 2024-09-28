@@ -22,7 +22,7 @@ class delete_message(commands.Cog):
 
     async def delete_message_callback(self, interaction: discord.Interaction, message: discord.Message):
         author = await UserRole(interaction.user.id).load()
-        if author.stored and config["roles"][author.role]["permission_level"] >= 10:
+        if author.stored and config["roles"][author.role]["permission_level"] >= 5:
             uuid = await GlobalMessage().get_uuid(message.id)
             if uuid:
                 await interaction.response.defer(ephemeral=True)
@@ -31,26 +31,24 @@ class delete_message(commands.Cog):
                 instance_count = 0
                 start_time = time.time() * 1000
                 for global_message in global_messages:
-                    guild = self.client.get_guild(global_message["guild_id"])
-                    if guild:
-                        channel = guild.get_channel(global_message["channel_id"])
-                        if channel:
-                            try:
-                                message = await channel.fetch_message(global_message["message_id"])
-                                await message.delete()
-                                instance_count += 1
-                                await asyncio.sleep(0.05)  
-                            except:
-                                pass    
+                    channel = self.client.get_channel(global_message["channel_id"])
+                    if channel:
+                        try:
+                            message = await channel.fetch_message(global_message["message_id"])
+                            await message.delete()
+                            instance_count += 1
+                            await asyncio.sleep(0.05)  
+                        except:
+                            pass    
                 duration = f"{int((time.time() * 1000) - start_time)}ms"
                 success_embed= discord.Embed(
-                    title=f"{config["emojis"]["check_circle_green"]} "+translator.translate(interaction.locale.value, "menu.database_message.success_embed.title"),
-                    description=translator.translate(interaction.locale.value, "menu.database_message.success_embed.description", count=instance_count, duration=duration),
+                    title=f"{config["emojis"]["check_circle_green"]} "+translator.translate(interaction.locale.value, "menu.delete_message.success_embed.title"),
+                    description=translator.translate(interaction.locale.value, "menu.delete_message.success_embed.description", count=instance_count, duration=duration),
                     color=0x57F287)
                 await interaction.edit_original_response(embed=success_embed)
             else:
                 database_error_embed = discord.Embed(
-                    title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(interaction.locale.value, "menu.database_message.permission_error_embed.title"),
+                    title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(interaction.locale.value, "menu.delete_message.database_error_embed.title"),
                     description=translator.translate(interaction.locale.value, "menu.delete_message.database_error_embed.description"),
                     color=0xED4245)
                 await interaction.response.send_message(embed=database_error_embed, ephemeral=True)

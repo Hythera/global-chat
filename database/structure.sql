@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `global_channels` (
 CREATE TABLE IF NOT EXISTS `message_ids` (
     `uuid` VARCHAR(255) NOT NULL,
     `message_id` BIGINT NOT NULL,
-    `guild_id` BIGINT NOT NULL,
+    `channel_id` BIGINT NOT NULL,
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`message_id`)
 );

@@ -33,23 +33,22 @@ class message(commands.Cog):
                 global_channel = await GlobalChannel(channel_id=message.channel.id).load()
                 if global_channel.stored == True:
                     try:
-                        perms: discord.Permissions = message.channel.permissions_for(message.guild.get_member(self.client.user.id))
-                        if perms.manage_messages:
-                            await message.delete()
+                         await message.delete()
                     except:
                         pass
 
-                    await self.loop_channels(message)
+                    await self.loop_channels(message, global_channel)
 
         except Exception as e:
             print("on_message: ", e)
+        
             
-    async def loop_channels(self, message: discord.Message):
-        global_channel = await GlobalChannel(channel_id=message.channel.id).load()
+    async def loop_channels(self, message: discord.Message, global_channel: GlobalChannel):
         channels = await global_channel.get_all_channels()
 
         uuid = generate_random_string()
         user_role = await UserRole(message.author.id).load()
+
         guilds = self.client.guilds
         for guild in guilds:
             if guild.id == message.guild.id:
@@ -61,30 +60,30 @@ class message(commands.Cog):
 
         channel: discord.TextChannel = self.client.get_channel(message.channel.id)
         sent_message = await self.send(channel, message.author, role, member_count, global_channel.invite, message.guild, message.content)
-        messages = await GlobalMessage().add(uuid, sent_message.id, sent_message.guild.id)
+        messages = await GlobalMessage().add(uuid, sent_message.id, sent_message.channel.id)
 
         for entry in channels:
             if entry["guild_id"] != message.guild.id:
-                guild: discord.Guild = self.client.get_guild(entry["guild_id"])
-                if guild:
-                    channel: discord.TextChannel = self.client.get_channel(entry["channel_id"])
-                    if channel:
-                        try:
-                            perms: discord.Permissions = channel.permissions_for(guild.get_member(self.client.user.id))
-                            if perms.send_messages:
-                                sent_message = await self.send(channel, message.author, role, member_count, global_channel.invite, message.guild, message.content)
-                                await messages.add(uuid, sent_message.id, sent_message.guild.id)
-                                await asyncio.sleep(0.05)
-                        except:
-                            pass
+                channel: discord.TextChannel = self.client.get_channel(entry["channel_id"])
+                if channel:
+                    try:
+                        perms: discord.Permissions = channel.permissions_for(channel.guild.get_member(self.client.user.id))
+                        if perms.send_messages:
+                            sent_message = await self.send(channel, message.author, role, member_count, global_channel.invite, message.guild, message.content)
+                            await messages.add(uuid, sent_message.id, sent_message.channel.id)
+                            await asyncio.sleep(0.05)
+                    except:
+                        pass
+
 
     async def send(self, channel: discord.TextChannel, author: discord.Member, role: str, member_count:int, invite:str, guild: discord.Guild, content: str):
         embed=discord.Embed(
-            description=content+translator.translate(guild.preferred_locale, "global_chat.message.embed.description.footer", support_server=config["support_server_url"], invite=invite),
+            description=content+"\n",
             color=int(config["roles"][role]["color"], 16))
         if role != "default":
             embed.title = config["roles"][role]["display_name"]
-        embed.set_author(name=author.name, icon_url=author.display_avatar)
+        embed.set_author(name=author.name, icon_url=author.display_avatar, url=f"https://discordapp.com/users/{author.id}")
+        embed.add_field(name=translator.translate(guild.preferred_locale.value, "global_chat.message.embed.field.name"),value=translator.translate(guild.preferred_locale.value, "global_chat.message.embed.field.value", support_server=config["support_server_url"], invite=invite))
         if guild.icon:
             embed.set_footer(text=f"{guild.name} - {member_count}", icon_url=guild.icon.url)
         else:

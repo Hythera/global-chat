@@ -5,9 +5,11 @@ from pathlib import Path
 import aiofiles
 from aiomysql import Pool
 import asyncio
+import time
 
 import discord
 from discord.ext import commands
+from discord import app_commands
 
 import pytz
 from datetime import datetime
@@ -15,7 +17,8 @@ from colorama import Fore, Back, Style
 import platform
 
 from database import get_pool
-from languages import CommandTranslator
+from languages import CommandTranslator, Translator
+translator = Translator()
 
 load_dotenv()
 with open("config.json", 'r', encoding='utf-8') as file:
@@ -38,6 +41,13 @@ async def init_db():
     pool.close()
     await pool.wait_closed()
 
+async def on_tree_error(interaction: discord.Interaction, error: app_commands.AppCommandError):
+    if isinstance(error, app_commands.CommandOnCooldown):
+        cooldown_error_embed = discord.Embed(
+            title=f"{config["emojis"]["clock_red"]} "+translator.translate(interaction.locale.value, "on_tree_error.cooldown_error_embed.title"),
+            description=translator.translate(interaction.locale.value, "on_tree_error.cooldown_error_embed.description", time=round(time.time()+error.retry_after)),  
+            color=0xED4245)
+        await interaction.response.send_message(embed=cooldown_error_embed, ephemeral=True)
 
 class Client(commands.Bot):
     def __init__(self):
@@ -47,6 +57,7 @@ class Client(commands.Bot):
 
         asyncio.run(init_db())
         self.cogslist = ['.'.join(file.relative_to('cogs').with_suffix('').parts) for file in Path('cogs').rglob('*.py') if not file.name.startswith('__')]
+        self.tree.on_error = on_tree_error
 
     async def setup_hook(self):
         for cog in self.cogslist:
