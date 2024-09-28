@@ -6,7 +6,7 @@ import random
 import asyncio
 import json
 
-from database.models import GlobalChannel, GlobalMessage, UserRole
+from database.models import GlobalChannel, GlobalMessage, UserRole, Mutes
 from languages import Translator
 translator = Translator()
 
@@ -36,7 +36,18 @@ class message(commands.Cog):
                          await message.delete()
                     except:
                         pass
-
+                    user = await Mutes(message.author.id).load()
+                    if user.stored:
+                        if user.exipires_at == None:
+                            time_str = translator.translate(message.guild.preferred_locale, "global_chat.translation.never")
+                        else:
+                            time_str = f"<t:{int(user.exipires_at.timestamp())}:R>"
+                        mute_error_embed = discord.Embed(
+                            title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(message.guild.preferred_locale, "global_chat.mute_error_embed.title"),
+                            description=translator.translate(message.guild.preferred_locale, "global_chat.mute_error_embed.description", time=time_str, reason=user.reason),
+                            color=0xED4245)
+                        await message.author.send(embed=mute_error_embed)
+                        return
                     await self.loop_channels(message, global_channel)
 
         except Exception as e:

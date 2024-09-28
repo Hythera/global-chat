@@ -53,7 +53,7 @@ class mute_commands(commands.Cog):
                     time_str = f"<t:{int(expires_at.timestamp())}:R>"
                 else:
                     await mute.add(interaction.user.id, reason, None)   
-                    time_str = translator.translate(interaction.locale.value, "command.mute.add.succes_embed.translation.permanent")
+                    time_str = translator.translate(interaction.locale.value, "command.mute.add.succes_embed.translation.never")
                     
                 success_embed = discord.Embed(
                     title=f"{config["emojis"]["check_circle_green"]} "+translator.translate(interaction.locale.value, "command.mute.add.success_embed.title"),

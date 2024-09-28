@@ -4,68 +4,71 @@
     
     "on_tree_error.cooldown_error_embed.title": "ABKLINGZEIT",
     "on_tree_error.cooldown_error_embed.description": "> **Dieser Befehl hat eine Abklingzeit**\n> Der Befehl ist zurzeit nicht verwendbar, da er eine Abklingzeit hat. Du kannst den Befehl <t:$time:R> wieder verwenden. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
-
+    
+    "global_chat.translation.never": "`nie`",
+    "global_chat.mute_error_embed.title": "FEHLER",
+    "global_chat.mute_error_embed.description": "> **Du bist stummgeschaltet**\n> Du bist zurzeit stummgeschaltet und kannst deshalb keine Nachrichten im Global Chat versenden.\n\n> **Informationen**\n> Läuft ab: $time\n> Grund: `$reason`",
     "global_chat.message.embed.field.name": "Links & Hilfe",
     "global_chat.message.embed.field.value": "[Support Server]($support_server) • [Server Einladung]($invite)",
-
+    
     "command.help.embed.title": "HILFE",
     "command.help.embed.description": "> **Was ist die Global Chat App?**\n> Die Global Chat App ist eine Open-Source-Discord-App, die dir erlaubt, dich mit anderen Servern zu vernetzen und Nachrichten serverübergreifend zu versenden.\n\n> **Source Code**\n> Wenn du deine eigene Global Chat App erstellen möchtest, kannst du dir gerne den Code vom offiziellen [GitHub Repository](https://github.com/Blackstonecoden/Global-Chat) herunterladen.\n\n> **Fehler melden**\n> Wenn du einen Fehler in unserer App melden möchtest, tritt gerne unserem Support-Server bei.",
     "command.help.embed.button.invite_app": "App Einladen",
     "command.help.embed.button.support_server": "Support Server",
 
     "command.channel.set.success_embed.title": "GLOBAL CHAT GESETZT",
-    "command.channel.set.success_embed.description": "> **Global Chat Erfolgreich Gesetzt**\n> Du hast den Global Chat auf deinem Server erfolgreich im <#$channel_id> eingerichtet. Bitte stelle sicher, dass dieser Kanal einen 5-Sekunden-Slowmode hat.",
+    "command.channel.set.success_embed.description": "> **Global Chat erfolgreich gesetzt**\n> Du hast den Global Chat auf deinem Server erfolgreich im <#$channel_id> eingerichtet. Bitte stelle sicher, dass dieser Kanal einen 5-Sekunden-Slowmode hat.",
     "command.channel.set.error_embed.title": "FEHLER",
-    "command.channel.set.error_embed.description": "> **Global Chat Existiert Bereits**\n> Dein Server hat bereits einen Global Chat. Bitte beachte, dass jeder Server nur einen Global Chat haben kann. Entferne den bestehenden Global Chat zuerst, wenn du den Kanal ändern möchtest.",
+    "command.channel.set.error_embed.description": "> **Global Chat existiert bereits**\n> Dein Server hat bereits einen Global Chat. Bitte beachte, dass jeder Server nur einen Global Chat haben kann. Entferne den bestehenden Global Chat zuerst, wenn du den Kanal ändern möchtest.",
     
     "command.channel.remove.success_embed.title": "GLOBAL CHAT ENTFERNT",
-    "command.channel.remove.success_embed.description": "> **Global Chat Erfolgreich Entfernt**\n> Du hast den Global Chat erfolgreich von deinem Server entfernt. Du kannst ihn jederzeit wieder hinzufügen.",
+    "command.channel.remove.success_embed.description": "> **Global Chat erfolgreich entfernt**\n> Du hast den Global Chat erfolgreich von deinem Server entfernt. Du kannst ihn jederzeit wieder hinzufügen.",
     "command.channel.remove.error_embed.title": "FEHLER",
-    "command.channel.remove.error_embed.description": "> **Kein Global Chat Vorhanden**\n> Dein Server hat keinen Global Chat, der entfernt werden kann, oder der Global Chat wurde bereits entfernt. Du kannst jederzeit den Global Chat wieder hinzufügen.",
+    "command.channel.remove.error_embed.description": "> **Kein Global Chat vorhanden**\n> Dein Server hat keinen Global Chat, der entfernt werden kann, oder der Global Chat wurde bereits entfernt. Du kannst jederzeit den Global Chat wieder hinzufügen.",
     
     "command.role.set.success_removed_embed.title": "ROLLE ENTFERNT",
-    "command.role.set.success_removed_embed.description": "> **Rolle Erfolgreich Entfernt**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich entfernt.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`",
+    "command.role.set.success_removed_embed.description": "> **Rolle erfolgreich entfernt**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich entfernt.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`",
     "command.role.set.success_embed.title": "ROLLE GEÄNDERT",
-    "command.role.set.success_embed.description": "> **Rolle Erfolgreich Geändert**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich geändert.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`",
+    "command.role.set.success_embed.description": "> **Rolle erfolgreich geändert**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich geändert.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`",
     "command.role.set.same_role_error_embed.title": "FEHLER",
     "command.role.set.same_role_error_embed.description": "> **Keine Rollenänderung**\n> Der angegebene Nutzer hat bereits die angegebene Rolle. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "command.role.set.user_is_default_error_embed.title": "FEHLER",
-    "command.role.set.user_is_default_error_embed.description": "> **Rollen Fehler**\n> Die Rolle des angegebenen Nutzers ist bereits auf die Standardrolle gesetzt. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+    "command.role.set.user_is_default_error_embed.description": "> **Rollenfehler**\n> Die Rolle des angegebenen Nutzers ist bereits auf die Standardrolle gesetzt. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "command.role.set.permission_error_embed.title": "FEHLER",
-    "command.role.set.permission_error_embed.description": "> **Berechtigungs Fehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um die Rolle von anderen Nutzern zu ändern. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+    "command.role.set.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um die Rolle von anderen Nutzern zu ändern. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
 
     "command.role.list.embed.title": "ROLLEN",
-    "command.role.list.embed.description": "> **Nutzer Mit Rollen**\n> Das ist eine Liste von allen Nutzern, die eine spezielle Rolle haben.\n> ",
+    "command.role.list.embed.description": "> **Nutzer mit Rollen**\n> Das ist eine Liste von allen Nutzern, die eine spezielle Rolle haben.\n> ",
     "command.role.list.permission_error_embed.title": "FEHLER",
     "command.role.list.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um die Rollen anderer Nutzer einzusehen. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
 
     "command.message_delete.success_embed.title": "NACHRICHT GELÖSCHT",
-    "command.message_delete.success_embed.description": "> **Nachricht Erfolgreich Gelöscht**\n> Die ausgewählte Nachricht wurde erfolgreich aus dem Global Chat gelöscht.\n\n> **Informationen**\n> Instanzen gelöscht: `$count`\n> Zeit: `$duration`",
+    "command.message_delete.success_embed.description": "> **Nachricht erfolgreich Gelöscht**\n> Die ausgewählte Nachricht wurde erfolgreich aus dem Global Chat gelöscht.\n\n> **Informationen**\n> Instanzen gelöscht: `$count`\n> Zeit: `$duration`",
     "command.message_delete.database_error_embed.title": "FEHLER",
-    "command.message_delete.database_error_embed.description": "> **Nachricht Nicht Gefunden**\n> Die ausgewählte Nachricht konnte in der Datenbank nicht gefunden werden. Dies könnte daran liegen, dass die Nachricht nicht im Global Chat gesendet wurde oder ein Fehler aufgetreten ist. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+    "command.message_delete.database_error_embed.description": "> **Nachricht nicht gefunden**\n> Die ausgewählte Nachricht konnte in der Datenbank nicht gefunden werden. Dies könnte daran liegen, dass die Nachricht nicht im Global Chat gesendet wurde oder ein Fehler aufgetreten ist. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
 
-    "command.mute.add.succes_embed.translation.permanent": "`Permanent`",
+    "command.mute.add.succes_embed.translation.never": "`nie`",
     "command.mute.add.success_embed.title": "NUTZER STUMMGESCHALTEN",
-    "command.mute.add.success_embed.description": "> **Nutzer Erfolgreich Stummgeschaltet**\n> Der angegebene Benutzer wurde erfolgreich stummgeschaltet.\n\n> **Informationen**\n> Nutzer: <@$user_id>\n> Läuft ab: $time\n> Grund: `$reason`\n> Teammitglied: <@$staff_id>",
+    "command.mute.add.success_embed.description": "> **Nutzer erfolgreich stummgeschaltet**\n> Der angegebene Benutzer wurde erfolgreich stummgeschaltet.\n\n> **Informationen**\n> Nutzer: <@$user_id>\n> Läuft ab: $time\n> Grund: `$reason`\n> Teammitglied: <@$staff_id>",
     "command.mute.add.user_exists_error_embed.title": "FEHLER",
-    "command.mute.add.user_exists_error_embed.description": "> **Nutzer Schon Stummgeschaltet**\n> angegebene Benutzer ist bereits stummgeschaltet. Wenn du die Dauer der Stummschaltung ändern möchtest, entstumme den Nutzer zuerst und ändere dann die Zeit. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+    "command.mute.add.user_exists_error_embed.description": "> **Nutzer schon stummgeschaltet**\n> angegebene Benutzer ist bereits stummgeschaltet. Wenn du die Dauer der Stummschaltung ändern möchtest, entstumme den Nutzer zuerst und ändere dann die Zeit. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "command.mute.add.permission_error_embed.title": "FEHLER",
     "command.mute.add.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um andere Nutzer stummzuschalten. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
   
     "command.mute.remove.success_embed.title": "STUMMGESCHALTUNG AUFGEHOBEN",
-    "command.mute.remove.success_embed.description": "> **Stummschaltung Erfolgreich Aufgehoben**\n> Die Stummschaltung des angegebenen Nutzers wurde erfolgreich aufgehoben.",
+    "command.mute.remove.success_embed.description": "> **Stummschaltung erfolgreich aufgehoben**\n> Die Stummschaltung des angegebenen Nutzers wurde erfolgreich aufgehoben.",
     "command.mute.remove.user_not_exists_error_embed.title": "FEHLER",
-    "command.mute.remove.user_not_exists_error_embed.description": "> **Nutzer Nicht Stummgeschaltet**\n> Der angegebene Benutzer ist bereits nicht stummgeschaltet. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+    "command.mute.remove.user_not_exists_error_embed.description": "> **Nutzer nicht stummgeschaltet**\n> Der angegebene Benutzer ist bereits nicht stummgeschaltet. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
 
     "menu.delete_message.success_embed.title": "NACHRICHT GELÖSCHT",
-    "menu.delete_message.success_embed.description": "> **Nachricht Erfolgreich Gelöscht**\n> Die ausgewählte Nachricht wurde erfolgreich aus dem Global Chat gelöscht.\n\n> **Informationen**\n> Instanzen gelöscht: `$count`\n> Zeit: `$duration`",
+    "menu.delete_message.success_embed.description": "> **Nachricht erfolgreich gelöscht**\n> Die ausgewählte Nachricht wurde erfolgreich aus dem Global Chat gelöscht.\n\n> **Informationen**\n> Instanzen gelöscht: `$count`\n> Zeit: `$duration`",
     "menu.delete_message.database_error_embed.title": "FEHLER",
-    "menu.delete_message.database_error_embed.description": "> **Nachricht Nicht Gefunden**\n> Die ausgewählte Nachricht konnte in der Datenbank nicht gefunden werden. Dies könnte daran liegen, dass die Nachricht nicht im Global Chat gesendet wurde oder ein Fehler aufgetreten ist. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+    "menu.delete_message.database_error_embed.description": "> **Nachricht nicht gefunden**\n> Die ausgewählte Nachricht konnte in der Datenbank nicht gefunden werden. Dies könnte daran liegen, dass die Nachricht nicht im Global Chat gesendet wurde oder ein Fehler aufgetreten ist. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "menu.delete_message.permission_error_embed.title": "FEHLER",
     "menu.delete_message.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um Nachrichten aus dem Global Chat zu löschen. Wenn du glaubst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
 
     "menu.report_message.success_embed.title": "GEMELDET",
-    "menu.report_message.success_embed.description": "> **Nachricht Erfolgreich Gemeldet**\n> Du hast diese Nachricht im Global Chat erfolgreich gemeldet. Vielen Dank, dass du zur Sicherheit im Global Chat beiträgst. Bitte habe etwas Geduld, bis sich ein Teammitglied darum kümmert.",
+    "menu.report_message.success_embed.description": "> **Nachricht erfolgreich gemeldet**\n> Du hast diese Nachricht im Global Chat erfolgreich gemeldet. Vielen Dank, dass du zur Sicherheit im Global Chat beiträgst. Bitte habe etwas Geduld, bis sich ein Teammitglied darum kümmert.",
     "menu.report_message.database_error_embed.title": "FEHLER",
-    "menu.report_message.database_error_embed.description": "> **Nachricht Nicht Gefunden**\n> Die ausgewählte Nachricht konnte in der Datenbank nicht gefunden werden. Dies könnte daran liegen, dass die Nachricht nicht im Global Chat gesendet wurde oder ein Fehler aufgetreten ist. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App."
+    "menu.report_message.database_error_embed.description": "> **Nachricht nicht gefunden**\n> Die ausgewählte Nachricht konnte in der Datenbank nicht gefunden werden. Dies könnte daran liegen, dass die Nachricht nicht im Global Chat gesendet wurde oder ein Fehler aufgetreten ist. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App."
 }

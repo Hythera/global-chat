@@ -187,9 +187,9 @@ class Mutes:
                 await cursor.execute(f"SELECT * FROM `{mutes}` WHERE `user_id`= %s", self.user_id)
                 result = await cursor.fetchone()
                 if result:
-                    self.staff_id = result[2]
-                    self.reason = result[3]
-                    self.exipires_at = result[4]
+                    self.staff_id = result[1]
+                    self.reason = result[2]
+                    self.exipires_at = result[3]
                     self.stored = True
                 else:
                     self.stored = False
