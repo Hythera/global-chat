@@ -25,4 +25,4 @@ CREATE TABLE IF NOT EXISTS `mutes` (
     `expires_at` TIMESTAMP NULL,
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`user_id`)
-);
+)

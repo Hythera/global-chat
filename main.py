@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 import aiofiles
 from aiomysql import Pool
+from aiomysql import Warning as MySQLWarning 
+import warnings
 import asyncio
 import time
 
@@ -35,9 +37,11 @@ async def init_db():
         async with connection.cursor() as cursor:
             for statement in sql.split(';'):
                 try:
-                    await cursor.execute(statement)
+                    with warnings.catch_warnings():
+                        warnings.simplefilter("ignore", MySQLWarning) 
+                        await cursor.execute(statement)
                 except Exception as e:
-                    continue
+                    print(e)
     pool.close()
     await pool.wait_closed()
 
