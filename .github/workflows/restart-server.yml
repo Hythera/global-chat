@@ -1,0 +1,26 @@
+name: Restart Server
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  restart:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Run restart script
+      env:
+        API_URL: ${{ secrets.PTERODACTYL_API_URL }}
+        API_KEY: ${{ secrets.PTERODACTYL_API_KEY }}
+        SERVER_ID: ${{ secrets.PTERODACTYL_SERVER_ID }}
+      run: |
+        python3 .github/scripts/restart_server.py
