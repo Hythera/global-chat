@@ -1,6 +1,6 @@
 {
     "log.reports.log_embed.title": "MESSAGE REPORTED",
-    "log.reports.log_embed.description": "> **A message was reported**\n> A message in the Global Chat has just been reported. More information is provided below.\n\n> **Information**\n> - Reported by: <@$reported_by>\n> - Message author: <@$message_author>\n> - Message ID: `$message_id`\n> - Message UUID: `$message_uuid`\n\n> **Content**\n> ```$message_content```",
+    "log.reports.log_embed.description": "> **A message was reported**\n> A message in the Global Chat has just been reported. More information is provided below.\n\n> **Information**\n> - Reported by: <@$reported_by>\n> - Message author: <@$message_author>\n> - Message ID: `$message_id`\n> - Message UUID: `$message_uuid`",
     
     "on_tree_error.cooldown_error_embed.title": "COOLDOWN",
     "on_tree_error.cooldown_error_embed.description": "> **This command has a cooldown**\n> The command is currently unavailable because it has a cooldown. You can use the command again <t:$time:R>. If you believe this is a mistake, please contact the administrators of this app.",

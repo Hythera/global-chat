@@ -24,8 +24,11 @@ class channel_commands(commands.Cog):
             channel = interaction.channel
         global_channel = await GlobalChannel(channel.id, interaction.guild.id).load()
         if global_channel.stored == False:
-            invite = str(await channel.create_invite())
-            await global_channel.add(invite)
+            try:
+                invite = str(await channel.create_invite())
+                await global_channel.add(invite)
+            except:
+                await global_channel.add(config["support_server_url"])
             try:
                 await channel.edit(slowmode_delay=5)
             except:

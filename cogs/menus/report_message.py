@@ -31,11 +31,18 @@ class report_message(commands.Cog):
             message_author_id = int(message.embeds[0].author.url.split("/")[-1])
             message_content = message.embeds[0].description.replace('\n', ' ')
             report_channel = self.client.get_channel(config["channels"]["reports"])
+
+            line_image = discord.File("images/line.png")
             log_embed = discord.Embed(
                 title=f"{config["emojis"]["alert_yellow"]} "+translator.translate(report_channel.guild.preferred_locale.value, "log.reports.log_embed.title"),
-                description=translator.translate(report_channel.guild.preferred_locale.value, "log.reports.log_embed.description", reported_by=interaction.user.id, message_author=message_author_id, message_id=message.id, message_uuid=uuid, message_content=message_content),
+                description=translator.translate(report_channel.guild.preferred_locale.value, "log.reports.log_embed.description", reported_by=interaction.user.id, message_author=message_author_id, message_id=message.id, message_uuid=uuid),
                 color=0xFEE75C)
-            await report_channel.send(embed=log_embed)
+            log_embed.set_image(url="attachment://line.png")
+            content_embed = discord.Embed(
+                description=f"```{message_content}```",
+                color=0xFEE75C)
+            content_embed.set_image(url="attachment://line.png")
+            await report_channel.send(embeds=[log_embed, content_embed], files=[line_image])
 
         else:
             database_error_embed = discord.Embed(
