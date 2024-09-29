@@ -18,7 +18,7 @@ Key features:
 - [MariDB](https://mariadb.org/) or [MySQL](https://www.mysql.com/)
 
 ## 🔧 Installation
-Download the [latest release](https://github.com/Blackstonecoden/global-chat/releases/latest) from this repository. Setup the `.env`file in the root direcotry and fill it with your cridentials.
+Download the [latest release](https://github.com/Blackstonecoden/global-chat/releases/latest) from this repository. Setup the `.env` file in the root direcotry and fill it with your cridentials.
 ```env
 TOKEN = nGRuiORASD
 
