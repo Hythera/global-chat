@@ -8,10 +8,11 @@
 ## 📌 Information
 This is an open-source code for a Discord Global-Chat. It allows you to have a cross-server chat just by using this app. 
 Key features:
-- Global-Chat
+- global-chat
 - message deletion
 - mute users
 - custom roles
+- localization (de/en)
 
 ## 🔌 Requirements
 - [Python](https://www.python.org/)

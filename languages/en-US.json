@@ -21,7 +21,7 @@
     "command.help.embed.button.support_server": "Support Server",
 
     "command.channel.set.success_embed.title": "GLOBAL CHAT SET",
-    "command.channel.set.success_embed.description": "> **Global Chat successfully set**\n> You have successfully set up the Global Chat on your server in <#$channel_id>. Please make sure that this channel has a 5-second slow mode enabled.",
+    "command.channel.set.success_embed.description": "> **Global Chat successfully set**\n> You have successfully set up the Global Chat on your server in <#$channel_id>. Please make sure that this channel has a 5 second slow mode enabled.",
     "command.channel.set.error_embed.title": "ERROR",
     "command.channel.set.error_embed.description": "> **Global Chat already exists**\n> Your server already has a Global Chat. Please note that each server can only have one Global Chat. Remove the existing Global Chat first if you want to change the channel.",
     
