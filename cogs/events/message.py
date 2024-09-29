@@ -79,14 +79,25 @@ class message(commands.Cog):
                             pass
                         return
                     
-                    await self.loop_channels(message, global_channel)
+                    if message.reference:
+                        reference_uuid = await GlobalMessage().get_uuid(message.reference.message_id)
+                    else:
+                        reference_uuid = None
+
+                    await self.loop_channels(message, global_channel, reference_uuid)
 
         except Exception as e:
             print("on_message: ", e)
         
             
-    async def loop_channels(self, message: discord.Message, global_channel: GlobalChannel):
+    async def loop_channels(self, message: discord.Message, global_channel: GlobalChannel, reference_uuid: str = None):
         channels = await global_channel.get_all_channels()
+
+        if reference_uuid:
+            data = await GlobalMessage().get(reference_uuid)
+            referenced_messages = {item['channel_id']: item['message_id'] for item in data}
+        else:
+            referenced_messages = None
 
         uuid = generate_random_string()
         user_role = await UserRole(message.author.id).load()
@@ -101,7 +112,7 @@ class message(commands.Cog):
             role = "default"
 
         channel: discord.TextChannel = self.client.get_channel(message.channel.id)
-        sent_message = await self.send(channel, message.author, role, member_count, global_channel.invite, message.guild, message.content)
+        sent_message = await self.send(channel, message.author, role, member_count, global_channel.invite, message.guild, message.content, referenced_messages)
         messages = await GlobalMessage().add(uuid, sent_message.id, sent_message.channel.id)
 
         for entry in channels:
@@ -111,14 +122,14 @@ class message(commands.Cog):
                     try:
                         perms: discord.Permissions = channel.permissions_for(channel.guild.get_member(self.client.user.id))
                         if perms.send_messages:
-                            sent_message = await self.send(channel, message.author, role, member_count, global_channel.invite, message.guild, message.content)
+                            sent_message = await self.send(channel, message.author, role, member_count, global_channel.invite, message.guild, message.content, referenced_messages)
                             await messages.add(uuid, sent_message.id, sent_message.channel.id)
                             await asyncio.sleep(0.05)
                     except:
                         pass
 
 
-    async def send(self, channel: discord.TextChannel, author: discord.Member, role: str, member_count:int, invite:str, guild: discord.Guild, content: str):
+    async def send(self, channel: discord.TextChannel, author: discord.Member, role: str, member_count:int, invite:str, guild: discord.Guild, content: str, referenced_messages: dict):
         embed=discord.Embed(
             description=content+"\n",
             color=int(config["roles"][role]["color"], 16))
@@ -130,7 +141,22 @@ class message(commands.Cog):
             embed.set_footer(text=f"{guild.name} - {member_count}", icon_url=guild.icon.url)
         else:
             embed.set_footer(text=f"{guild.name} - {member_count}", icon_url=config["standard_server_icon_url"])
-        return await channel.send(embed=embed)
-    
+        try:
+            if referenced_messages:
+                try:
+                    message: discord.Message = await channel.fetch_message(referenced_messages[channel.id])
+                except:
+                    message = None
+                if message:
+                    return await message.reply(embed=embed)
+                else:
+                    return await channel.send(embed=embed)
+
+            else:
+                return await channel.send(embed=embed)
+        except:
+            return None
+
+
 async def setup(client:commands.Bot) -> None:
     await client.add_cog(message(client))
