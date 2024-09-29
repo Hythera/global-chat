@@ -6,6 +6,8 @@
     "on_tree_error.cooldown_error_embed.description": "> **This command has a cooldown**\n> The command is currently unavailable because it has a cooldown. You can use the command again <t:$time:R>. If you believe this is a mistake, please contact the administrators of this app.",
 
     "global_chat.translation.never": "`never`",
+    "global_chat.cooldown_error_embed.title": "COOLDOWN",
+    "global_chat.cooldown_error_embed.description": "> **The Global Chat has a cooldown**\n> You can only send a message in the Global Chat every 10 seconds. This is a security measure to prevent spam. You can send another message <t:$time:R>.",
     "global_chat.mute_error_embed.title": "ERROR",
     "global_chat.mute_error_embed.description": "> **You are muted**\n> You are currently muted and cannot send messages in the Global Chat.\n\n> **Information**\n> Expires: $time\n> Reason: `$reason`",
     "global_chat.attachment_error_embed.title": "ERROR",

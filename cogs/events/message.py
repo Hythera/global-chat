@@ -5,6 +5,7 @@ import string
 import random
 import asyncio
 import json
+import time
 
 from database.models import GlobalChannel, GlobalMessage, UserRole, Mutes
 from languages import Translator
@@ -21,7 +22,8 @@ def generate_random_string():
 class message(commands.Cog):
     def __init__(self, client: commands.Bot):
         self.client = client
-
+        self.global_chat_cooldown = commands.CooldownMapping.from_cooldown(1, 10, commands.BucketType.user)
+    
     @commands.Cog.listener("on_message")
     async def on_message(self, message: discord.Message):
         try:
@@ -36,6 +38,19 @@ class message(commands.Cog):
                          await message.delete()
                     except:
                         pass
+
+                    bucket = self.global_chat_cooldown.get_bucket(message)
+                    retry_after = bucket.update_rate_limit()
+                    if retry_after:
+                        cooldown_error_embed = discord.Embed(
+                            title=f"{config["emojis"]["clock_red"]} "+translator.translate(message.guild.preferred_locale, "global_chat.cooldown_error_embed.title"),
+                            description=translator.translate(message.guild.preferred_locale, "global_chat.cooldown_error_embed.description",time=round(time.time()+retry_after)),
+                            color=0xED4245)
+                        try:
+                            await message.author.send(embed=cooldown_error_embed)
+                        except:
+                            pass
+                        return
 
                     user = await Mutes(message.author.id).load()
                     if user.stored:

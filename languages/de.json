@@ -6,6 +6,8 @@
     "on_tree_error.cooldown_error_embed.description": "> **Dieser Befehl hat eine Abklingzeit**\n> Der Befehl ist zurzeit nicht verwendbar, da er eine Abklingzeit hat. Du kannst den Befehl <t:$time:R> wieder verwenden. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     
     "global_chat.translation.never": "`nie`",
+    "global_chat.cooldown_error_embed.title": "ABKLINGZEIT",
+    "global_chat.cooldown_error_embed.description": "> **Der Global Chat hat eine Abklingzeit**\n> Du kannst im Global Chat nur alle 10 Sekunden eine Nachricht senden. Das ist eine Sicherheitsmaßnahme, um Spam zu vermeiden. Du kannst <t:$time:R> wieder eine Nachricht senden.",  
     "global_chat.mute_error_embed.title": "FEHLER",
     "global_chat.mute_error_embed.description": "> **Du bist stummgeschaltet**\n> Du bist zurzeit stummgeschaltet und kannst deshalb keine Nachrichten im Global Chat versenden.\n\n> **Informationen**\n> Läuft ab: $time\n> Grund: `$reason`",
     "global_chat.attachment_error_embed.title": "FEHLER",
