@@ -26,9 +26,6 @@ load_dotenv()
 with open("config.json", 'r', encoding='utf-8') as file:
     config = json.load(file)
 
-if not os.path.exists("json"):
-    os.makedirs("json")
-
 async def init_db():
     pool: Pool = await get_pool()
     async with aiofiles.open('database/structure.sql') as file:

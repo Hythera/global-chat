@@ -8,6 +8,8 @@
     "global_chat.translation.never": "`never`",
     "global_chat.mute_error_embed.title": "ERROR",
     "global_chat.mute_error_embed.description": "> **You are muted**\n> You are currently muted and cannot send messages in the Global Chat.\n\n> **Information**\n> Expires: $time\n> Reason: `$reason`",
+    "global_chat.attachment_error_embed.title": "ERROR",
+    "global_chat.attachment_error_embed.description": "> **Attachments are not allowed**\n> Unfortunately, you cannot send attachments in the Global Chat. This is a security measure to prevent spam. If you believe this is a mistake, please contact the administrators of this app.",
     "global_chat.message.embed.field.name": "Links & Help",
     "global_chat.message.embed.field.value": "[Support Server]($support_server) • [Server Invite]($invite)",
 

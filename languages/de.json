@@ -8,6 +8,8 @@
     "global_chat.translation.never": "`nie`",
     "global_chat.mute_error_embed.title": "FEHLER",
     "global_chat.mute_error_embed.description": "> **Du bist stummgeschaltet**\n> Du bist zurzeit stummgeschaltet und kannst deshalb keine Nachrichten im Global Chat versenden.\n\n> **Informationen**\n> Läuft ab: $time\n> Grund: `$reason`",
+    "global_chat.attachment_error_embed.title": "FEHLER",
+    "global_chat.attachment_error_embed.description": "> **Dateien sind nicht erlaubt**\n> Du kannst leider keine Anhänge im Global Chat versenden. Das ist eine Sicherheitsmaßnahme, um Spam zu vermeiden. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "global_chat.message.embed.field.name": "Links & Hilfe",
     "global_chat.message.embed.field.value": "[Support Server]($support_server) • [Server Einladung]($invite)",
     
