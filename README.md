@@ -1,6 +1,6 @@
 <p align="center"><img src="https://raw.githubusercontent.com/Blackstonecoden/global-chat/refs/heads/main/images/logo.png" alt="Global Chat Logo" width="200"></p>
 <h1 align="center">Global Chat<br></h1>
-<div style="text-align: center;">
+<div align="center">
 <a href="https://github.com/Blackstonecoden/global-chat"><img src="https://img.shields.io/github/stars/blackstonecoden/global-chat"></a>
 <a href="https://discord.gg/FVQxgBysA7"><img src="https://img.shields.io/discord/1201557790758551574?color=5865f2&label=Discord&style=flat" alt="Discord"></a>
 <br><br>
@@ -21,7 +21,12 @@ Key features:
 
 ## 🔧 Installation
 Download the [latest release](https://github.com/Blackstonecoden/global-chat/releases/latest) from this repository. Setup the `.env` file in the root direcotry and fill it with your cridentials.
-```env
+<details open>
+  <summary style="font-size: 18px; cursor: pointer;">
+    .env
+  </summary>
+
+```bash
 TOKEN = nGRuiORASD
 
 database_host = 1.1.1.1:3306
@@ -29,7 +34,14 @@ database_user = user
 database_password = password
 database_name = s128_bot
 ```
-Create the `config.json`.
+</details>
+
+Create the `config.json`. Here is the reference.
+<details open>
+  <summary style="font-size: 18px; cursor: pointer;">
+    config.json
+  </summary>
+
 ```json
 {
     "admin_guild_id": 123,
@@ -94,3 +106,4 @@ Create the `config.json`.
     "standard_server_icon_url": "https://discord.com/assets/ca24969f2fd7a9fb03d5.png"
 }
 ```
+</details>
