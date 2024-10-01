@@ -1,9 +1,10 @@
 <p align="center"><img src="https://raw.githubusercontent.com/Blackstonecoden/global-chat/refs/heads/main/images/logo.png" alt="Global Chat Logo" width="200"></p>
-<h1 align="center">Global Chat<br>
-	<a href="https://github.com/Blackstonecoden/global-chat"><img src="https://img.shields.io/github/stars/blackstonecoden/global-chat"></a>
-	<a href="https://discord.gg/FVQxgBysA7"><img src="https://img.shields.io/discord/1201557790758551574?color=5865f2&label=Discord&style=flat" alt="Discord"></a>
-	<br><br>
-</h1>
+<h1 align="center">Global Chat<br></h1>
+<div style="text-align: center;">
+<a href="https://github.com/Blackstonecoden/global-chat"><img src="https://img.shields.io/github/stars/blackstonecoden/global-chat"></a>
+<a href="https://discord.gg/FVQxgBysA7"><img src="https://img.shields.io/discord/1201557790758551574?color=5865f2&label=Discord&style=flat" alt="Discord"></a>
+<br><br>
+</div>
 
 ## 📌 Information
 This is an open-source code for a Discord Global-Chat. It allows you to have a cross-server chat just by using this app. 
