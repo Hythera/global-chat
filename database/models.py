@@ -160,7 +160,7 @@ class UserRole:
         await pool.wait_closed()
         return self
     
-    async def change(self, role: str, display_role: str):
+    async def change(self, role: str, display_role: str = None):
         self.role = role
         if display_role:
             self.display_role = display_role

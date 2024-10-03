@@ -22,6 +22,8 @@
 
     "command.channel.set.success_embed.title": "GLOBAL CHAT SET",
     "command.channel.set.success_embed.description": "> **Global Chat successfully set**\n> You have successfully set up the Global Chat on your server in <#$channel_id>. Please make sure that this channel has a 5 second slow mode enabled.",
+    "command.channel.set.global_embed.title": "NEW SERVER",
+    "command.channel.set.global_embed.description": "> **New server in the Global Chat**\n> The server `$guild` has joined the Global Chat and added `$users` new members to the Global Chat.",
     "command.channel.set.error_embed.title": "ERROR",
     "command.channel.set.error_embed.description": "> **Global Chat already exists**\n> Your server already has a Global Chat. Please note that each server can only have one Global Chat. Remove the existing Global Chat first if you want to change the channel.",
     

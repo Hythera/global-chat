@@ -136,7 +136,7 @@ class message(commands.Cog):
         if role != "default":
             embed.title = config["roles"][role]["display_name"]
         embed.set_author(name=author.name, icon_url=author.display_avatar, url=f"https://discordapp.com/users/{author.id}")
-        embed.add_field(name=translator.translate(guild.preferred_locale.value, "global_chat.message.embed.field.name"),value=translator.translate(guild.preferred_locale.value, "global_chat.message.embed.field.value", support_server=config["support_server_url"], invite=invite))
+        embed.add_field(name=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.name"),value=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.value", support_server=config["support_server_url"], invite=invite))
         if guild.icon:
             embed.set_footer(text=f"{guild.name} - {member_count}", icon_url=guild.icon.url)
         else:

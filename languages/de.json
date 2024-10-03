@@ -22,6 +22,8 @@
 
     "command.channel.set.success_embed.title": "GLOBAL CHAT GESETZT",
     "command.channel.set.success_embed.description": "> **Global Chat erfolgreich gesetzt**\n> Du hast den Global Chat auf deinem Server erfolgreich im <#$channel_id> eingerichtet. Bitte stelle sicher, dass dieser Kanal einen 5 Sekunden Slowmode hat.",
+    "command.channel.set.global_embed.title": "NEUER SERVER",
+    "command.channel.set.global_embed.description": "> **Neuer Server im Global Chat**\n> Der Server `$guild` ist dem Global Chat beigetreten und hat `$users` neue Mitglieder zum Global Chat hinzugefügt.",
     "command.channel.set.error_embed.title": "FEHLER",
     "command.channel.set.error_embed.description": "> **Global Chat existiert bereits**\n> Dein Server hat bereits einen Global Chat. Bitte beachte, dass jeder Server nur einen Global Chat haben kann. Entferne den bestehenden Global Chat zuerst, wenn du den Kanal ändern möchtest.",
     
@@ -33,7 +35,7 @@
     "command.user.set.success_removed_embed.title": "ROLLE ENTFERNT",
     "command.user.set.success_removed_embed.description": "> **Rolle erfolgreich entfernt**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich entfernt.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`",
     "command.user.set.success_embed.title": "ROLLE GEÄNDERT",
-"command.user.set.success_embed.description": "> **Rolle erfolgreich geändert**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich geändert.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`\n> Anzeigerolle: `$display_role`",
+    "command.user.set.success_embed.description": "> **Rolle erfolgreich geändert**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich geändert.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`\n> Anzeigerolle: `$display_role`",
     "command.user.set.same_role_error_embed.title": "FEHLER",
     "command.user.set.same_role_error_embed.description": "> **Keine Rollenänderung**\n> Der angegebene Nutzer hat bereits die angegebene Rolle. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "command.user.set.user_is_default_error_embed.title": "FEHLER",
