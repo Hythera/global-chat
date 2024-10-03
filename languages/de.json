@@ -65,7 +65,7 @@
     "command.mute.remove.user_not_exists_error_embed.description": "> **Nutzer nicht stummgeschaltet**\n> Der angegebene Benutzer ist bereits nicht stummgeschaltet. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
 
     "command.stats.embed.title": "STATISTIKEN",
-    "command.stats.embed.description": "> **Datenbank**\n> Globale Kanäle: `$global_channels_count`\n> Benutzer: `$user_count`\n\n> **App**\n> Server: `$guilds`\n> Nutzer: `$users`\n> Gestartet: <t:$start_time:R>\n> Ping: `$ping`",
+    "command.stats.embed.description": "> **Datenbank**\n> Globale Nachrichten: `$global_messages_count`\n> Globale Kanäle: `$global_channels_count`\n> Benutzer: `$user_count`\n\n> **App**\n> Server: `$guilds`\n> Nutzer: `$users`\n> Gestartet: <t:$start_time:R>\n> Ping: `$ping`",
 
     "menu.delete_message.success_embed.title": "NACHRICHT GELÖSCHT",
     "menu.delete_message.success_embed.description": "> **Nachricht erfolgreich gelöscht**\n> Die ausgewählte Nachricht wurde erfolgreich aus dem Global Chat gelöscht.\n\n> **Informationen**\n> Instanzen gelöscht: `$count`\n> Zeit: `$duration`",

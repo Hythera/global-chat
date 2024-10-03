@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord import app_commands
 import json
 
-from database.models import GlobalChannel, UserRole
+from database.models import GlobalChannel, UserRole, GlobalMessage
 from languages import Translator
 translator = Translator()
 
@@ -31,6 +31,7 @@ class stats_command(commands.Cog):
     @app_commands.guilds(config["admin_guild_id"])
     async def stats(self, interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
+        global_messages_count = format_number(await GlobalMessage().len())
         global_channels_count = format_number(await GlobalChannel().len())
         user_count = format_number(await UserRole(None).len())
         guilds = format_number(len(self.client.guilds))
@@ -39,7 +40,7 @@ class stats_command(commands.Cog):
 
         embed = discord.Embed(
             title=f"{config["emojis"]["bar_chart"]} "+translator.translate(interaction.locale.value, "command.stats.embed.title"),
-            description=translator.translate(interaction.locale.value, "command.stats.embed.description", global_channels_count=global_channels_count, user_count=user_count, guilds=guilds, users=users, start_time=self.client.start_time, ping=ping),
+            description=translator.translate(interaction.locale.value, "command.stats.embed.description", global_messages_count=global_messages_count, global_channels_count=global_channels_count, user_count=user_count, guilds=guilds, users=users, start_time=self.client.start_time, ping=ping),
         color=0x4e5058)
 
         await interaction.edit_original_response(embed=embed)

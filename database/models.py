@@ -125,6 +125,17 @@ class GlobalMessage:
         await pool.wait_closed()
         return result
     
+    async def len(self) -> int:
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"SELECT COUNT(DISTINCT `uuid`) FROM `{message_ids}`")
+                result = await cursor.fetchone()
+                                   
+        pool.close()
+        await pool.wait_closed()
+        return result[0]
+    
 class UserRole:
     def __init__(self, user_id: int):
         self.user_id = user_id
