@@ -33,7 +33,7 @@
     "command.user.set.success_removed_embed.title": "ROLLE ENTFERNT",
     "command.user.set.success_removed_embed.description": "> **Rolle erfolgreich entfernt**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich entfernt.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`",
     "command.user.set.success_embed.title": "ROLLE GEÄNDERT",
-    "command.user.set.success_embed.description": "> **Rolle erfolgreich geändert**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich geändert.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`",
+"command.user.set.success_embed.description": "> **Rolle erfolgreich geändert**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich geändert.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`\n> Anzeigerolle: `$display_role`",
     "command.user.set.same_role_error_embed.title": "FEHLER",
     "command.user.set.same_role_error_embed.description": "> **Keine Rollenänderung**\n> Der angegebene Nutzer hat bereits die angegebene Rolle. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "command.user.set.user_is_default_error_embed.title": "FEHLER",

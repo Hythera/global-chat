@@ -14,6 +14,7 @@
         "reason": "reason",
         "add": "add",
         "stats": "stats",
+        "display_role": "display_role",
 
         "delete_message": "Delete Message",
         "report_message": "Report Message",
@@ -42,6 +43,7 @@
         "mute_add_describe_time": "How long the user should be muted",
         "mute_add_describe_reason": "The reason for the mute",
         "mute_remove_describe_user": "The user whose mute you want to remove",
+        "user_set_describe_display_role": "The role that will be displayed in the Global Chat",
 
 
         "choice_mute_add_15m": "15 minutes",
@@ -67,6 +69,7 @@
         "time": "zeit",
         "reason": "grund",
         "stats": "statistiken",
+        "display_role": "anzeige_rolle",
 
         "delete_message": "Nachricht Löschen",
         "report_message": "Nachricht Melden",
@@ -95,6 +98,7 @@
         "mute_add_describe_time": "Wie lange der Nutzer stummgeschaltet werden soll",
         "mute_add_describe_reason": "Der Grund für die Stummschaltung",
         "mute_remove_describe_user": "Den Nutzer, dessen Stummschaltung du aufheben möchtest",
+        "user_set_describe_display_role": "Die Rolle, die im Global Chat angezeigt wird",
       
 
         "choice_mute_add_15m": "15 Minuten",

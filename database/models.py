@@ -140,6 +140,7 @@ class UserRole:
     def __init__(self, user_id: int):
         self.user_id = user_id
         self.role = None
+        self.display_role = None
         self.stored = False
 
     async def load(self):
@@ -149,6 +150,7 @@ class UserRole:
                 await cursor.execute(f"SELECT * FROM `{user_roles}` WHERE `user_id`= %s", self.user_id)
                 result = await cursor.fetchone()
                 if result:
+                    self.display_role = result[2]
                     self.role = result[1]
                     self.stored = True
                 else:
@@ -158,15 +160,19 @@ class UserRole:
         await pool.wait_closed()
         return self
     
-    async def change(self, role: str):
+    async def change(self, role: str, display_role: str):
         self.role = role
+        if display_role:
+            self.display_role = display_role
+        else:
+           self.display_role = role
         pool: Pool = await get_pool()
         async with pool.acquire() as connection:
             async with connection.cursor() as cursor:
                 if self.stored == False:
-                    await cursor.execute(f"INSERT INTO `{user_roles}` (`user_id`, `role`) VALUES (%s, %s)", (self.user_id, self.role))
+                    await cursor.execute(f"INSERT INTO `{user_roles}` (`user_id`, `role`, `display_role`) VALUES (%s, %s, %s)", (self.user_id, self.role, self.display_role))
                 else:
-                    await cursor.execute(f"UPDATE `{user_roles}` SET `role` = %s WHERE `user_id` = %s", (self.role, self.user_id))
+                    await cursor.execute(f"UPDATE `{user_roles}` SET `role` =  %s, `display_role` = %s WHERE `user_id` = %s", (self.role, self.display_role, self.user_id))
 
         pool.close()
         await pool.wait_closed()
@@ -186,8 +192,8 @@ class UserRole:
         pool: Pool = await get_pool()
         async with pool.acquire() as connection:
             async with connection.cursor() as cursor:
-                await cursor.execute(f"SELECT `user_id`, `role` FROM `{user_roles}`")
-                result = [{"user_id": row[0], "role": row[1]} for row in await cursor.fetchall()]
+                await cursor.execute(f"SELECT `user_id`, `role`, `display_role` FROM `{user_roles}`")
+                result = [{"user_id": row[0], "role": row[1], "display_role": row[2]} for row in await cursor.fetchall()]
 
         pool.close()
         await pool.wait_closed()

@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS `message_ids` (
 CREATE TABLE IF NOT EXISTS `user_roles` (
     `user_id` BIGINT NOT NULL,
     `role` VARCHAR(255) NOT NULL,
+    `display_role` VARCHAR(255) Not NULL,
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`user_id`)
 );

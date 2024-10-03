@@ -107,7 +107,7 @@ class message(commands.Cog):
             if guild.id == message.guild.id:
                 member_count = guild.member_count
         if user_role.stored == True:
-            role = user_role.role
+            role = user_role.display_role
         else:
             role = "default"
 
