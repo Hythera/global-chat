@@ -13,6 +13,7 @@
         "time": "time",
         "reason": "reason",
         "add": "add",
+        "stats": "stats",
 
         "delete_message": "Delete Message",
         "report_message": "Report Message",
@@ -30,6 +31,7 @@
         "mute_description": "Mute command",
         "mute_add_description": "Mute a specific user",
         "mute_remove_description": "Unmute a specific user",
+        "stats_description": "Displays statistics about the app",
 
 
         "channel_set_describe_channel": "The channel you want to set as a global chat",
@@ -64,6 +66,7 @@
         "add": "hinzufügen",
         "time": "zeit",
         "reason": "grund",
+        "stats": "statistiken",
 
         "delete_message": "Nachricht Löschen",
         "report_message": "Nachricht Melden",
@@ -81,6 +84,7 @@
         "mute_description": "Stummschalt Befehl",
         "mute_add_description": "Schalte einen bestimmten Nutzer stumm",
         "mute_remove_description": "Hebe die Stummschaltung eines bestimmten Nutzers auf",
+        "stats_description": "Zeigt dir Statistiken über die App",
 
 
         "channel_set_describe_channel": "Der Kanal, den du als globalen Chat festlegen möchtest",

@@ -64,6 +64,9 @@
     "command.mute.remove.user_not_exists_error_embed.title": "ERROR",
     "command.mute.remove.user_not_exists_error_embed.description": "> **User not muted**\n> The specified user is already unmuted. If you believe this is a mistake, please contact the administrators of this app.",
 
+    "command.stats.embed.title": "STATS",
+    "command.stats.embed.description": "> **Database**\n> Global Channels: `$global_channels_count`\n> Users: `$user_count`\n\n> **App**\n> Servers: `$guilds`\n> Users: `$users`\n> Started: <t:$start_time:R>\n> Ping: `$ping`",
+
     "menu.delete_message.success_embed.title": "MESSAGE DELETED",
     "menu.delete_message.success_embed.description": "> **Message successfully deleted**\n> The selected message was successfully deleted from the Global Chat.\n\n> **Information**\n> Instances deleted: `$count`\n> Time: `$duration`",
     "menu.delete_message.database_error_embed.title": "ERROR",

@@ -16,7 +16,7 @@
     "global_chat.message.embed.field.value": "[Support Server]($support_server) • [Server Einladung]($invite)",
     
     "command.help.embed.title": "HILFE",
-    "command.help.embed.description": "> **Was ist die Global Chat App?**\n> Die Global Chat App ist eine Open-Source-Discord-App, die dir erlaubt, dich mit anderen Servern zu vernetzen und Nachrichten serverübergreifend zu versenden.\n\n> **Source Code**\n> Wenn du deine eigene Global Chat App erstellen möchtest, kannst du dir gerne den Code vom offiziellen [GitHub Repository](https://github.com/Blackstonecoden/Global-Chat) herunterladen.\n\n> **Fehler melden**\n> Wenn du einen Fehler in unserer App melden möchtest, tritt gerne unserem Support-Server bei.",
+    "command.help.embed.description": "> **Was ist die Global Chat App?**\n> Die Global Chat App ist eine Open-Source-Discord-App, die dir erlaubt, dich mit anderen Servern zu vernetzen und Nachrichten serverübergreifend zu versenden.\n\n> **Source Code**\n> Wenn du deine eigene Global Chat App erstellen möchtest, kannst du dir gerne den Code vom offiziellen [GitHub Repository](https://github.com/Blackstonecoden/global-chat) herunterladen.\n\n> **Fehler melden**\n> Wenn du einen Fehler in unserer App melden möchtest, tritt gerne unserem Support-Server bei.",
     "command.help.embed.button.invite_app": "App Einladen",
     "command.help.embed.button.support_server": "Support Server",
 
@@ -63,6 +63,9 @@
     "command.mute.remove.success_embed.description": "> **Stummschaltung erfolgreich aufgehoben**\n> Die Stummschaltung des angegebenen Nutzers wurde erfolgreich aufgehoben.",
     "command.mute.remove.user_not_exists_error_embed.title": "FEHLER",
     "command.mute.remove.user_not_exists_error_embed.description": "> **Nutzer nicht stummgeschaltet**\n> Der angegebene Benutzer ist bereits nicht stummgeschaltet. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+
+    "command.stats.embed.title": "STATISTIKEN",
+    "command.stats.embed.description": "> **Datenbank**\n> Globale Kanäle: `$global_channels_count`\n> Benutzer: `$user_count`\n\n> **App**\n> Server: `$guilds`\n> Nutzer: `$users`\n> Gestartet: <t:$start_time:R>\n> Ping: `$ping`",
 
     "menu.delete_message.success_embed.title": "NACHRICHT GELÖSCHT",
     "menu.delete_message.success_embed.description": "> **Nachricht erfolgreich gelöscht**\n> Die ausgewählte Nachricht wurde erfolgreich aus dem Global Chat gelöscht.\n\n> **Informationen**\n> Instanzen gelöscht: `$count`\n> Zeit: `$duration`",

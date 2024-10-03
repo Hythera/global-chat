@@ -1,6 +1,5 @@
 from aiomysql import Pool
 from database import get_pool
-import datetime
 
 global_channels = "global_channels"
 message_ids = "message_ids"
@@ -76,6 +75,17 @@ class GlobalChannel:
         pool.close()
         await pool.wait_closed()
         return channels
+
+    async def len(self) -> int:
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"SELECT COUNT(*) FROM `{global_channels}`")
+                result = await cursor.fetchone()
+                                   
+        pool.close()
+        await pool.wait_closed()
+        return result[0]
     
 class GlobalMessage:
     def __init__(self):
@@ -171,6 +181,17 @@ class UserRole:
         pool.close()
         await pool.wait_closed()
         return result
+
+    async def len(self) -> int:
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"SELECT COUNT(*) FROM `{user_roles}`")
+                result = await cursor.fetchone()
+                                   
+        pool.close()
+        await pool.wait_closed()
+        return result[0]
 
 class Mutes:
     def __init__(self, user_id: int):

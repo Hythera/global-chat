@@ -101,7 +101,8 @@ Create the `config.json`. Here is the reference.
         "check_circle_green": "",
 
         "users": "",
-        "file_text": ""
+        "file_text": "",
+        "bar_chart": ""
     },
     "standard_server_icon_url": "https://discord.com/assets/ca24969f2fd7a9fb03d5.png"
 }

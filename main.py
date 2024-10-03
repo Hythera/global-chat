@@ -61,6 +61,7 @@ class Client(commands.Bot):
         asyncio.run(init_db())
         self.cogslist = ['.'.join(file.relative_to('cogs').with_suffix('').parts) for file in Path('cogs').rglob('*.py') if not file.name.startswith('__')]
         self.tree.on_error = on_tree_error
+        self.start_time = int(time.time())
 
     async def setup_hook(self):
         for cog in self.cogslist:
