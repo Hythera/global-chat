@@ -73,17 +73,11 @@ Create the `config.json`. Here is the reference.
             "display_name": "<:moderator:123> MOD",
             "color": "0xfc964b"
         },
-        "partner": {
+        "verified": {
             "permission_level": 0,
-            "name": "Partner",
-            "display_name": "<:partner:123> Partner",
-            "color": "0x4dbc62"
-        },
-        "vip": {
-            "permission_level": 0,
-            "name": "VIP",
-            "display_name": "<:vip:123> VIP",
-            "color": "0xfbb848"
+            "name": "Verified",
+            "display_name": "<:verified:123> Verified",
+            "color": "0x43b581"
         },
         "default": {
             "permission_level": 0,
@@ -98,7 +92,9 @@ Create the `config.json`. Here is the reference.
         "clock_red": "",
 
         "alert_yellow": "",
+
         "check_circle_green": "",
+        "plus_circle_green": "",
 
         "users": "",
         "file_text": "",
