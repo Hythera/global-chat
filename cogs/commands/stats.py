@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
+from typing import Sequence
 import json
 
 from database.models import GlobalChannel, UserRole, GlobalMessage
@@ -9,6 +10,12 @@ translator = Translator()
 
 with open("config.json", 'r', encoding='utf-8') as file:
     config = json.load(file)
+
+def get_users(guilds: Sequence[discord.Guild])-> int:
+    users = 0
+    for guild in guilds:
+        users+= guild.member_count
+    return users
 
 def format_number(number: int) -> str:
     if number >= 10_000_000:
@@ -35,7 +42,7 @@ class stats_command(commands.Cog):
         global_channels_count = format_number(await GlobalChannel().len())
         user_count = format_number(await UserRole(None).len())
         guilds = format_number(len(self.client.guilds))
-        users = format_number(len(self.client.users))
+        users = format_number(get_users(self.client.guilds))
         ping = f"{round(self.client.latency * 1000)}ms"
 
         embed = discord.Embed(
