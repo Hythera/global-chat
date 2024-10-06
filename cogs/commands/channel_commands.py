@@ -74,7 +74,9 @@ class channel_commands(commands.Cog):
                                     title=f"{config["emojis"]["plus_circle_green"]} "+translator.translate(loop_channel.guild.preferred_locale, "command.channel.set.global_embed.title"),
                                     description=translator.translate(loop_channel.guild.preferred_locale, "command.channel.set.global_embed.description", guild=channel.guild.name, users=format_number(channel.guild.member_count)),
                                     color=0x57F287)
-                                
+                                if channel.guild.icon:
+                                    global_embed.set_thumbnail(url=channel.guild.icon.with_size(64).url)
+                                    
                                 sent_message = await loop_channel.send(embed=global_embed)
                                 await GlobalMessage().add(uuid, sent_message.id, sent_message.channel.id)
                                 await asyncio.sleep(0.05)
