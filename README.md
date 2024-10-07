@@ -111,7 +111,7 @@ To assign yourself a role, you have two options:
 
 1. Log into the database using a client like [MySQL Workbench](https://www.mysql.com/products/workbench/) and manually insert your user ID, role, and display role into the `user_roles` table.
 
-2. Alternatively, add this code in the `setup_hook` of the `Client` class in `main.py`:
+2. Alternatively, temporarily add the following code in the `setup_hook` of the `Client` class in `main.py` and replace 123 with your user ID:
    ```py
    from database.models import UserRole
    UserRole(123).change("developer")

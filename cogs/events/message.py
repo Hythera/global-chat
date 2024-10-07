@@ -39,6 +39,9 @@ class message(commands.Cog):
                     except:
                         pass
 
+                    if message.type != discord.MessageType.default:
+                        return
+
                     bucket = self.global_chat_cooldown.get_bucket(message)
                     retry_after = bucket.update_rate_limit()
                     if retry_after:
@@ -138,9 +141,9 @@ class message(commands.Cog):
         embed.set_author(name=author.name, icon_url=author.display_avatar, url=f"https://discordapp.com/users/{author.id}")
         embed.add_field(name=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.name"),value=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.value", support_server=config["support_server_url"], invite=invite))
         if guild.icon:
-            embed.set_footer(text=f"{guild.name} - {member_count}", icon_url=guild.icon.url)
+            embed.set_footer(text=f"{guild.name}", icon_url=guild.icon.url)
         else:
-            embed.set_footer(text=f"{guild.name} - {member_count}", icon_url=config["standard_server_icon_url"])
+            embed.set_footer(text=f"{guild.name}", icon_url=config["standard_server_icon_url"])
         try:
             if referenced_messages:
                 try:
