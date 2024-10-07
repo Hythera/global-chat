@@ -39,7 +39,7 @@ class message(commands.Cog):
                     except:
                         pass
 
-                    if message.type != discord.MessageType.default:
+                    if message.type not in [discord.MessageType.default, discord.MessageType.reply]:
                         return
 
                     bucket = self.global_chat_cooldown.get_bucket(message)
@@ -141,7 +141,10 @@ class message(commands.Cog):
         except:
             icon = discord.File(f"images/icons/default.png", filename=f"{role}.png")
         embed.set_author(name=author.name, url=f"https://discordapp.com/users/{author.id}", icon_url=f"attachment://{role}.png")
-        embed.set_thumbnail(url=author.display_avatar.with_size(256))
+        if author.avatar:
+            embed.set_thumbnail(url=author.avatar.with_size(256).url)
+        else:
+            embed.set_thumbnail(url=author.default_avatar.with_size(256).url)
         embed.add_field(name=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.name"),value=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.value", support_server=config["support_server_url"], invite=invite))
         if guild.icon:
             embed.set_footer(text=f"{guild.name}", icon_url=guild.icon.url)
