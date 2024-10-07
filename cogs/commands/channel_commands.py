@@ -68,11 +68,11 @@ class channel_commands(commands.Cog):
                     loop_channel: discord.TextChannel = self.client.get_channel(entry["channel_id"])
                     if loop_channel:
                         try:
-                            perms: discord.Permissions = loop_channel.permissions_for(channel.guild.get_member(self.client.user.id))
+                            perms: discord.Permissions = loop_channel.permissions_for(loop_channel.guild.get_member(self.client.user.id))
                             if perms.send_messages:
                                 global_embed = discord.Embed(
-                                    title=f"{config["emojis"]["plus_circle_green"]} "+translator.translate(loop_channel.guild.preferred_locale, "command.channel.set.global_embed.title"),
-                                    description=translator.translate(loop_channel.guild.preferred_locale, "command.channel.set.global_embed.description", guild=channel.guild.name, users=format_number(channel.guild.member_count)),
+                                    title=f"{config["emojis"]["plus_circle_green"]} "+translator.translate(loop_channel.guild.preferred_locale.value, "command.channel.set.global_embed.title"),
+                                    description=translator.translate(loop_channel.guild.preferred_locale.value, "command.channel.set.global_embed.description", guild=channel.guild.name, users=format_number(channel.guild.member_count)),
                                     color=0x57F287)
                                 if channel.guild.icon:
                                     global_embed.set_thumbnail(url=channel.guild.icon.with_size(64).url)

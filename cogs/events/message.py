@@ -46,8 +46,8 @@ class message(commands.Cog):
                     retry_after = bucket.update_rate_limit()
                     if retry_after:
                         cooldown_error_embed = discord.Embed(
-                            title=f"{config["emojis"]["clock_red"]} "+translator.translate(message.guild.preferred_locale, "global_chat.cooldown_error_embed.title"),
-                            description=translator.translate(message.guild.preferred_locale, "global_chat.cooldown_error_embed.description",time=round(time.time()+retry_after)),
+                            title=f"{config["emojis"]["clock_red"]} "+translator.translate(message.guild.preferred_locale.value, "global_chat.cooldown_error_embed.title"),
+                            description=translator.translate(message.guild.preferred_locale.value, "global_chat.cooldown_error_embed.description",time=round(time.time()+retry_after)),
                             color=0xED4245)
                         try:
                             await message.author.send(embed=cooldown_error_embed)
@@ -58,12 +58,12 @@ class message(commands.Cog):
                     user = await Mutes(message.author.id).load()
                     if user.stored:
                         if user.exipires_at == None:
-                            time_str = translator.translate(message.guild.preferred_locale, "global_chat.translation.never")
+                            time_str = translator.translate(message.guild.preferred_locale.value, "global_chat.translation.never")
                         else:
                             time_str = f"<t:{int(user.exipires_at.timestamp())}:R>"
                         mute_error_embed = discord.Embed(
-                            title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(message.guild.preferred_locale, "global_chat.mute_error_embed.title"),
-                            description=translator.translate(message.guild.preferred_locale, "global_chat.mute_error_embed.description", time=time_str, reason=user.reason),
+                            title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(message.guild.preferred_locale.value, "global_chat.mute_error_embed.title"),
+                            description=translator.translate(message.guild.preferred_locale.value, "global_chat.mute_error_embed.description", time=time_str, reason=user.reason),
                             color=0xED4245)
                         try:
                             await message.author.send(embed=mute_error_embed)
@@ -73,8 +73,8 @@ class message(commands.Cog):
                     
                     if message.attachments:
                         attachment_error_embed = discord.Embed(
-                            title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(message.guild.preferred_locale, "global_chat.attachment_error_embed.title"),
-                            description=translator.translate(message.guild.preferred_locale, "global_chat.attachment_error_embed.description"),
+                            title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(message.guild.preferred_locale.value, "global_chat.attachment_error_embed.title"),
+                            description=translator.translate(message.guild.preferred_locale.value, "global_chat.attachment_error_embed.description"),
                             color=0xED4245)
                         try:
                             await message.author.send(embed=attachment_error_embed)
