@@ -115,7 +115,7 @@ class message(commands.Cog):
             role = "default"
 
         channel: discord.TextChannel = self.client.get_channel(message.channel.id)
-        sent_message = await self.send(channel, message.author, role, member_count, global_channel.invite, message.guild, message.content, referenced_messages)
+        sent_message = await self.send(channel, message.author, role, global_channel.invite, message.guild, message.content, referenced_messages)
         messages = await GlobalMessage().add(uuid, sent_message.id, sent_message.channel.id)
 
         for entry in channels:
@@ -125,20 +125,23 @@ class message(commands.Cog):
                     try:
                         perms: discord.Permissions = channel.permissions_for(channel.guild.get_member(self.client.user.id))
                         if perms.send_messages:
-                            sent_message = await self.send(channel, message.author, role, member_count, global_channel.invite, message.guild, message.content, referenced_messages)
+                            sent_message = await self.send(channel, message.author, role, global_channel.invite, message.guild, message.content, referenced_messages)
                             await messages.add(uuid, sent_message.id, sent_message.channel.id)
                             await asyncio.sleep(0.05)
                     except:
                         pass
 
 
-    async def send(self, channel: discord.TextChannel, author: discord.Member, role: str, member_count:int, invite:str, guild: discord.Guild, content: str, referenced_messages: dict):
+    async def send(self, channel: discord.TextChannel, author: discord.Member, role: str, invite:str, guild: discord.Guild, content: str, referenced_messages: dict):
         embed=discord.Embed(
-            description=content+"\n",
+            description=f"{content}\n⠀",
             color=int(config["roles"][role]["color"], 16))
-        if role != "default":
-            embed.title = config["roles"][role]["display_name"]
-        embed.set_author(name=author.name, icon_url=author.display_avatar, url=f"https://discordapp.com/users/{author.id}")
+        try:
+            icon = discord.File(f"images/icons/{role}.png",)
+        except:
+            icon = discord.File(f"images/icons/default.png", filename=f"{role}.png")
+        embed.set_author(name=author.name, url=f"https://discordapp.com/users/{author.id}", icon_url=f"attachment://{role}.png")
+        embed.set_thumbnail(url=author.display_avatar.with_size(256))
         embed.add_field(name=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.name"),value=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.value", support_server=config["support_server_url"], invite=invite))
         if guild.icon:
             embed.set_footer(text=f"{guild.name}", icon_url=guild.icon.url)
@@ -151,12 +154,12 @@ class message(commands.Cog):
                 except:
                     message = None
                 if message:
-                    return await message.reply(embed=embed)
+                    return await message.reply(embed=embed, file=icon)
                 else:
-                    return await channel.send(embed=embed)
+                    return await channel.send(embed=embed, files=icon)
 
             else:
-                return await channel.send(embed=embed)
+                return await channel.send(embed=embed, file=icon)
         except:
             return None
 

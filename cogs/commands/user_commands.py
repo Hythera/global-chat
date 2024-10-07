@@ -79,7 +79,7 @@ class user_commands(commands.Cog):
             for i, role in enumerate(roles):
                 members = staff_dict[role]
                 if members:
-                    formatted_text += f"\n> **{config['roles'][role]['display_name']} - {len(members)}**\n"
+                    formatted_text += f"\n> {config['roles'][role]['emoji']} **{config['roles'][role]['name']} - {len(members)}**\n"
                     formatted_text += "\n ".join(members)
                     if i < sum(1 for users in staff_dict.values() if users)-1:
                         formatted_text += "\n > "

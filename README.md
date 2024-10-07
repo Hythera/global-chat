@@ -44,40 +44,46 @@ Create the `config.json`. Here is the reference.
 
 ```json
 {
-    "admin_guild_id": 123,
-    "support_server_url": "https://discord.gg/123",
+    "admin_guild_id": 1234,
+    "support_server_url": "https://discord.gg/1234",
     "app_invite_url": "https://example.com",
 
     "custom_app_status": "Hello, world!",
 
     "channels": {
-        "reports": 123
+        "reports": 1234
     },
 
     "roles": {
-        "developer": {
-            "permission_level": 20,
-            "name": "Developer",
-            "display_name": "<:developer:123> DEV",
-            "color": "0x5865f2"
+        "staff": {
+            "permission_level": 0,
+            "name": "Staff",
+            "emoji": "<:staff:1234>",
+            "color": "0x7289da"
         },
         "admin": {
             "permission_level": 10,
             "name": "Admin",
-            "display_name": "<:admin:123> Admin",
-            "color": "0xf54651"
+            "emoji": "<:admin:1234>",
+            "color": "0x7289da"
         },
         "moderator": {
             "permission_level": 5,
             "name": "Moderator",
-            "display_name": "<:moderator:123> MOD",
-            "color": "0xfc964b"
+            "emoji": "<:moderator:1234>",
+            "color": "0x7289da"
+        },
+        "partner": {
+            "permission_level": 0,
+            "name": "Partner",
+            "emoji": "<:partner:1234>",
+            "color": "0x7289da"
         },
         "verified": {
             "permission_level": 0,
             "name": "Verified",
-            "display_name": "<:verified:123> Verified",
-            "color": "0x43b581"
+            "emoji": "<:verified:1234>",
+            "color": "0x7289da"
         },
         "default": {
             "permission_level": 0,
