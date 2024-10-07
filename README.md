@@ -104,3 +104,16 @@ Create the `config.json`. Here is the reference.
 }
 ```
 </details>
+
+## 📄 Notes
+
+To assign yourself a role, you have two options:
+
+1. Log into the database using a client like [MySQL Workbench](https://www.mysql.com/products/workbench/) and manually insert your user ID, role, and display role into the `user_roles` table.
+
+2. Alternatively, add this code in the `setup_hook` of the `Client` class in `main.py`:
+   ```py
+   from database.models import UserRole
+   UserRole(123).change("developer")
+    ```
+Ensure that you have a permission level of at least 10 to use all commands.
