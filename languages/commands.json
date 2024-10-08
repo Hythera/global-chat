@@ -18,6 +18,7 @@
 
         "delete_message": "Delete Message",
         "report_message": "Report Message",
+        "message_info": "Message Info",
 
 
         "help_description": "Shows you assistance for the Global Chat",
@@ -73,6 +74,7 @@
 
         "delete_message": "Nachricht Löschen",
         "report_message": "Nachricht Melden",
+        "message_info": "Nachrichten Info",
 
         
         "help_description": "Zeigt dir eine Hilfestellung zum Global Chat",

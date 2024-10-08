@@ -116,7 +116,7 @@ class message(commands.Cog):
 
         channel: discord.TextChannel = self.client.get_channel(message.channel.id)
         sent_message = await self.send(channel, message.author, role, global_channel.invite, message.guild, message.content, referenced_messages)
-        messages = await GlobalMessage().add(uuid, sent_message.id, sent_message.channel.id)
+        messages = await GlobalMessage().add(uuid, sent_message.id, sent_message.channel.id, True)
 
         for entry in channels:
             if entry["guild_id"] != message.guild.id:
@@ -126,7 +126,7 @@ class message(commands.Cog):
                         perms: discord.Permissions = channel.permissions_for(channel.guild.get_member(self.client.user.id))
                         if perms.send_messages:
                             sent_message = await self.send(channel, message.author, role, global_channel.invite, message.guild, message.content, referenced_messages)
-                            await messages.add(uuid, sent_message.id, sent_message.channel.id)
+                            await messages.add(uuid, sent_message.id, sent_message.channel.id, False)
                             await asyncio.sleep(0.05)
                     except:
                         pass

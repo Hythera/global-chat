@@ -15,7 +15,7 @@ with open("config.json", 'r', encoding='utf-8') as file:
 class delete_message(commands.Cog):
     def __init__(self, client: commands.Bot):
         self.client = client
-        self.delete_message_menu = app_commands.ContextMenu(name=discord.app_commands.locale_str("delete_message"), callback=self.delete_message_callback, )
+        self.delete_message_menu = app_commands.ContextMenu(name=discord.app_commands.locale_str("delete_message"), callback=self.delete_message_callback)
         self.delete_message_menu.default_permissions=discord.Permissions(manage_messages=True)
         self.client.tree.add_command(self.delete_message_menu) 
 
