@@ -29,7 +29,7 @@ class report_message(commands.Cog):
             await interaction.response.send_message(embed=success_embed, ephemeral=True)
 
             message_author_id = int(message.embeds[0].author.url.split("/")[-1])
-            message_content = message.embeds[0].description.replace('\n', ' ')
+            message_content = message.embeds[0].description.replace('⠀', '')
             report_channel = self.client.get_channel(config["channels"]["reports"])
 
             line_image = discord.File("images/line.png")
