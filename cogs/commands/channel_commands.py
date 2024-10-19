@@ -75,7 +75,7 @@ class channel_commands(commands.Cog):
                                     description=translator.translate(loop_channel.guild.preferred_locale.value, "command.channel.set.global_embed.description", guild=channel.guild.name, users=format_number(channel.guild.member_count)),
                                     color=0x57F287)
                                 if channel.guild.icon:
-                                    global_embed.set_thumbnail(url=channel.guild.icon.with_size(64).url)
+                                    global_embed.set_thumbnail(url=channel.guild.icon.with_size(256).url)
                                     
                                 sent_message = await loop_channel.send(embed=global_embed)
                                 await GlobalMessage().add(uuid, sent_message.id, sent_message.channel.id)

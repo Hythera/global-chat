@@ -147,7 +147,7 @@ class message(commands.Cog):
             embed.set_thumbnail(url=author.default_avatar.with_size(256).url)
         embed.add_field(name=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.name"),value=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.value", support_server=config["support_server_url"], invite=invite))
         if guild.icon:
-            embed.set_footer(text=f"{guild.name}", icon_url=guild.icon.url)
+            embed.set_footer(text=f"{guild.name}", icon_url=guild.icon.with_size(64).url)
         else:
             embed.set_footer(text=f"{guild.name}", icon_url=config["standard_server_icon_url"])
         try:
