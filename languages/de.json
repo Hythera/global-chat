@@ -1,7 +1,8 @@
 {
     "log.reports.log_embed.title": "NACHRICHT GEMELDET",
     "log.reports.log_embed.description": "> **Eine Nachricht wurde gemeldet**\n> Eine Nachricht im Global Chat wurde gerade gemeldet. Weitere Informationen stehen unten.\n\n> **Informationen**\n> - Gemeldet von: <@$reported_by>\n> - Nachrichtenautor: <@$message_author>\n> - Nachrichten-ID: `$message_id`\n> - Nachrichten-UUID: `$message_uuid`",
-    
+    "log.reports.content_embed.title": "NACHRICHTEN INHALT",
+
     "on_tree_error.cooldown_error_embed.title": "ABKLINGZEIT",
     "on_tree_error.cooldown_error_embed.description": "> **Dieser Befehl hat eine Abklingzeit**\n> Der Befehl ist zurzeit nicht verwendbar, da er eine Abklingzeit hat. Du kannst den Befehl <t:$time:R> wieder verwenden. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     

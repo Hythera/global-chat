@@ -39,7 +39,8 @@ class report_message(commands.Cog):
                 color=0xFEE75C)
             log_embed.set_image(url="attachment://line.png")
             content_embed = discord.Embed(
-                description=f"```{message_content}```",
+                title=f"{config["emojis"]["file_text_yellow"]} "+translator.translate(report_channel.guild.preferred_locale.value, "log.reports.content_embed.title"),
+                description=f"```\n{message_content}```",
                 color=0xFEE75C)
             content_embed.set_image(url="attachment://line.png")
             await report_channel.send(embeds=[log_embed, content_embed], files=[line_image])

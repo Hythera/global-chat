@@ -98,6 +98,7 @@ Create the `config.json`. Here is the reference.
         "clock_red": "",
 
         "alert_yellow": "",
+        "file_text_yellow": "",
 
         "check_circle_green": "",
         "plus_circle_green": "",
