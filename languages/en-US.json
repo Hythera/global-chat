@@ -80,7 +80,7 @@
     "menu.delete_message.permission_error_embed.description": "> **Permission error**\n> Your permission level is not high enough to delete messages from the Global Chat. If you believe this is an error, please contact the administrators of this app.",
     
     "menu.message_info.response_embed.title": "MESSAGE INFO",
-    "menu.message_info.response_embed.description": "> **Message**\n> - Message Author: <@$user_id>\n> - Message ID: `$message_id`\n> - Message UUID: `$message_uuid`\n> - Instances: `$instances`\n\n> **Location**\n> - Server ID: `$guild_id`\n> - Server Name: `$guild_name`\n> - Channel ID: `$channel_id`\n> - Channel Name: `$channel_name`",
+    "menu.message_info.response_embed.description": "> **Message**\n> - Message Author: <@$user_id>\n> - Message ID: `$message_id`\n> - Message UUID: `$message_uuid`\n> - Instances: `$instances`\n\n> **Location**\n> - Server ID: `$guild_id`\n> - Server Name: `$guild_name`\n> - Members: `$guild_member_count`\n> - Channel ID: `$channel_id`\n> - Channel Name: `$channel_name`",
     "menu.message_info.message_error_embed.title": "ERROR",
     "menu.message_info.message_error_embed.description": "> **Original message not found**\n> The message is in the database, but the original message could not be found. This might be because the original message was deleted or the app doesn't have access to it. If you believe this is a mistake, please contact the administrators of this app.",
     "menu.message_info.response_embed.button.server_invite": "Join Server",

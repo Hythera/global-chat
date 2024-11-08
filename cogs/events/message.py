@@ -119,10 +119,6 @@ class message(commands.Cog):
         uuid = generate_random_string()
         user_role = await UserRole(message.author.id).load()
 
-        guilds = self.client.guilds
-        for guild in guilds:
-            if guild.id == message.guild.id:
-                member_count = guild.member_count
         if user_role.stored == True:
             role = user_role.display_role
         else:
