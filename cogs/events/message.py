@@ -85,29 +85,31 @@ class message(commands.Cog):
                             pass
                         return
                     
-                    if link_regex.search(message.content):
-                        link_error_embed = discord.Embed(
-                            title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(message.guild.preferred_locale.value, "global_chat.link_error_embed.title"),
-                            description=translator.translate(message.guild.preferred_locale.value, "global_chat.link_error_embed.description"),
-                            color=0xED4245)
-                        try:
-                            await message.author.send(embed=link_error_embed)
-                        except:
-                            pass
-                        return
-                    
+                    user_role = await UserRole(message.author.id).load()
+                    if not user_role.stored or config["roles"][user_role.role]["permission_level"] < 10:      
+                        if link_regex.search(message.content):
+                            link_error_embed = discord.Embed(
+                                title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(message.guild.preferred_locale.value, "global_chat.link_error_embed.title"),
+                                description=translator.translate(message.guild.preferred_locale.value, "global_chat.link_error_embed.description"),
+                                color=0xED4245)
+                            try:
+                                await message.author.send(embed=link_error_embed)
+                            except:
+                                pass
+                            return
+                        
                     if message.reference:
                         reference_uuid = await GlobalMessage().get_uuid(message.reference.message_id)
                     else:
                         reference_uuid = None
-
-                    await self.loop_channels(message, global_channel, reference_uuid)
+                        
+                    await self.loop_channels(message, global_channel, user_role, reference_uuid)
 
         except Exception as e:
             print("on_message: ", e)
         
             
-    async def loop_channels(self, message: discord.Message, global_channel: GlobalChannel, reference_uuid: str = None):
+    async def loop_channels(self, message: discord.Message, global_channel: GlobalChannel, user_role: UserRole, reference_uuid: str = None):
         channels = await global_channel.get_all_channels()
 
         if reference_uuid:
@@ -117,7 +119,6 @@ class message(commands.Cog):
             referenced_messages = None
 
         uuid = generate_random_string()
-        user_role = await UserRole(message.author.id).load()
 
         if user_role.stored == True:
             role = user_role.display_role
