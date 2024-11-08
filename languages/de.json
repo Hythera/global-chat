@@ -80,7 +80,7 @@
     "menu.delete_message.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um Nachrichten aus dem Global Chat zu löschen. Wenn du glaubst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
 
     "menu.message_info.response_embed.title": "NACHRICHTEN INFO",
-    "menu.message_info.response_embed.description": "> **Nachricht**\n> - Nachrichtenautor: <@$user_id>\n> - Nachrichten-ID: `$message_id`\n> - Nachrichten-UUID: `$message_uuid`\n\n> **Sendeort**\n> - Server-ID: `$guild_id`\n> - Servername: `$guild_name`\n> - Kanal-ID: `$channel_id`\n> - Kanalname: `$channel_name`",
+    "menu.message_info.response_embed.description": "> **Nachricht**\n> - Nachrichtenautor: <@$user_id>\n> - Nachrichten-ID: `$message_id`\n> - Nachrichten-UUID: `$message_uuid`\n> - Instanzen: `$instances`\n\n> **Sendeort**\n> - Server-ID: `$guild_id`\n> - Servername: `$guild_name`\n> - Kanal-ID: `$channel_id`\n> - Kanalname: `$channel_name`",
     "menu.message_info.message_error_embed.title": "FEHLER",
     "menu.message_info.message_error_embed.description": "> **Originale Nachricht nicht gefunden**\n> Die Nachricht ist zwar in der Datenbank, aber die Originalnachricht wurde nicht gefunden. Das könnte daran liegen, dass die Nachricht gelöscht wurde oder die App keinen Zugriff auf die Originalnachricht hat. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "menu.message_info.response_embed.button.server_invite": "Server beitreten",

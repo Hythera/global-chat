@@ -41,7 +41,7 @@ class message_info(commands.Cog):
                     if original_messge:
                         response_embed = discord.Embed(
                             title=f"{config["emojis"]["file_text"]} "+translator.translate(interaction.locale.value, "menu.message_info.response_embed.title"),
-                            description=translator.translate(interaction.locale.value, "menu.message_info.response_embed.description", user_id=int(original_messge.embeds[0].author.url.split("/")[-1]), message_id=original_messge.id, message_uuid=uuid, guild_id=channel.guild.id, guild_name=channel.guild.name, channel_id=channel.id, channel_name=channel.name),
+                            description=translator.translate(interaction.locale.value, "menu.message_info.response_embed.description", user_id=int(original_messge.embeds[0].author.url.split("/")[-1]), message_id=original_messge.id, message_uuid=uuid, instances=len(global_messages), guild_id=channel.guild.id, guild_name=channel.guild.name, channel_id=channel.id, channel_name=channel.name),
                             color=0x4e5058)
                         await interaction.edit_original_response(embed=response_embed, view=EmbedButtons(interaction, global_channel))
                         return
