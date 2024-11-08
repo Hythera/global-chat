@@ -6,6 +6,7 @@ import random
 import asyncio
 import json
 import time
+import re
 
 from database.models import GlobalChannel, GlobalMessage, UserRole, Mutes
 from languages import Translator
@@ -13,6 +14,8 @@ translator = Translator()
 
 with open("config.json", 'r', encoding='utf-8') as file:
     config = json.load(file)
+
+link_regex = re.compile(r'(?:https?://)[a-z0-9_\-\.]*[a-z0-9_\-]')
 
 def generate_random_string():
     characters = string.ascii_letters + string.digits
@@ -78,6 +81,17 @@ class message(commands.Cog):
                             color=0xED4245)
                         try:
                             await message.author.send(embed=attachment_error_embed)
+                        except:
+                            pass
+                        return
+                    
+                    if link_regex.search(message.content):
+                        link_error_embed = discord.Embed(
+                            title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(message.guild.preferred_locale.value, "global_chat.link_error_embed.title"),
+                            description=translator.translate(message.guild.preferred_locale.value, "global_chat.link_error_embed.description"),
+                            color=0xED4245)
+                        try:
+                            await message.author.send(embed=link_error_embed)
                         except:
                             pass
                         return
