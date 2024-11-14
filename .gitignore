@@ -1,12 +1,10 @@
 __pycache__
 .env
-.venv
 config.json
 
 /.VSCodeCounter
 /.vscode
-/venv
+/.venv
 /testing
-/json
 
 hidden.*

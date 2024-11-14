@@ -37,32 +37,26 @@ class message_info(commands.Cog):
             if uuid:
                 await interaction.response.defer(ephemeral=True)
                 global_messages = await GlobalMessage().get(uuid)
+                message_infos = await GlobalMessage().get_infos(uuid)
 
-                found_message = None
-                for message in global_messages:
-                    if message.get("original_message") == 1:
-                        found_message = message
-                        break
-                if found_message:
-                    global_channel = await GlobalChannel(channel_id=found_message["channel_id"]).load()
-                    try:
-                        channel = self.client.get_channel(global_channel.channel_id)
-                        original_messge = await channel.fetch_message(found_message["message_id"])
-                    except:
-                        original_messge = None
-                    if original_messge:
-                        response_embed = discord.Embed(
-                            title=f"{config["emojis"]["file_text"]} "+translator.translate(interaction.locale.value, "menu.message_info.response_embed.title"),
-                            description=translator.translate(interaction.locale.value, "menu.message_info.response_embed.description", user_id=int(original_messge.embeds[0].author.url.split("/")[-1]), message_id=original_messge.id, message_uuid=uuid, instances=len(global_messages), guild_id=channel.guild.id, guild_name=channel.guild.name, guild_member_count=format_number(channel.guild.member_count), channel_id=channel.id, channel_name=channel.name),
-                            color=0x4e5058)
-                        await interaction.edit_original_response(embed=response_embed, view=EmbedButtons(interaction, global_channel))
-                        return
-                    
-                message_error_embed = discord.Embed(
-                    title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(interaction.locale.value, "menu.message_info.message_error_embed.title"),
-                    description=translator.translate(interaction.locale.value, "menu.message_info.message_error_embed.description"),
-                    color=0xED4245)
-                await interaction.edit_original_response(embed=message_error_embed)
+                global_channel = await GlobalChannel(channel_id=message_infos[1]).load()
+                try:
+                    channel = self.client.get_channel(global_channel.channel_id)
+                except:
+                    channel = None
+
+                if channel:
+                    response_embed = discord.Embed(
+                        title=f"{config["emojis"]["file_text"]} "+translator.translate(interaction.locale.value, "menu.message_info.response_embed.title"),
+                        description=translator.translate(interaction.locale.value, "menu.message_info.response_embed.description", user_id=message_infos[2], message_id=message_infos[0], message_uuid=uuid, instances=len(global_messages), guild_id=channel.guild.id, guild_name=channel.guild.name, guild_member_count=format_number(channel.guild.member_count), channel_id=channel.id, channel_name=channel.name),
+                        color=0x4e5058)
+                    await interaction.edit_original_response(embed=response_embed, view=EmbedButtons(interaction, global_channel))
+                else:
+                    message_error_embed = discord.Embed(
+                        title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(interaction.locale.value, "menu.message_info.message_error_embed.title"),
+                        description=translator.translate(interaction.locale.value, "menu.message_info.message_error_embed.description"),
+                        color=0xED4245)
+                    await interaction.edit_original_response(embed=message_error_embed)
             else:
                 database_error_embed = discord.Embed(
                     title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(interaction.locale.value, "menu.message_info.database_error_embed.title"),

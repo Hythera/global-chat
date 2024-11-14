@@ -82,7 +82,7 @@
     "menu.message_info.response_embed.title": "MESSAGE INFO",
     "menu.message_info.response_embed.description": "> **Message**\n> - Message Author: <@$user_id>\n> - Message ID: `$message_id`\n> - Message UUID: `$message_uuid`\n> - Instances: `$instances`\n\n> **Location**\n> - Server ID: `$guild_id`\n> - Server Name: `$guild_name`\n> - Members: `$guild_member_count`\n> - Channel ID: `$channel_id`\n> - Channel Name: `$channel_name`",
     "menu.message_info.message_error_embed.title": "ERROR",
-    "menu.message_info.message_error_embed.description": "> **Original message not found**\n> The message is in the database, but the original message could not be found. This might be because the original message was deleted or the app doesn't have access to it. If you believe this is a mistake, please contact the administrators of this app.",
+    "menu.message_info.message_error_embed.description": "> **Original sending location not found**\n> The message is in the database, but the original sending location could not be found. This may be because the channel was deleted or the app does not have access to the sending location. If you believe this is a mistake, please contact the administrators of this app.",
     "menu.message_info.response_embed.button.server_invite": "Join Server",
     "menu.message_info.database_error_embed.title": "ERROR",
     "menu.message_info.database_error_embed.description": "> **Message not found**\n> The selected message could not be found in the database. This might be because the message was not sent in the Global Chat or an error has occurred. If you believe this is a mistake, please contact the administrators of this app.",

@@ -3,6 +3,7 @@ from database import get_pool
 
 global_channels = "global_channels"
 message_ids = "message_ids"
+message_infos = "message_infos"
 user_roles = "user_roles"
 mutes = "mutes"
 
@@ -91,11 +92,20 @@ class GlobalMessage:
     def __init__(self):
         pass
   
-    async def add(self, uuid:str, message_id: int, channel_id: int, original_message: bool = False):
+    async def add(self, uuid:str, message_id: int, channel_id: int):
         pool: Pool = await get_pool()
         async with pool.acquire() as connection:
             async with connection.cursor() as cursor:
-                await cursor.execute(f"INSERT INTO `{message_ids}` (`uuid`, `message_id`, `channel_id`, `original_message`) VALUES (%s, %s, %s, %s)", (uuid, message_id, channel_id, original_message))
+                await cursor.execute(f"INSERT INTO `{message_ids}` (`uuid`, `message_id`, `channel_id`) VALUES (%s, %s, %s)", (uuid, message_id, channel_id))
+        pool.close()
+        await pool.wait_closed()
+        return self
+
+    async def add_info(self, uuid:str, message_id: int, channel_id: int, author_id: int):
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"INSERT INTO `{message_infos}` (`uuid`, `original_message_id`, `original_channel_id`, `author_id`) VALUES (%s, %s, %s, %s)", (uuid, message_id, channel_id, author_id))
         pool.close()
         await pool.wait_closed()
         return self
@@ -118,8 +128,19 @@ class GlobalMessage:
         pool: Pool = await get_pool()
         async with pool.acquire() as connection:
             async with connection.cursor() as cursor:
-                await cursor.execute(f"SELECT `message_id`, `channel_id`, `original_message` FROM `{message_ids}` WHERE uuid = %s", (uuid,))
-                result = [{"message_id": row[0], "channel_id": row[1], "original_message": row[2]} for row in await cursor.fetchall()]
+                await cursor.execute(f"SELECT `message_id`, `channel_id` FROM `{message_ids}` WHERE uuid = %s", (uuid,))
+                result = [{"message_id": row[0], "channel_id": row[1]} for row in await cursor.fetchall()]
+                    
+        pool.close()
+        await pool.wait_closed()
+        return result
+
+    async def get_infos(self, uuid:str) -> dict:
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"SELECT `original_message_id`, `original_channel_id`, `author_id` FROM `{message_infos}` WHERE uuid = %s", (uuid,))
+                result = await cursor.fetchone()
                     
         pool.close()
         await pool.wait_closed()

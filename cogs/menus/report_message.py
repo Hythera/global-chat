@@ -22,13 +22,14 @@ class report_message(commands.Cog):
     async def report_message_callback(self, interaction: discord.Interaction, message: discord.Message):
         uuid = await GlobalMessage().get_uuid(message.id)
         if uuid:
+            message_infos = await GlobalMessage().get_infos(uuid)
             success_embed= discord.Embed(
                 title=f"{config["emojis"]["check_circle_green"]} "+translator.translate(interaction.locale.value, "menu.report_message.success_embed.title"),
                 description=translator.translate(interaction.locale.value, "menu.report_message.success_embed.description"),
                 color=0x57F287)
             await interaction.response.send_message(embed=success_embed, ephemeral=True)
 
-            message_author_id = int(message.embeds[0].author.url.split("/")[-1])
+            message_author_id = message_infos[2]
             message_content = message.embeds[0].description.replace('⠀', '')
             report_channel = self.client.get_channel(config["channels"]["reports"])
 
