@@ -39,9 +39,9 @@ class message_info(commands.Cog):
                 global_messages = await GlobalMessage().get(uuid)
                 message_infos = await GlobalMessage().get_infos(uuid)
 
-                global_channel = await GlobalChannel(channel_id=message_infos[1]).load()
                 try:
-                    channel = self.client.get_channel(global_channel.channel_id)
+                    global_channel = await GlobalChannel(channel_id=message_infos[1]).load()
+                    channel = self.client.get_channel(message_infos[1])
                 except:
                     channel = None
 
