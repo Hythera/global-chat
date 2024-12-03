@@ -2,10 +2,10 @@ from aiomysql import Pool
 from database import get_pool
 
 global_channels = "global_channels"
-message_ids = "message_ids"
-message_infos = "message_infos"
-user_roles = "user_roles"
-mutes = "mutes"
+message_ids     = "message_ids"
+message_infos   = "message_infos"
+user_roles      = "user_roles"
+mutes           = "mutes"
 
 class GlobalChannel:
     def __init__(self, channel_id: int = None, guild_id: int = None, invite: str = None):
