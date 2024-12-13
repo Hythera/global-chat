@@ -3,7 +3,6 @@ from discord.ext import commands
 from discord import app_commands
 import json
 
-from database.models import GlobalChannel
 from languages import Translator
 translator = Translator()
 

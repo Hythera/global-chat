@@ -2,10 +2,8 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 import json
-import asyncio
-import time
 
-from database.models import UserRole, GlobalMessage
+from database.models import GlobalMessage
 from languages import Translator
 translator = Translator()
 
