@@ -18,7 +18,7 @@ class settings_commands(commands.Cog):
     channel_command = app_commands.Group(name=discord.app_commands.locale_str("settings"), description=discord.app_commands.locale_str("settings_description"), default_permissions=discord.Permissions(administrator=True), guild_only=True)
 
     @channel_command.command(name=discord.app_commands.locale_str("invite"), description=discord.app_commands.locale_str("settings_invite_description"))
-    @app_commands.checks.cooldown(1, 300, key=lambda i: i.user.id)
+    @app_commands.checks.cooldown(1, 30, key=lambda i: i.user.id)
     @app_commands.describe(status=discord.app_commands.locale_str("settings_invite_describe_status"))
     @app_commands.rename(status=discord.app_commands.locale_str("status"))
     @app_commands.choices(status=[app_commands.Choice(name=discord.app_commands.locale_str("choice_settings_invite_on"), value=1), 
