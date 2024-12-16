@@ -16,7 +16,8 @@
     "global_chat.link_error_embed.title": "ERROR",
     "global_chat.link_error_embed.description": "> **Links are not allowed**\n> Your message could not be sent in the Global Chat because it contains a link. This is a security measure to prevent spam. If you believe this is a mistake, please contact the administrators of this app.",
     "global_chat.message.embed.field.name": "Links",
-    "global_chat.message.embed.field.value": "[Support Server]($support_server) • [Server Invite]($invite)",
+    "global_chat.message.embed.field.value.invite": "[Support Server]($support_server) • [Server Invite]($invite)",
+    "global_chat.message.embed.field.value": "[Support Server]($support_server)",
 
     "command.help.embed.title": "HELP",
     "command.help.embed.description": "> **What is the Global Chat app?**\n> The Global Chat app is an open-source Discord app that allows you to connect with other servers and send messages across servers.\n\n> **Source Code**\n> If you would like to create your own Global Chat app, feel free to download the code from the official [GitHub Repository](https://github.com/Blackstonecoden/Global-Chat).\n\n> **Report a Bug**\n> If you would like to report a bug in our app, feel free to join our support server.",
@@ -72,6 +73,17 @@
     "command.stats.embed.title": "STATS",
     "command.stats.embed.description": "> **Database**\n> Global Messages: `$global_messages_count`\n> Global Channels: `$global_channels_count`\n> Users: `$user_count`\n\n> **App**\n> Servers: `$guilds`\n> Users: `$users`\n> Started: <t:$start_time:R>\n> Ping: `$ping`",
 
+    "command.settings.invite.channel_error_embed.title": "ERROR",
+    "command.settings.invite.channel_error_embed.description": "> **No Global Chat available**\n> Your server does not have a Global Chat. If you want to change the settings of your Global Chat, please add a Global Chat first.",
+    "command.settings.invite.same_false_error_embed.title": "ERROR",
+    "command.settings.invite.same_false_embed.description": "> **Settings identical**\n> Global Chat invitations are already disabled. If you believe this is an error, please contact the administrators of this app.",
+    "command.settings.invite.same_true_error_embed.title": "ERROR",
+    "command.settings.invite.same_true_embed.description": "> **Settings identical**\n> Global Chat invitations are already enabled. If you believe this is an error, please contact the administrators of this app.",
+    "command.settings.invite.enabled_embed.title": "SETTINGS UPDATED",
+    "command.settings.invite.enabled_embed.description": "> **Invitations Enabled**\n> Global Chat invitations have been successfully enabled. Users from other servers can now join your server through the Global Chat.",
+    "command.settings.invite.disabled_embed.title": "SETTINGS UPDATED",
+    "command.settings.invite.disabled_embed.description": "> **Invitations Disabled**\n> Global Chat invitations have been successfully disabled. Users from other servers can no longer join your server through the Global Chat.",
+
     "menu.delete_message.success_embed.title": "MESSAGE DELETED",
     "menu.delete_message.success_embed.description": "> **Message successfully deleted**\n> The selected message was successfully deleted from the Global Chat.\n\n> **Information**\n> Instances deleted: `$count`\n> Time: `$duration`",
     "menu.delete_message.database_error_embed.title": "ERROR",
@@ -90,7 +102,7 @@
     "menu.message_info.permission_error_embed.description": "> **Permission error**\n> Your permission level is not high enough to delete messages from the Global Chat. If you believe this is an error, please contact the administrators of this app.",
 
     "menu.report_message.success_embed.title": "REPORTED",
-    "menu.report_message.success_embed.description": "> **MessagesSuccessfully reported**\n> You have successfully reported this message in the Global Chat. Thank you for contributing to the safety of the Global Chat. Please be patient while a team member takes care of it.",
+    "menu.report_message.success_embed.description": "> **Messages successfully reported**\n> You have successfully reported this message in the Global Chat. Thank you for contributing to the safety of the Global Chat. Please be patient while a team member takes care of it.",
     "menu.report_message.database_error_embed.title": "ERROR",
     "menu.report_message.database_error_embed.description": "> **Message not found**\n> The selected message could not be found in the database. This might be because the message was not sent in the Global Chat or an error has occurred. If you believe this is a mistake, please contact the administrators of this app."
 }

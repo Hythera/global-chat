@@ -126,7 +126,10 @@ class message(commands.Cog):
             role = "default"
 
         channel: discord.TextChannel = self.client.get_channel(message.channel.id)
-        sent_message = await self.send(channel, message.author, role, global_channel.invite, message.guild, message.content, referenced_messages)
+        if global_channel.setting_invite == 0:
+            sent_message = await self.send(channel, message.author, role, None, message.guild, message.content, referenced_messages)
+        else:
+            sent_message = await self.send(channel, message.author, role, global_channel.invite, message.guild, message.content, referenced_messages)
         messages = await GlobalMessage().add(uuid, sent_message.id, sent_message.channel.id)
         await messages.add_info(uuid, sent_message.id, sent_message.channel.id, message.author.id)
 
@@ -137,7 +140,10 @@ class message(commands.Cog):
                     try:
                         perms: discord.Permissions = channel.permissions_for(channel.guild.get_member(self.client.user.id))
                         if perms.send_messages:
-                            sent_message = await self.send(channel, message.author, role, global_channel.invite, message.guild, message.content, referenced_messages)
+                            if global_channel.setting_invite == 0:
+                                sent_message = await self.send(channel, message.author, role, None, message.guild, message.content, referenced_messages)
+                            else:
+                                sent_message = await self.send(channel, message.author, role, global_channel.invite, message.guild, message.content, referenced_messages)
                             await messages.add(uuid, sent_message.id, sent_message.channel.id)
                             await asyncio.sleep(0.05)
                     except:
@@ -157,7 +163,10 @@ class message(commands.Cog):
             embed.set_thumbnail(url=author.avatar.with_size(256).url)
         else:
             embed.set_thumbnail(url=author.default_avatar.with_size(256).url)
-        embed.add_field(name=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.name"),value=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.value", support_server=config["support_server_url"], invite=invite))
+        if invite:
+            embed.add_field(name=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.name"),value=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.value.invite", support_server=config["support_server_url"], invite=invite))
+        else:
+            embed.add_field(name=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.name"),value=translator.translate(channel.guild.preferred_locale.value, "global_chat.message.embed.field.value", support_server=config["support_server_url"]))
         if guild.icon:
             embed.set_footer(text=f"{guild.name}", icon_url=guild.icon.with_size(64).url)
         else:

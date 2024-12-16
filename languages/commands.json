@@ -15,6 +15,9 @@
         "add": "add",
         "stats": "stats",
         "display_role": "display_role",
+        "settings": "settings",
+        "invite": "invite",
+        "status": "status",
 
         "delete_message": "Delete Message",
         "report_message": "Report Message",
@@ -34,6 +37,8 @@
         "mute_add_description": "Mute a specific user",
         "mute_remove_description": "Unmute a specific user",
         "stats_description": "Displays statistics about the app",
+        "settings_description": "Change Global Chat settings",
+        "settings_invite_description": "Change the invite settings",
 
 
         "channel_set_describe_channel": "The channel you want to set as a global chat",
@@ -45,6 +50,7 @@
         "mute_add_describe_reason": "The reason for the mute",
         "mute_remove_describe_user": "The user whose mute you want to remove",
         "user_set_describe_display_role": "The role that will be displayed in the Global Chat",
+        "settings_invite_describe_status": "The invitation status",
 
 
         "choice_mute_add_15m": "15 minutes",
@@ -53,7 +59,10 @@
         "choice_mute_add_12h": "12 hours",
         "choice_mute_add_1d": "1 day",
         "choice_mute_add_7d": "7 days",
-        "choice_mute_add_permanent": "Permanent"
+        "choice_mute_add_permanent": "Permanent",
+
+        "choice_settings_invite_on": "On",
+        "choice_settings_invite_off": "Off"
     },
     "de": {
         "help": "hilfe",
@@ -71,6 +80,9 @@
         "reason": "grund",
         "stats": "statistiken",
         "display_role": "anzeige_rolle",
+        "settings": "einstellungen",
+        "invite": "einladung",
+        "status": "status",
 
         "delete_message": "Nachricht Löschen",
         "report_message": "Nachricht Melden",
@@ -90,6 +102,8 @@
         "mute_add_description": "Schalte einen bestimmten Nutzer stumm",
         "mute_remove_description": "Hebe die Stummschaltung eines bestimmten Nutzers auf",
         "stats_description": "Zeigt dir Statistiken über die App",
+        "settings_description": "Ändere Einstellungen am Global Chat",
+        "settings_invite_description": "Ändere die Einladungseinstellungen",
 
 
         "channel_set_describe_channel": "Der Kanal, den du als globalen Chat festlegen möchtest",
@@ -101,6 +115,7 @@
         "mute_add_describe_reason": "Der Grund für die Stummschaltung",
         "mute_remove_describe_user": "Den Nutzer, dessen Stummschaltung du aufheben möchtest",
         "user_set_describe_display_role": "Die Rolle, die im Global Chat angezeigt wird",
+        "settings_invite_describe_status": "Der Einladungsstatus",
       
 
         "choice_mute_add_15m": "15 Minuten",
@@ -109,6 +124,9 @@
         "choice_mute_add_12h": "12 Stunden",
         "choice_mute_add_1d": "1 Tag",
         "choice_mute_add_7d": "7 Tage",
-        "choice_mute_add_permanent": "Permanent"
+        "choice_mute_add_permanent": "Permanent",
+
+        "choice_settings_invite_on": "An",
+        "choice_settings_invite_off": "Aus"
     }
 }

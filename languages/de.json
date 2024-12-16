@@ -16,7 +16,8 @@
     "global_chat.link_error_embed.title": "FEHLER",
     "global_chat.link_error_embed.description": "> **Links sind nicht erlaubt**\n> Deine Nachricht konnte nicht im Global Chat gesendet werden, da sie einen Link enthält. Das ist eine Sicherheitsmaßnahme, um Spam zu vermeiden. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "global_chat.message.embed.field.name": "Links",
-    "global_chat.message.embed.field.value": "[Support Server]($support_server) • [Server Einladung]($invite)",
+    "global_chat.message.embed.field.value.invite": "[Support Server]($support_server) • [Server Einladung]($invite)",
+    "global_chat.message.embed.field.value": "[Support Server]($support_server)",
     
     "command.help.embed.title": "HILFE",
     "command.help.embed.description": "> **Was ist die Global Chat App?**\n> Die Global Chat App ist eine Open-Source-Discord-App, die dir erlaubt, dich mit anderen Servern zu vernetzen und Nachrichten serverübergreifend zu versenden.\n\n> **Source Code**\n> Wenn du deine eigene Global Chat App erstellen möchtest, kannst du dir gerne den Code vom offiziellen [GitHub Repository](https://github.com/Blackstonecoden/global-chat) herunterladen.\n\n> **Fehler melden**\n> Wenn du einen Fehler in unserer App melden möchtest, tritt gerne unserem Support-Server bei.",
@@ -71,6 +72,17 @@
 
     "command.stats.embed.title": "STATISTIKEN",
     "command.stats.embed.description": "> **Datenbank**\n> Globale Nachrichten: `$global_messages_count`\n> Globale Kanäle: `$global_channels_count`\n> Benutzer: `$user_count`\n\n> **App**\n> Server: `$guilds`\n> Nutzer: `$users`\n> Gestartet: <t:$start_time:R>\n> Ping: `$ping`",
+
+    "command.settings.invite.channel_error_embed.title": "FEHLER",
+    "command.settings.invite.channel_error_embed.description": "> **Kein Global Chat vorhanden**\n> Dein Server hat keinen Global Chat. Wenn du die Einstellungen deines Global Chats ändern möchtest, füge zuerst einen Global Chat hinzu. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+    "command.settings.invite.same_false_error_embed.title": "FEHLER",
+    "command.settings.invite.same_false_embed.description": "> **Einstellungen gleich**\n> Die Global Chat Einladungen sind bereits deaktiviert. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+    "command.settings.invite.same_true_error_embed.title": "FEHLER",
+    "command.settings.invite.same_true_embed.description": "> **Einstellungen gleich**\n> Die Global Chat Einladungen sind bereits aktiviert. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
+    "command.settings.invite.enabled_embed.title": "EINSTELLUNGEN AKTUALISIERT",
+    "command.settings.invite.enabled_embed.description": "> **Einladungen aktiviert**\n> Die Global Chat Einladungen wurden erfolgreich aktiviert. Nutzer von anderen Servern können nun deinem Server über dem Global Chat beitreten.",
+    "command.settings.invite.disabled_embed.title": "EINSTELLUNGEN AKTUALISIERT",
+    "command.settings.invite.disabled_embed.description": "> **Einladungen deaktiviert**\n> Die Global Chat-Einladungen wurden erfolgreich deaktiviert. Nutzer von anderen Servern können deinem Server über den Global Chat nicht mehr beitreten.",
 
     "menu.delete_message.success_embed.title": "NACHRICHT GELÖSCHT",
     "menu.delete_message.success_embed.description": "> **Nachricht erfolgreich gelöscht**\n> Die ausgewählte Nachricht wurde erfolgreich aus dem Global Chat gelöscht.\n\n> **Informationen**\n> Instanzen gelöscht: `$count`\n> Zeit: `$duration`",

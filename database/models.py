@@ -8,10 +8,9 @@ user_roles      = "user_roles"
 mutes           = "mutes"
 
 class GlobalChannel:
-    def __init__(self, channel_id: int = None, guild_id: int = None, invite: str = None):
+    def __init__(self, channel_id: int = None, guild_id: int = None):
         self.channel_id = channel_id
         self.guild_id = guild_id
-        self.invite = invite
         self.stored = False
 
     async def load(self):
@@ -27,6 +26,7 @@ class GlobalChannel:
                     self.channel_id = result[0]
                     self.guild_id = result[1]
                     self.invite = result[2]
+                    self.setting_invite = result[3]
                     self.stored = True
                 else:
                     self.stored = False
@@ -50,6 +50,17 @@ class GlobalChannel:
         async with pool.acquire() as connection:
             async with connection.cursor() as cursor:
                 await cursor.execute(f"DELETE FROM `{global_channels}` WHERE `channel_id`= %s", (self.channel_id,))
+        pool.close()
+        await pool.wait_closed()
+        return self
+
+    async def update(self, setting_invite: int = None):
+        if setting_invite is not None:
+            self.setting_invite = setting_invite
+        pool: Pool = await get_pool()
+        async with pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                await cursor.execute(f"UPDATE `{global_channels}` SET `setting_invite` =  %s WHERE `guild_id` = %s", (self.setting_invite, self.guild_id,))
         pool.close()
         await pool.wait_closed()
         return self
