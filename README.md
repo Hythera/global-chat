@@ -26,7 +26,7 @@ Download the [latest release](https://github.com/Blackstonecoden/global-chat/rel
     .env
   </summary>
 
-```bash
+```env
 TOKEN = nGRuiORASD
 
 database_host = 1.1.1.1:3306
