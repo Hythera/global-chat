@@ -1,14 +1,14 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
-import json
+from json import load
 
 from database.models import UserRole
 from languages import Translator
 translator = Translator()
 
 with open("config.json", 'r', encoding='utf-8') as file:
-    config = json.load(file)
+    config = load(file)
 
 role_choices = [app_commands.Choice(name=role_key, value=role_key) for role_key in config["roles"]]
 

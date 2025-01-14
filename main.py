@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-import json
+from json import load
 from pathlib import Path
 import aiofiles
 from aiomysql import Pool
@@ -24,7 +24,7 @@ translator = Translator()
 
 load_dotenv()
 with open("config.json", 'r', encoding='utf-8') as file:
-    config = json.load(file)
+    config = load(file)
 
 async def init_db():
     pool: Pool = await get_pool()
@@ -50,7 +50,19 @@ async def on_tree_error(interaction: discord.Interaction, error: app_commands.Ap
             color=0xED4245)
         await interaction.response.send_message(embed=cooldown_error_embed, ephemeral=True)
     else:
-        print(error)
+        error_channel = client.get_channel(config["channels"]["errors"])
+        line_image = discord.File("images/line.png")
+        log_embed = discord.Embed(
+            title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(error_channel.guild.preferred_locale.value, "log.errors.log_embed.title"),
+            description=translator.translate(error_channel.guild.preferred_locale.value, "log.errors.log_embed.description", type="interaction_tree_error", command=interaction.command.name, user=f"<@{interaction.user.id}>"),
+            color=0xED4245)
+        log_embed.set_image(url="attachment://line.png")
+        content_embed = discord.Embed(
+            title=f"{config["emojis"]["file_text_red"]} "+translator.translate(error_channel.guild.preferred_locale.value, "log.errors.content_embed.title"),
+            description=f"```{error}```",
+            color=0xED4245)
+        content_embed.set_image(url="attachment://line.png")
+        await error_channel.send(embeds=[log_embed, content_embed], files=[line_image])
 
 class Client(commands.Bot):
     def __init__(self):

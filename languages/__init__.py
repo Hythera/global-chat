@@ -1,4 +1,4 @@
-import json
+from json import load
 from string import Template
 import os
 from discord import Locale
@@ -12,7 +12,7 @@ class Translator():
             if filename.endswith(".json"):
                 file_path = os.path.join("languages", filename)
                 with open(file_path, 'r', encoding='utf-8') as file:
-                    self.data[filename[:-5]] = json.load(file)
+                    self.data[filename[:-5]] = load(file)
 
     def translate(self, lang: str, key: str, **kwargs) -> str:
         if lang not in self.data:
@@ -32,7 +32,7 @@ class CommandTranslator(discord.app_commands.Translator):
 
     async def translate(self, string: locale_str, locale: Locale, context: TranslationContext):
         with open("languages/commands.json", 'r', encoding='utf-8') as file:
-            translations = json.load(file)
+            translations = load(file)
 
         message_key = string.message  
         if locale.value in translations:

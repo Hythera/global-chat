@@ -51,7 +51,8 @@ Create the `config.json`. Here is the reference.
     "custom_app_status": "Hello, world!",
 
     "channels": {
-        "reports": 1234
+        "reports": 1234,
+        "errors": 1234
     },
 
     "roles": {
@@ -96,6 +97,7 @@ Create the `config.json`. Here is the reference.
     "emojis": {
         "x_circle_red": "<:emoji:1234>",
         "clock_red": "",
+        "file_text_red": "",
 
         "alert_yellow": "",
         "file_text_yellow": "",

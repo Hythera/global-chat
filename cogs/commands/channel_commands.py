@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
-import json
+from json import load
 import asyncio
 import string
 import random
@@ -11,7 +11,7 @@ from languages import Translator
 translator = Translator()
 
 with open("config.json", 'r', encoding='utf-8') as file:
-    config = json.load(file)
+    config = load(file)
 
 def generate_random_string():
     characters = string.ascii_letters + string.digits

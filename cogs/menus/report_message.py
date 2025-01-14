@@ -1,14 +1,14 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
-import json
+from json import load
 
 from database.models import GlobalMessage
 from languages import Translator
 translator = Translator()
 
 with open("config.json", 'r', encoding='utf-8') as file:
-    config = json.load(file)
+    config = load(file)
 
 class report_message(commands.Cog):
     def __init__(self, client: commands.Bot):

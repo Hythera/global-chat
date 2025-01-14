@@ -1,23 +1,23 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
-import json
-import datetime
+from json import load
+from datetime import timedelta, datetime
 
 from database.models import UserRole, Mutes
 from languages import Translator
 translator = Translator()
 
 with open("config.json", 'r', encoding='utf-8') as file:
-    config = json.load(file)
+    config = load(file)
 
 times = {
-    "15m": datetime.timedelta(minutes=15),
-    "1h": datetime.timedelta(hours=1),
-    "6h": datetime.timedelta(hours=6),
-    "12h": datetime.timedelta(hours=12),
-    "1d": datetime.timedelta(days=1),
-    "7d": datetime.timedelta(days=7)
+    "15m": timedelta(minutes=15),
+    "1h": timedelta(hours=1),
+    "6h": timedelta(hours=6),
+    "12h": timedelta(hours=12),
+    "1d": timedelta(days=1),
+    "7d": timedelta(days=7)
 }
 
 class mute_commands(commands.Cog):
@@ -48,7 +48,7 @@ class mute_commands(commands.Cog):
                 await interaction.response.send_message(embed=user_exists_error_embed, ephemeral=True)
             else:
                 if time.value != "permanent":
-                    expires_at = datetime.datetime.now() + times[time.value]
+                    expires_at = datetime.now() + times[time.value]
                     await mute.add(interaction.user.id, reason, expires_at.strftime('%Y-%m-%d %H:%M:%S'))
                     time_str = f"<t:{int(expires_at.timestamp())}:R>"
                 else:

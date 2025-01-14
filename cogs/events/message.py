@@ -4,7 +4,7 @@ from discord.ext import commands
 import string
 import random
 import asyncio
-import json
+from json import load
 import time
 import re
 
@@ -13,7 +13,7 @@ from languages import Translator
 translator = Translator()
 
 with open("config.json", 'r', encoding='utf-8') as file:
-    config = json.load(file)
+    config = load(file)
 
 link_regex = re.compile(r'(?:https?://)[a-z0-9_\-\.]*[a-z0-9_\-]')
 
@@ -29,6 +29,7 @@ class message(commands.Cog):
     
     @commands.Cog.listener("on_message")
     async def on_message(self, message: discord.Message):
+        global_channel = None
         try:
             if message.author.bot:
                 return
@@ -106,7 +107,20 @@ class message(commands.Cog):
                     await self.loop_channels(message, global_channel, user_role, reference_uuid)
 
         except Exception as e:
-            print("on_message: ", e)
+            if global_channel:
+                error_channel = self.client.get_channel(config["channels"]["errors"])
+                line_image = discord.File("images/line.png")
+                log_embed = discord.Embed(
+                    title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(error_channel.guild.preferred_locale.value, "log.errors.log_embed.title"),
+                    description=translator.translate(error_channel.guild.preferred_locale.value, "log.errors.log_embed.description", type="on_message", command="None", user="`None`"),
+                    color=0xED4245)
+                log_embed.set_image(url="attachment://line.png")
+                content_embed = discord.Embed(
+                    title=f"{config["emojis"]["file_text_red"]} "+translator.translate(error_channel.guild.preferred_locale.value, "log.errors.content_embed.title"),
+                    description=f"```{e}```",
+                    color=0xED4245)
+                content_embed.set_image(url="attachment://line.png")
+                await error_channel.send(embeds=[log_embed, content_embed], files=[line_image])
         
             
     async def loop_channels(self, message: discord.Message, global_channel: GlobalChannel, user_role: UserRole, reference_uuid: str = None):
