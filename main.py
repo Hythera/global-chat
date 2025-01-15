@@ -8,6 +8,7 @@ from aiomysql import Warning as MySQLWarning
 import warnings
 import asyncio
 import time
+from logging import WARN
 
 import discord
 from discord.ext import commands
@@ -96,4 +97,4 @@ class Client(commands.Bot):
 
 if __name__ == "__main__":
     client = Client()
-    client.run(os.getenv('TOKEN'))
+    client.run(os.getenv('TOKEN'), log_level=WARN)
