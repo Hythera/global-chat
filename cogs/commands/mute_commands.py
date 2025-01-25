@@ -38,7 +38,7 @@ class mute_commands(commands.Cog):
                                 app_commands.Choice(name=discord.app_commands.locale_str("choice_mute_add_permanent"), value="permanent")])
     async def mute_add(self, interaction: discord.Interaction, user: discord.User, time: app_commands.Choice[str], reason: str):
         author = await UserRole(interaction.user.id).load()
-        if author.stored and config["roles"][author.role]["permission_level"] >= 10:
+        if author.stored and config["roles"][author.role]["permission_level"] >= 5:
             mute = await Mutes(user.id).load()
             if mute.stored:
                 user_exists_error_embed = discord.Embed(
