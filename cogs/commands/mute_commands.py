@@ -24,7 +24,7 @@ class mute_commands(commands.Cog):
     def __init__(self, client: commands.Bot):
         self.client = client
 
-    mute_command = app_commands.Group(name=discord.app_commands.locale_str("mute"), description=discord.app_commands.locale_str("mute_description"), default_permissions=discord.Permissions(administrator=True), guild_only=True, guild_ids=[config["admin_guild_id"]])
+    mute_command = app_commands.Group(name=discord.app_commands.locale_str("mute"), description=discord.app_commands.locale_str("mute_description"), default_permissions=discord.Permissions(manage_messages=True), guild_only=True, guild_ids=[config["admin_guild_id"]])
 
     @mute_command.command(name=discord.app_commands.locale_str("add"), description=discord.app_commands.locale_str("mute_add_description"))
     @app_commands.describe(user=discord.app_commands.locale_str("mute_add_describe_user"), time=discord.app_commands.locale_str("mute_add_describe_time"), reason=discord.app_commands.locale_str("mute_add_describe_reason"))
