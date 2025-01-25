@@ -73,7 +73,7 @@ class mute_commands(commands.Cog):
     @app_commands.rename(user=discord.app_commands.locale_str("user"))
     async def mute_remove(self, interaction: discord.Interaction, user: discord.User):
         author = await UserRole(interaction.user.id).load()
-        if author.stored and config["roles"][author.role]["permission_level"] >= 10:
+        if author.stored and config["roles"][author.role]["permission_level"] >= 5:
             mute = await Mutes(user.id).load()
             if mute.stored:
                 await mute.remove()
