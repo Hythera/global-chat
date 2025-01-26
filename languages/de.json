@@ -1,7 +1,11 @@
 {
     "log.reports.log_embed.title": "NACHRICHT GEMELDET",
-    "log.reports.log_embed.description": "> **Eine Nachricht wurde gemeldet**\n> Eine Nachricht im Global Chat wurde gerade gemeldet. Weitere Informationen stehen unten.\n\n> **Informationen**\n> - Gemeldet von: <@$reported_by>\n> - Nachrichtenautor: <@$message_author>\n> - Nachrichten-ID: `$message_id`\n> - Nachrichten-UUID: `$message_uuid`",
+    "log.reports.log_embed.description": "**Informationen**\n> - Gemeldet von: <@$reported_by>\n> - Nachrichtenautor: <@$message_author>\n> - Nachrichten-ID: `$message_id`\n> - Nachrichten-UUID: `$message_uuid`",
     "log.reports.content_embed.title": "NACHRICHTEN INHALT",
+
+    "log.actions.delete_log_embed.title": "NACHRICHT GELÖSCHT",
+    "log.actions.delete_log_embed.description": "**Informationen**\n> - Gelöscht von: <@$deleted_by>\n> - Nachrichtenautor: <@$message_author>\n> - Instanzen: `$instances`",
+    "log.actions.delete_log_content_embed.title": "NACHRICHTEN INHALT",
 
     "log.errors.log_embed.title": "FEHLER AUFGETRETEN",
     "log.errors.log_embed.description": "> **Es ist ein Fehler aufgetreten**\n> Typ: `$type`\n> Befehl: `$command`\n> Benutzer: $user",

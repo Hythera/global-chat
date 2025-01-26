@@ -1,7 +1,11 @@
 {
     "log.reports.log_embed.title": "MESSAGE REPORTED",
-    "log.reports.log_embed.description": "> **A message was reported**\n> A message in the Global Chat has just been reported. More information is provided below.\n\n> **Information**\n> - Reported by: <@$reported_by>\n> - Message author: <@$message_author>\n> - Message ID: `$message_id`\n> - Message UUID: `$message_uuid`",
+    "log.reports.log_embed.description": "**Information**\n> - Reported by: <@$reported_by>\n> - Message author: <@$message_author>\n> - Message ID: `$message_id`\n> - Message UUID: `$message_uuid`",
     "log.reports.content_embed.title": "MESSAGE CONTENT",
+
+    "log.actions.delete_log_embed.title": "MESSAGE DELETED",
+    "log.actions.delete_log_embed.description": "**Information**\n> - Deleted by: <@$deleted_by>\n> - Message author: <@$message_author>\n> - Instances: `$instances`",
+    "log.actions.delete_log_content_embed.title": "MESSAGE CONTENT",
 
     "log.errors.log_embed.title": "ERROR OCCURRED",
     "log.errors.log_embed.description": "> **An error has occurred**\n> Type: `$type`\n> Command: `$command`\n> User: `$user`",

@@ -52,7 +52,8 @@ Create the `config.json`. Here is the reference.
 
     "channels": {
         "reports": 1234,
-        "errors": 1234
+        "errors": 1234,
+        "actions": 1234
     },
 
     "roles": {
@@ -95,19 +96,20 @@ Create the `config.json`. Here is the reference.
       },
     
     "emojis": {
-        "x_circle_red": "<:emoji:1234>",
-        "clock_red": "",
-        "file_text_red": "",
+        "x_circle_red":         "<:emoji:1234>",
+        "clock_red":            "",
+        "file_text_red":        "",
+        "trash_red":            "",
 
-        "alert_yellow": "",
-        "file_text_yellow": "",
+        "alert_yellow":         "",
+        "file_text_yellow":     "",
 
-        "check_circle_green": "",
-        "plus_circle_green": "",
+        "check_circle_green":   "",
+        "plus_circle_green":    "",
 
-        "users": "",
-        "file_text": "",
-        "bar_chart": ""
+        "users":                "",
+        "file_text":            "",
+        "bar_chart":            ""
     },
     "standard_server_icon_url": "https://discord.com/assets/ca24969f2fd7a9fb03d5.png"
 }
