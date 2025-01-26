@@ -57,9 +57,18 @@ class mute_commands(commands.Cog):
                     
                 success_embed = discord.Embed(
                     title=f"{config["emojis"]["check_circle_green"]} "+translator.translate(interaction.locale.value, "command.mute.add.success_embed.title"),
-                    description=translator.translate(interaction.locale.value, "command.mute.add.success_embed.description", user_id=user.id, time=time_str, reason=reason, staff_id=interaction.user.id),
+                    description=translator.translate(interaction.locale.value, "command.mute.add.success_embed.description", user_id=user.id, time=time_str, reason=reason),
                     color=0x57F287)
                 await interaction.response.send_message(embed=success_embed, ephemeral=True)
+
+                staff_channel = self.client.get_channel(config["channels"]["actions"])
+                line_image = discord.File("images/line.png")
+                log_embed = discord.Embed(
+                    title=f"{config["emojis"]["clock_red"]} "+translator.translate(staff_channel.guild.preferred_locale.value, "log.actions.mute_log_embed.title"),
+                    description=translator.translate(staff_channel.guild.preferred_locale.value, "log.actions.mute_log_embed.description", user_id=user.id, staff_id=interaction.user.id, time=time_str, reason=reason),
+                    color=0xED4245)
+                log_embed.set_image(url="attachment://line.png")
+                await staff_channel.send(embed=log_embed, file=line_image)
         else:
             permission_error_embed = discord.Embed(
                 title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(interaction.locale.value, "command.mute.add.permission_error_embed.title"),
@@ -82,6 +91,15 @@ class mute_commands(commands.Cog):
                     description=translator.translate(interaction.locale.value, "command.mute.remove.success_embed.description"),
                     color=0x57F287)
                 await interaction.response.send_message(embed=success_embed, ephemeral=True)
+
+                staff_channel = self.client.get_channel(config["channels"]["actions"])
+                line_image = discord.File("images/line.png")
+                log_embed = discord.Embed(
+                    title=f"{config["emojis"]["clock_red"]} "+translator.translate(staff_channel.guild.preferred_locale.value, "log.actions.mute_remove_log_embed.title"),
+                    description=translator.translate(staff_channel.guild.preferred_locale.value, "log.actions.mute_remvove_log_embed.description", user_id=user.id, staff_id=interaction.user.id),
+                    color=0xED4245)
+                log_embed.set_image(url="attachment://line.png")
+                await staff_channel.send(embed=log_embed, file=line_image)
             else:
                 user_not_exists_error_embed = discord.Embed(
                     title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(interaction.locale.value, "command.mute.remove.user_not_exists_error_embed.title"),

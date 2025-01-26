@@ -6,9 +6,13 @@
     "log.actions.delete_log_embed.title": "MESSAGE DELETED",
     "log.actions.delete_log_embed.description": "**Information**\n> - Deleted by: <@$deleted_by>\n> - Message author: <@$message_author>\n> - Instances: `$instances`",
     "log.actions.delete_log_content_embed.title": "MESSAGE CONTENT",
+    "log.actions.mute_log_embed.title": "USER MUTED",
+    "log.actions.mute_log_embed.description": "**Information**\n> - User: <@$user_id>\n> - Team member: <@$staff_id>\n> - Expires: $time\n> - Reason: `$reason`",
+    "log.actions.mute_remove_log_embed.title": "USER UNMUTED",
+    "log.actions.mute_remvove_log_embed.description": "**Information**\n> - User: <@$user_id>\n> - Team member: <@$staff_id>",
 
     "log.errors.log_embed.title": "ERROR OCCURRED",
-    "log.errors.log_embed.description": "> **An error has occurred**\n> Type: `$type`\n> Command: `$command`\n> User: `$user`",
+    "log.errors.log_embed.description": "> **An error has occurred**\n> Type: `$type`\n> Command: `$command`\n> User: $user",
     "log.errors.content_embed.title": "ERROR MESSAGE",
 
     "on_tree_error.cooldown_error_embed.title": "COOLDOWN",
@@ -67,7 +71,7 @@
 
     "command.mute.add.succes_embed.translation.never": "`never`",
     "command.mute.add.success_embed.title": "USER MUTED",
-    "command.mute.add.success_embed.description": "> **User successfully muted**\n> The specified user has been successfully muted.\n\n> **Information**\n> User: <@$user_id>\n> Expires: $time\n> Reason: `$reason`\n> Team member: <@$staff_id>",
+    "command.mute.add.success_embed.description": "> **User successfully muted**\n> The specified user has been successfully muted.\n\n> **Information**\n> - User: <@$user_id>\n> - Expires: $time\n> - Reason: `$reason`",
     "command.mute.add.user_exists_error_embed.title": "ERROR",
     "command.mute.add.user_exists_error_embed.description": "> **User already muted**\n> The specified user is already muted. If you want to change the duration of the mute, please unmute the user first and then change the time. If you believe this is a mistake, please contact the administrators of this app.",
     "command.mute.add.permission_error_embed.title": "ERROR",
