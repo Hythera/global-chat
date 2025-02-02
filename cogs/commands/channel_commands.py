@@ -51,7 +51,7 @@ class channel_commands(commands.Cog):
             except:
                 await global_channel.add(config["support_server_url"])
             try:
-                await channel.edit(slowmode_delay=5)
+                await channel.edit(slowmode_delay=10)
             except:
                 pass
 
