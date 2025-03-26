@@ -21,7 +21,7 @@ class guild_channel_delete(commands.Cog):
                 if global_channel.stored == True:
                     await global_channel.remove()
         except Exception as e:
-            if e[0] != 2003: 
+            if e.args and e.args[0] != 2003:
                 error_channel = self.client.get_channel(config["channels"]["errors"])
                 line_image = File("images/line.png")
                 log_embed = Embed(

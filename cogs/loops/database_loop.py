@@ -20,7 +20,7 @@ class database_loop(commands.Cog):
         try:
             mutes = await Mutes(None).list()
         except Exception as e:
-            if e[0] != 2003:
+            if e.args and e.args[0] != 2003:
                 error_channel = self.client.get_channel(config["channels"]["errors"])
                 line_image = File("images/line.png")
                 log_embed = Embed(

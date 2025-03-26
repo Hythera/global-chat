@@ -107,7 +107,7 @@ class message(commands.Cog):
                     await self.loop_channels(message, global_channel, user_role, reference_uuid)
 
         except Exception as e:
-            if e[0] != 2003: 
+            if e.args and e.args[0] != 2003:
                 if global_channel:
                     error_channel = self.client.get_channel(config["channels"]["errors"])
                     line_image = discord.File("images/line.png")
