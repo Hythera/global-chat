@@ -125,6 +125,6 @@ To assign yourself a role, you have two options:
 2. Alternatively, temporarily add the following code in the `setup_hook` of the `Client` class in `main.py` and replace 1234 with your user ID:
    ```py
    from database.models import UserRole
-   UserRole(1234).change("admin")
+   await UserRole(1234).change("admin")
     ```
 Ensure that you have a permission level of at least 10 to use all commands.
