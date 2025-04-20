@@ -59,7 +59,7 @@
     "command.user.set.permission_error_embed.title": "FEHLER",
     "command.user.set.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um die Rolle von anderen Nutzern zu ändern. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
 
-    "command.user.list.embed.title": "ROLLEN",
+    "command.user.list.embed.title": "NUTZER",
     "command.user.list.embed.description": "> **Nutzer mit Rollen**\n> Das ist eine Liste von allen Nutzern, die eine spezielle Rolle haben.\n> ",
     "command.user.list.permission_error_embed.title": "FEHLER",
     "command.user.list.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um die Rollen anderer Nutzer einzusehen. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",

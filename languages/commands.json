@@ -18,10 +18,11 @@
         "settings": "settings",
         "invite": "invite",
         "status": "status",
+        "information": "information",
 
         "delete_message": "Delete Message",
         "report_message": "Report Message",
-        "message_info": "Message Info",
+        "message_info": "Message Information",
 
 
         "help_description": "Shows you assistance for the Global Chat",
@@ -33,6 +34,7 @@
         "user_list_description": "Shows you all users with a role.",
         "message_description": "Message command",
         "message_delete_description": "Delete a message from the Global Chat",
+        "message_information_description": "Retrieve information about a message",
         "mute_description": "Mute command",
         "mute_add_description": "Mute a specific user",
         "mute_remove_description": "Unmute a specific user",
@@ -45,6 +47,7 @@
         "user_set_describe_user": "The user whose role you want to change",
         "user_set_describe_role": "The role you want to give to the user",
         "message_delete_describe_uuid": "The UUID of the message you want to delete",
+        "message_information_describe_uuid": "The UUID of the message from which you want to retrieve information",
         "mute_add_describe_user": "The user who should be muted",
         "mute_add_describe_time": "How long the user should be muted",
         "mute_add_describe_reason": "The reason for the mute",
@@ -86,7 +89,8 @@
 
         "delete_message": "Nachricht Löschen",
         "report_message": "Nachricht Melden",
-        "message_info": "Nachrichten Info",
+        "message_info": "Nachrichten Informationen",
+        "information": "information",
 
         
         "help_description": "Zeigt dir eine Hilfestellung zum Global Chat",
@@ -96,8 +100,9 @@
         "user_description": "Nutzer Befehl",
         "user_set_description": "Ändere die Rolle eines Nutzers",
         "user_list_description": "Zeigt dir alle Nutzer mit eine Rolle an",
-        "message_description": "Nachrichten Befehl",
+        "message_description": "Nachrichten Befehl", 
         "message_delete_description": "Lösche eine Nachricht aus dem Global Chat",
+        "message_information_description": "Rufe Details zu einer Nachricht ab",
         "mute_description": "Stummschalt Befehl",
         "mute_add_description": "Schalte einen bestimmten Nutzer stumm",
         "mute_remove_description": "Hebe die Stummschaltung eines bestimmten Nutzers auf",
@@ -110,6 +115,7 @@
         "user_set_describe_user": "Der Nutzer, dessen Rolle du ändern möchtest",
         "user_set_describe_role": "Die Rolle, die du dem Nutzer geben möchtes",
         "message_delete_describe_uuid": "Die UUID der Nachricht, die du löschen möchtest",
+        "message_information_describe_uuid": "Die UUID der Nachricht, von der du Informationen abrufen möchtest",
         "mute_add_describe_user": "Der Nutzer, der stummgeschaltet werden soll",
         "mute_add_describe_time": "Wie lange der Nutzer stummgeschaltet werden soll",
         "mute_add_describe_reason": "Der Grund für die Stummschaltung",
