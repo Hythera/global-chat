@@ -159,7 +159,8 @@ class message(commands.Cog):
                                 sent_message = await self.send(channel, message.author, role, None, message.guild, message.content, referenced_messages)
                             else:
                                 sent_message = await self.send(channel, message.author, role, global_channel.invite, message.guild, message.content, referenced_messages)
-                            await messages.add(uuid, sent_message.id, sent_message.channel.id)
+                            if sent_message:
+                                await messages.add(uuid, sent_message.id, sent_message.channel.id)
                             await asyncio.sleep(0.05)
                     except:
                         pass
