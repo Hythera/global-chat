@@ -4,7 +4,7 @@
     "log.reports.content_embed.title": "NACHRICHTEN INHALT",
 
     "log.actions.delete_log_embed.title": "NACHRICHT GELÖSCHT",
-    "log.actions.delete_log_embed.description": "**Informationen**\n> - Gelöscht von: <@$deleted_by>\n> - Nachrichtenautor: <@$message_author>\n> - Instanzen: `$instances`",
+    "log.actions.delete_log_embed.description": "**Informationen**\n> - Gelöscht von: <@$deleted_by>\n> - Nachrichtenautor: <@$message_author>\n> - UUID: `$uuid`\n> - Instanzen: `$instances`",
     "log.actions.delete_log_content_embed.title": "NACHRICHTEN INHALT",
     "log.actions.mute_log_embed.title": "NUTZER STUMMGESCHALTEN",
     "log.actions.mute_log_embed.description": "**Informationen**\n> - Nutzer: <@$user_id>\n> - Teammitglied: <@$staff_id>\n> - Läuft ab: $time\n> - Grund: `$reason`",
