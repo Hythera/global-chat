@@ -59,7 +59,7 @@
     "command.user.set.permission_error_embed.title": "ERROR",
     "command.user.set.permission_error_embed.description": "> **Permission error**\n> Your permission level is not high enough to change the role of other users. If you think this is an error, please contact the administrators of this app.",
 
-    "command.user.list.embed.title": "ROLES",
+    "command.user.list.embed.title": "USERS",
     "command.user.list.embed.description": "> **Users with roles**\n> This is a list of all users who have a special role.\n> ",
     "command.user.list.permission_error_embed.title": "ERROR",
     "command.user.list.permission_error_embed.description": "> **Permission error**\n> Your permission level is not high enough to view the roles of other users. If you believe this is an error, please contact the administrators of this app.",

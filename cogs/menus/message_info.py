@@ -10,6 +10,7 @@ translator = Translator()
 with open("config.json", 'r', encoding='utf-8') as file:
     config = load(file)
 
+
 def format_number(number: int) -> str:
     if number >= 10_000_000:
         return f"{number // 1_000_000}M" 
@@ -21,6 +22,14 @@ def format_number(number: int) -> str:
         return f"{number / 1000:.1f}k"
     else:
         return number
+    
+
+class EmbedButtons(discord.ui.View):
+    def __init__(self, interaction: discord.Interaction, global_channel):
+        super().__init__(timeout=None)
+        server_invite = discord.ui.Button(label=translator.translate(interaction.locale.value, "menu.message_info.response_embed.button.server_invite"), style=discord.ButtonStyle.url, url=global_channel.invite)
+        self.add_item(server_invite)
+
 
 class message_info(commands.Cog):
     def __init__(self, client: commands.Bot):
@@ -69,12 +78,7 @@ class message_info(commands.Cog):
                 description=translator.translate(interaction.locale.value, "menu.message_info.permission_error_embed.description"),
                 color=0xED4245)
             await interaction.response.send_message(embed=permission_error_embed, ephemeral=True)
-
-class EmbedButtons(discord.ui.View):
-    def __init__(self, interaction: discord.Interaction, global_channel):
-        super().__init__(timeout=None)
-        server_invite = discord.ui.Button(label=translator.translate(interaction.locale.value, "menu.message_info.response_embed.button.server_invite"), style=discord.ButtonStyle.url, url=global_channel.invite)
-        self.add_item(server_invite)
         
 async def setup(client:commands.Bot) -> None:
     await client.add_cog(message_info(client))
+
