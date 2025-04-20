@@ -55,7 +55,7 @@ class delete_message(commands.Cog):
                 line_image = discord.File("images/line.png")
                 log_embed = discord.Embed(
                     title=f"{config["emojis"]["trash_red"]} "+translator.translate(staff_channel.guild.preferred_locale.value, "log.actions.delete_log_embed.title"),
-                    description=translator.translate(staff_channel.guild.preferred_locale.value, "log.actions.delete_log_embed.description", deleted_by=interaction.user.id, message_author=message_author_id, instances=instance_count),
+                    description=translator.translate(staff_channel.guild.preferred_locale.value, "log.actions.delete_log_embed.description", deleted_by=interaction.user.id, message_author=message_author_id, uuid=uuid, instances=instance_count),
                     color=0xED4245)
                 content_embed = discord.Embed(
                     title=f"{config["emojis"]["file_text_red"]} "+translator.translate(staff_channel.guild.preferred_locale.value, "log.actions.delete_log_content_embed.title"),

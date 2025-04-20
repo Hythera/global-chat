@@ -34,7 +34,7 @@ class database_loop(commands.Cog):
                     color=0xED4245)
                 content_embed.set_image(url="attachment://line.png")
                 await error_channel.send(embeds=[log_embed, content_embed], files=[line_image])
-                return
+            return
         for entry in mutes:
             if datetime.now() >= entry["expires_at"]:
                 user = await Mutes(entry["user_id"]).load()

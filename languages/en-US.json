@@ -4,7 +4,7 @@
     "log.reports.content_embed.title": "MESSAGE CONTENT",
 
     "log.actions.delete_log_embed.title": "MESSAGE DELETED",
-    "log.actions.delete_log_embed.description": "**Information**\n> - Deleted by: <@$deleted_by>\n> - Message author: <@$message_author>\n> - Instances: `$instances`",
+    "log.actions.delete_log_embed.description": "**Information**\n> - Deleted by: <@$deleted_by>\n> - Message author: <@$message_author>\n> - UUID: `$uuid`\n> - Instances: `$instances`",
     "log.actions.delete_log_content_embed.title": "MESSAGE CONTENT",
     "log.actions.mute_log_embed.title": "USER MUTED",
     "log.actions.mute_log_embed.description": "**Information**\n> - User: <@$user_id>\n> - Team member: <@$staff_id>\n> - Expires: $time\n> - Reason: `$reason`",
