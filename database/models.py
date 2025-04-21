@@ -79,9 +79,9 @@ class GlobalChannel:
                     guild_id = result[1]
                     invite = result[2]
                     channels.append({
-                        'channel_id': channel_id,
-                        'guild_id': guild_id,
-                        'invite': invite
+                        "channel_id": channel_id,
+                        "guild_id": guild_id,
+                        "invite": invite
                     })
                     
         pool.close()

@@ -24,16 +24,16 @@ from languages import CommandTranslator, Translator
 translator = Translator()
 
 load_dotenv()
-with open("config.json", 'r', encoding='utf-8') as file:
+with open("config.json", "r", encoding="utf-8") as file:
     config = load(file)
 
 async def init_db():
     pool: Pool = await get_pool()
-    async with aiofiles.open('database/structure.sql') as file:
+    async with aiofiles.open("database/structure.sql") as file:
         sql = await file.read()
     async with pool.acquire() as connection:
         async with connection.cursor() as cursor:
-            for statement in sql.split(';'):
+            for statement in sql.split(";"):
                 try:
                     with warnings.catch_warnings():
                         warnings.simplefilter("ignore", MySQLWarning) 
@@ -69,10 +69,10 @@ class Client(commands.Bot):
     def __init__(self):
         intents = discord.Intents.default()
         intents.message_content = True
-        super().__init__(command_prefix='/disabled', intents=intents, help_command=None)
+        super().__init__(command_prefix="/disabled", intents=intents, help_command=None)
 
         asyncio.run(init_db())
-        self.cogslist = ['.'.join(file.relative_to('cogs').with_suffix('').parts) for file in Path('cogs').rglob('*.py') if not file.name.startswith('__')]
+        self.cogslist = [".".join(file.relative_to("cogs").with_suffix("").parts) for file in Path("cogs").rglob("*.py") if not file.name.startswith("__")]
         self.tree.on_error = on_tree_error
         self.start_time = int(time.time())
 
@@ -81,8 +81,8 @@ class Client(commands.Bot):
             await self.load_extension("cogs."+cog)
 
     async def on_ready(self):
-        os.system('cls' if os.name == 'nt' else 'clear')
-        prfx = (Back.BLACK + Fore.CYAN + datetime.now(pytz.timezone('Europe/Berlin')).strftime("%H:%M:%S") + Back.RESET + Fore.WHITE + Style.NORMAL)
+        os.system("cls" if os.name == "nt" else "clear")
+        prfx = (Back.BLACK + Fore.CYAN + datetime.now(pytz.timezone("Europe/Berlin")).strftime("%H:%M:%S") + Back.RESET + Fore.WHITE + Style.NORMAL)
         print(prfx + " Logged in as " + Fore.BLUE + self.user.name)
         print(prfx + " Bot ID " + Fore.BLUE + str(self.user.id))
         print(prfx + " Discord Version " + Fore.BLUE+ discord.__version__)
@@ -97,4 +97,4 @@ class Client(commands.Bot):
 
 if __name__ == "__main__":
     client = Client()
-    client.run(os.getenv('TOKEN'), log_level=WARN)
+    client.run(os.getenv("TOKEN"), log_level=WARN)

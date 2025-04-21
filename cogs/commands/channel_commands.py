@@ -10,12 +10,12 @@ from database.models import GlobalChannel, GlobalMessage
 from languages import Translator
 translator = Translator()
 
-with open("config.json", 'r', encoding='utf-8') as file:
+with open("config.json", "r", encoding="utf-8") as file:
     config = load(file)
 
 def generate_random_string():
     characters = string.ascii_letters + string.digits
-    random_string = ''.join(random.choice(characters) for _ in range(20))
+    random_string = "".join(random.choice(characters) for _ in range(20))
     return random_string
 
 def format_number(number: int) -> str:

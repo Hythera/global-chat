@@ -7,7 +7,7 @@ from database.models import Mutes
 from languages import Translator
 translator = Translator()
 
-with open("config.json", 'r', encoding='utf-8') as file:
+with open("config.json", "r", encoding="utf-8") as file:
     config = load(file)
 
 class database_loop(commands.Cog):

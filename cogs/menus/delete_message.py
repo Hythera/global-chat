@@ -9,7 +9,7 @@ from database.models import UserRole, GlobalMessage
 from languages import Translator
 translator = Translator()
 
-with open("config.json", 'r', encoding='utf-8') as file:
+with open("config.json", "r", encoding="utf-8") as file:
     config = load(file)
 
 class delete_message(commands.Cog):
@@ -49,7 +49,7 @@ class delete_message(commands.Cog):
                 await interaction.edit_original_response(embed=success_embed)
 
                 message_author_id = message_infos[2]
-                message_content = message.embeds[0].description.replace('⠀', '')
+                message_content = message.embeds[0].description.replace("⠀", "")
                 staff_channel = self.client.get_channel(config["channels"]["actions"])
 
                 line_image = discord.File("images/line.png")

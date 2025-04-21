@@ -8,7 +8,7 @@ from database.models import UserRole, Mutes
 from languages import Translator
 translator = Translator()
 
-with open("config.json", 'r', encoding='utf-8') as file:
+with open("config.json", "r", encoding="utf-8") as file:
     config = load(file)
 
 times = {
@@ -49,7 +49,7 @@ class mute_commands(commands.Cog):
             else:
                 if time.value != "permanent":
                     expires_at = datetime.now() + times[time.value]
-                    await mute.add(interaction.user.id, reason, expires_at.strftime('%Y-%m-%d %H:%M:%S'))
+                    await mute.add(interaction.user.id, reason, expires_at.strftime("%Y-%m-%d %H:%M:%S"))
                     time_str = f"<t:{int(expires_at.timestamp())}:R>"
                 else:
                     await mute.add(interaction.user.id, reason, None)   
