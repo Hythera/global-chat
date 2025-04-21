@@ -1,6 +1,7 @@
 {
     "en-US": {
         "help": "help",
+        "rules": "rules",
         "channel": "channel",
         "set": "set",
         "remove": "remove",
@@ -26,12 +27,13 @@
 
 
         "help_description": "Shows you assistance for the Global Chat",
+        "rules_description": "Shows you the rules of the Global Chat",
         "channel_description": "Channel command",
-        "channel_set_description": "Set the global chat channel",
-        "channel_remove_description": "Remove the global chat from your server",
+        "channel_set_description": "Set the global channel",
+        "channel_remove_description": "Remove the global channel from your server",
         "user_description": "User command",
         "user_set_description": "Change the role of a user",
-        "user_list_description": "Shows you all users with a role.",
+        "user_list_description": "Shows you all users with a role",
         "message_description": "Message command",
         "message_delete_description": "Delete a message from the Global Chat",
         "message_information_description": "Retrieve information about a message",
@@ -43,7 +45,7 @@
         "settings_invite_description": "Change the invite settings",
 
 
-        "channel_set_describe_channel": "The channel you want to set as a global chat",
+        "channel_set_describe_channel": "The channel you want to set as a global channel",
         "user_set_describe_user": "The user whose role you want to change",
         "user_set_describe_role": "The role you want to give to the user",
         "message_delete_describe_uuid": "The UUID of the message you want to delete",
@@ -69,6 +71,7 @@
     },
     "de": {
         "help": "hilfe",
+        "rules": "regeln",
         "channel": "kanal",
         "set": "setzen",
         "remove": "entfernen",
@@ -94,9 +97,10 @@
 
         
         "help_description": "Zeigt dir eine Hilfestellung zum Global Chat",
+        "rules_description": "Zeigt dir die Regeln vom Global Chat",
         "channel_description": "Kanal Befehl",
-        "channel_set_description": "Setze den Global Chat Kanal",
-        "channel_remove_description": "Entferne den globalen Chat Kanal von deinem Server",
+        "channel_set_description": "Setze den globalen Kanal",
+        "channel_remove_description": "Entferne den globalen Kanal von deinem Server",
         "user_description": "Nutzer Befehl",
         "user_set_description": "Ändere die Rolle eines Nutzers",
         "user_list_description": "Zeigt dir alle Nutzer mit eine Rolle an",
@@ -111,7 +115,7 @@
         "settings_invite_description": "Ändere die Einladungseinstellungen",
 
 
-        "channel_set_describe_channel": "Der Kanal, den du als globalen Chat festlegen möchtest",
+        "channel_set_describe_channel": "Der Kanal, den du als globalen Kanal festlegen möchtest",
         "user_set_describe_user": "Der Nutzer, dessen Rolle du ändern möchtest",
         "user_set_describe_role": "Die Rolle, die du dem Nutzer geben möchtes",
         "message_delete_describe_uuid": "Die UUID der Nachricht, die du löschen möchtest",
