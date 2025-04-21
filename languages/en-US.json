@@ -36,6 +36,11 @@
     "command.help.embed.button.invite_app": "Invite App",
     "command.help.embed.button.support_server": "Support Server",
 
+    "command.rules.embed.title": "RULES",
+    "command.rules.embed.description": "> **Follow Discord's Terms**\n> - [Discord Terms](https://discord.com/terms)\n> - [Discord Guidelines](https://discord.com/guidelines)\n\n> **General Rules**\n> - No advertising\n> - No insults or hate speech\n> - No spamming\n\n> **What to do if a user breaks the rules?**\n> Right-click the message, go to 'Apps', and select 'Report Message'. A team member will take care of your report shortly.",
+    "command.rules.embed.button.invite_app": "Invite App",
+    "command.rules.rules.button.support_server": "Support Server",
+
     "command.channel.set.success_embed.title": "GLOBAL CHAT SET",
     "command.channel.set.success_embed.description": "> **Global Chat successfully set**\n> You have successfully set up the Global Chat on your server in <#$channel_id>. Please make sure that this channel has a 5 second slow mode enabled.",
     "command.channel.set.global_embed.title": "NEW SERVER",

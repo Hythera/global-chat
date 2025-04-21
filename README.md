@@ -109,8 +109,10 @@ Create the `config.json`. Here is the reference.
 
         "users":                "",
         "file_text":            "",
-        "bar_chart":            ""
+        "bar_chart":            "",
+        "book":                 ""
     },
+    
     "standard_server_icon_url": "https://discord.com/assets/ca24969f2fd7a9fb03d5.png"
 }
 ```
