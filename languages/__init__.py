@@ -11,7 +11,7 @@ class Translator():
         for filename in os.listdir("languages"):
             if filename.endswith(".json"):
                 file_path = os.path.join("languages", filename)
-                with open(file_path, 'r', encoding='utf-8') as file:
+                with open(file_path, "r", encoding="utf-8") as file:
                     self.data[filename[:-5]] = load(file)
 
     def translate(self, lang: str, key: str, **kwargs) -> str:
@@ -31,7 +31,7 @@ class CommandTranslator(discord.app_commands.Translator):
         pass
 
     async def translate(self, string: locale_str, locale: Locale, context: TranslationContext):
-        with open("languages/commands.json", 'r', encoding='utf-8') as file:
+        with open("languages/commands.json", "r", encoding="utf-8") as file:
             translations = load(file)
 
         message_key = string.message  

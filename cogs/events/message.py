@@ -12,14 +12,14 @@ from database.models import GlobalChannel, GlobalMessage, UserRole, Mutes
 from languages import Translator
 translator = Translator()
 
-with open("config.json", 'r', encoding='utf-8') as file:
+with open("config.json", "r", encoding="utf-8") as file:
     config = load(file)
 
-link_regex = re.compile(r'(?:https?://)[a-z0-9_\-\.]*[a-z0-9_\-]')
+link_regex = re.compile(r"(?:https?://)[a-z0-9_\-\.]*[a-z0-9_\-]")
 
 def generate_random_string():
     characters = string.ascii_letters + string.digits
-    random_string = ''.join(random.choice(characters) for _ in range(20))
+    random_string = "".join(random.choice(characters) for _ in range(20))
     return random_string
 
 class message(commands.Cog):
@@ -129,7 +129,7 @@ class message(commands.Cog):
 
         if reference_uuid:
             data = await GlobalMessage().get(reference_uuid)
-            referenced_messages = {item['channel_id']: item['message_id'] for item in data}
+            referenced_messages = {item["channel_id"]: item["message_id"] for item in data}
         else:
             referenced_messages = None
 

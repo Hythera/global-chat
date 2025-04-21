@@ -7,7 +7,7 @@ from database.models import UserRole
 from languages import Translator
 translator = Translator()
 
-with open("config.json", 'r', encoding='utf-8') as file:
+with open("config.json", "r", encoding="utf-8") as file:
     config = load(file)
 
 role_choices = [app_commands.Choice(name=role_key, value=role_key) for role_key in config["roles"]]
@@ -79,7 +79,7 @@ class user_commands(commands.Cog):
             for i, role in enumerate(roles):
                 members = staff_dict[role]
                 if members:
-                    formatted_text += f"\n> {config['roles'][role]['emoji']} **{config['roles'][role]['name']} - {len(members)}**\n"
+                    formatted_text += f"\n> {config["roles"][role]["emoji"]} **{config["roles"][role]["name"]} - {len(members)}**\n"
                     formatted_text += "\n ".join(members)
                     if i < sum(1 for users in staff_dict.values() if users)-1:
                         formatted_text += "\n > "

@@ -8,7 +8,7 @@ from database.models import GlobalChannel, UserRole, GlobalMessage
 from languages import Translator
 translator = Translator()
 
-with open("config.json", 'r', encoding='utf-8') as file:
+with open("config.json", "r", encoding="utf-8") as file:
     config = load(file)
 
 def get_users(guilds: Sequence[discord.Guild])-> int:
