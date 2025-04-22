@@ -145,8 +145,11 @@ class message(commands.Cog):
             sent_message = await self.send(channel, message.author, role, None, message.guild, message.content, referenced_messages)
         else:
             sent_message = await self.send(channel, message.author, role, global_channel.invite, message.guild, message.content, referenced_messages)
-        messages = await GlobalMessage().add(uuid, sent_message.id, sent_message.channel.id)
-        await messages.add_info(uuid, sent_message.id, sent_message.channel.id, message.author.id)
+        if sent_message:
+            messages = await GlobalMessage().add(uuid, sent_message.id, sent_message.channel.id)
+            await messages.add_info(uuid, sent_message.id, sent_message.channel.id, message.author.id)
+        else:
+            return
 
         for entry in channels:
             if entry["guild_id"] != message.guild.id:
