@@ -45,6 +45,8 @@ class message(commands.Cog):
 
                     if message.type not in [discord.MessageType.default, discord.MessageType.reply]:
                         return
+                    if message.content == "":
+                        return
 
                     bucket = self.global_chat_cooldown.get_bucket(message)
                     retry_after = bucket.update_rate_limit()
