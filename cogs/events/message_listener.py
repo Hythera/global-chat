@@ -16,6 +16,7 @@ with open("config.json", "r", encoding="utf-8") as file:
     config = load(file)
 
 link_regex = re.compile(r"(?:https?://)[a-z0-9_\-\.]*[a-z0-9_\-]")
+invite_regex = re.compile(r"(https?:\/\/)?(www\.)?((discordapp\.com/invite)|(discord\.gg))\/(\w+)")
 
 def generate_random_string():
     characters = string.ascii_letters + string.digits
@@ -90,7 +91,7 @@ class message(commands.Cog):
                     
                     user_role = await UserRole(message.author.id).load()
                     if not user_role.stored or config["roles"][user_role.role]["permission_level"] < 10:      
-                        if link_regex.search(message.content):
+                        if link_regex.search(message.content) or invite_regex.search(message.content):
                             link_error_embed = discord.Embed(
                                 title=f"{config["emojis"]["x_circle_red"]} "+translator.translate(message.guild.preferred_locale.value, "global_chat.link_error_embed.title"),
                                 description=translator.translate(message.guild.preferred_locale.value, "global_chat.link_error_embed.description"),
@@ -147,7 +148,8 @@ class message(commands.Cog):
             sent_message = await self.send(channel, message.author, role, None, message.guild, message.content, referenced_messages)
         else:
             sent_message = await self.send(channel, message.author, role, global_channel.invite, message.guild, message.content, referenced_messages)
-        if sent_message:
+        
+        if sent_message is not None:
             messages = await GlobalMessage().add(uuid, sent_message.id, sent_message.channel.id)
             await messages.add_info(uuid, sent_message.id, sent_message.channel.id, message.author.id)
         else:
@@ -164,7 +166,8 @@ class message(commands.Cog):
                                 sent_message = await self.send(channel, message.author, role, None, message.guild, message.content, referenced_messages)
                             else:
                                 sent_message = await self.send(channel, message.author, role, global_channel.invite, message.guild, message.content, referenced_messages)
-                            if sent_message:
+                            
+                            if sent_message is not None:
                                 await messages.add(uuid, sent_message.id, sent_message.channel.id)
                             await asyncio.sleep(0.05)
                     except:
