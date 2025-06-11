@@ -25,7 +25,6 @@
         "report_message": "Report Message",
         "message_info": "Message Information",
 
-
         "help_description": "Shows you assistance for the Global Chat",
         "rules_description": "Shows you the rules of the Global Chat",
         "channel_description": "Channel command",
@@ -44,7 +43,6 @@
         "settings_description": "Change Global Chat settings",
         "settings_invite_description": "Change the invite settings",
 
-
         "channel_set_describe_channel": "The channel you want to set as a global channel",
         "user_set_describe_user": "The user whose role you want to change",
         "user_set_describe_role": "The role you want to give to the user",
@@ -56,7 +54,6 @@
         "mute_remove_describe_user": "The user whose mute you want to remove",
         "user_set_describe_display_role": "The role that will be displayed in the Global Chat",
         "settings_invite_describe_status": "The invitation status",
-
 
         "choice_mute_add_15m": "15 minutes",
         "choice_mute_add_1h": "1 hour",
@@ -95,7 +92,6 @@
         "message_info": "Nachrichten Informationen",
         "information": "information",
 
-        
         "help_description": "Zeigt dir eine Hilfestellung zum Global Chat",
         "rules_description": "Zeigt dir die Regeln vom Global Chat",
         "channel_description": "Kanal Befehl",
@@ -104,7 +100,7 @@
         "user_description": "Nutzer Befehl",
         "user_set_description": "Ändere die Rolle eines Nutzers",
         "user_list_description": "Zeigt dir alle Nutzer mit eine Rolle an",
-        "message_description": "Nachrichten Befehl", 
+        "message_description": "Nachrichten Befehl",
         "message_delete_description": "Lösche eine Nachricht aus dem Global Chat",
         "message_information_description": "Rufe Details zu einer Nachricht ab",
         "mute_description": "Stummschalt Befehl",
@@ -113,7 +109,6 @@
         "stats_description": "Zeigt dir Statistiken über die App",
         "settings_description": "Ändere Einstellungen am Global Chat",
         "settings_invite_description": "Ändere die Einladungseinstellungen",
-
 
         "channel_set_describe_channel": "Der Kanal, den du als globalen Kanal festlegen möchtest",
         "user_set_describe_user": "Der Nutzer, dessen Rolle du ändern möchtest",
@@ -126,7 +121,6 @@
         "mute_remove_describe_user": "Den Nutzer, dessen Stummschaltung du aufheben möchtest",
         "user_set_describe_display_role": "Die Rolle, die im Global Chat angezeigt wird",
         "settings_invite_describe_status": "Der Einladungsstatus",
-      
 
         "choice_mute_add_15m": "15 Minuten",
         "choice_mute_add_1h": "1 Stunde",

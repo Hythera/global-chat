@@ -17,10 +17,10 @@
 
     "on_tree_error.cooldown_error_embed.title": "ABKLINGZEIT",
     "on_tree_error.cooldown_error_embed.description": "> **Dieser Befehl hat eine Abklingzeit**\n> Der Befehl ist zurzeit nicht verwendbar, da er eine Abklingzeit hat. Du kannst den Befehl <t:$time:R> wieder verwenden. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
-    
+
     "global_chat.translation.never": "`nie`",
     "global_chat.cooldown_error_embed.title": "ABKLINGZEIT",
-    "global_chat.cooldown_error_embed.description": "> **Der Global Chat hat eine Abklingzeit**\n> Du kannst im Global Chat nur alle 10 Sekunden eine Nachricht senden. Das ist eine Sicherheitsmaßnahme, um Spam zu vermeiden. Du kannst <t:$time:R> wieder eine Nachricht senden.",  
+    "global_chat.cooldown_error_embed.description": "> **Der Global Chat hat eine Abklingzeit**\n> Du kannst im Global Chat nur alle 10 Sekunden eine Nachricht senden. Das ist eine Sicherheitsmaßnahme, um Spam zu vermeiden. Du kannst <t:$time:R> wieder eine Nachricht senden.",
     "global_chat.mute_error_embed.title": "FEHLER",
     "global_chat.mute_error_embed.description": "> **Du bist stummgeschaltet**\n> Du bist zurzeit stummgeschaltet und kannst deshalb keine Nachrichten im Global Chat versenden.\n\n> **Informationen**\n> Läuft ab: $time\n> Grund: `$reason`",
     "global_chat.attachment_error_embed.title": "FEHLER",
@@ -30,7 +30,7 @@
     "global_chat.message.embed.field.name": "Links",
     "global_chat.message.embed.field.value.invite": "[Support Server]($support_server) • [Server Einladung]($invite)",
     "global_chat.message.embed.field.value": "[Support Server]($support_server)",
-    
+
     "command.help.embed.title": "HILFE",
     "command.help.embed.description": "> **Was ist die Global Chat App?**\n> Die Global Chat App ist eine Open-Source-Discord-App, die dir erlaubt, dich mit anderen Servern zu vernetzen und Nachrichten serverübergreifend zu versenden.\n\n> **Source Code**\n> Wenn du deine eigene Global Chat App erstellen möchtest, kannst du dir gerne den Code vom offiziellen [GitHub Repository](https://github.com/Blackstonecoden/global-chat) herunterladen.\n\n> **Fehler melden**\n> Wenn du einen Fehler in unserer App melden möchtest, tritt gerne unserem Support-Server bei.",
     "command.help.embed.button.invite_app": "App Einladen",
@@ -47,12 +47,12 @@
     "command.channel.set.global_embed.description": "> **Neuer Server im Global Chat**\n> Der Server `$guild` ist dem Global Chat beigetreten und hat `$users` neue Mitglieder zum Global Chat hinzugefügt.",
     "command.channel.set.error_embed.title": "FEHLER",
     "command.channel.set.error_embed.description": "> **Global Chat existiert bereits**\n> Dein Server hat bereits einen Global Chat. Bitte beachte, dass jeder Server nur einen Global Chat haben kann. Entferne den bestehenden Global Chat zuerst, wenn du den Kanal ändern möchtest.",
-    
+
     "command.channel.remove.success_embed.title": "GLOBAL CHAT ENTFERNT",
     "command.channel.remove.success_embed.description": "> **Global Chat erfolgreich entfernt**\n> Du hast den Global Chat erfolgreich von deinem Server entfernt. Du kannst ihn jederzeit wieder hinzufügen.",
     "command.channel.remove.error_embed.title": "FEHLER",
     "command.channel.remove.error_embed.description": "> **Kein Global Chat vorhanden**\n> Dein Server hat keinen Global Chat, der entfernt werden kann, oder der Global Chat wurde bereits entfernt. Du kannst jederzeit den Global Chat wieder hinzufügen.",
-    
+
     "command.user.set.success_removed_embed.title": "ROLLE ENTFERNT",
     "command.user.set.success_removed_embed.description": "> **Rolle erfolgreich entfernt**\n> Die Rolle des angegebenen Nutzers wurde erfolgreich entfernt.\n\n> **Änderungen**\n> Nutzer: <@$user_id>\n> Rolle: `$role`",
     "command.user.set.success_embed.title": "ROLLE GEÄNDERT",
@@ -81,7 +81,7 @@
     "command.mute.add.user_exists_error_embed.description": "> **Nutzer schon stummgeschaltet**\n> angegebene Benutzer ist bereits stummgeschaltet. Wenn du die Dauer der Stummschaltung ändern möchtest, entstumme den Nutzer zuerst und ändere dann die Zeit. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "command.mute.add.permission_error_embed.title": "FEHLER",
     "command.mute.add.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um andere Nutzer stummzuschalten. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
-  
+
     "command.mute.remove.success_embed.title": "STUMMSCHALTUNG AUFGEHOBEN",
     "command.mute.remove.success_embed.description": "> **Stummschaltung erfolgreich aufgehoben**\n> Die Stummschaltung des angegebenen Nutzers wurde erfolgreich aufgehoben.",
     "command.mute.remove.user_not_exists_error_embed.title": "FEHLER",
@@ -117,7 +117,7 @@
     "menu.message_info.database_error_embed.description": "> **Nachricht nicht gefunden**\n> Die ausgewählte Nachricht konnte in der Datenbank nicht gefunden werden. Das könnte daran liegen, dass die Nachricht nicht im Global Chat gesendet wurde oder ein Fehler aufgetreten ist. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
     "menu.message_info.permission_error_embed.title": "FEHLER",
     "menu.message_info.permission_error_embed.description": "> **Berechtigungsfehler**\n> Dein Berechtigungslevel ist nicht hoch genug, um Nachrichten aus dem Global Chat zu löschen. Wenn du denkst, dass dies ein Fehler ist, wende dich bitte an die Administratoren dieser App.",
-    
+
     "menu.report_message.success_embed.title": "GEMELDET",
     "menu.report_message.success_embed.description": "> **Nachricht erfolgreich gemeldet**\n> Du hast diese Nachricht im Global Chat erfolgreich gemeldet. Vielen Dank, dass du zur Sicherheit im Global Chat beiträgst. Bitte habe etwas Geduld, bis sich ein Teammitglied darum kümmert.",
     "menu.report_message.database_error_embed.title": "FEHLER",

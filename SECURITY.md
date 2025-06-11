@@ -10,8 +10,8 @@ If you discover a security vulnerability, **please do not open a public issue or
 
 ### Our commitment:
 
-- We aim to address all security vulnerabilities within **7 business days**.
-- You will be kept informed of our progress as we work to resolve the issue.
-- Your report will be kept **confidential**.
+-   We aim to address all security vulnerabilities within **7 business days**.
+-   You will be kept informed of our progress as we work to resolve the issue.
+-   Your report will be kept **confidential**.
 
 Thank you for helping us keep our project secure!

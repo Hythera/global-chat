@@ -7,20 +7,25 @@
 </div>
 
 ## 📌 Information
-This is an open-source code for a Discord Global-Chat. It allows you to have a cross-server chat just by using this app. 
+
+This is an open-source code for a Discord Global-Chat. It allows you to have a cross-server chat just by using this app.
 Key features:
-- global-chat
-- message deletion
-- mute users
-- custom roles
-- localization (de/en)
+
+-   global-chat
+-   message deletion
+-   mute users
+-   custom roles
+-   localization (de/en)
 
 ## 🔌 Requirements
-- [Python](https://www.python.org/)
-- [MariDB](https://mariadb.org/) or [MySQL](https://www.mysql.com/)
+
+-   [Python](https://www.python.org/)
+-   [MariDB](https://mariadb.org/) or [MySQL](https://www.mysql.com/)
 
 ## 🔧 Installation
+
 Download the [latest release](https://github.com/Blackstonecoden/global-chat/releases/latest) from this repository. Setup the `.env` file in the root direcotry and fill it with your cridentials.
+
 <details open>
   <summary style="font-size: 18px; cursor: pointer;">
     .env
@@ -34,9 +39,11 @@ database_user = user
 database_password = password
 database_name = s128_bot
 ```
+
 </details>
 
 Create the `config.json`. Here is the reference.
+
 <details open>
   <summary style="font-size: 18px; cursor: pointer;">
     config.json
@@ -93,29 +100,30 @@ Create the `config.json`. Here is the reference.
             "display_name": "",
             "color": "0x4e5058"
         }
-      },
-    
-    "emojis": {
-        "x_circle_red":         "<:emoji:1234>",
-        "clock_red":            "",
-        "file_text_red":        "",
-        "trash_red":            "",
-
-        "alert_yellow":         "",
-        "file_text_yellow":     "",
-
-        "check_circle_green":   "",
-        "plus_circle_green":    "",
-
-        "users":                "",
-        "file_text":            "",
-        "bar_chart":            "",
-        "book":                 ""
     },
-    
+
+    "emojis": {
+        "x_circle_red": "<:emoji:1234>",
+        "clock_red": "",
+        "file_text_red": "",
+        "trash_red": "",
+
+        "alert_yellow": "",
+        "file_text_yellow": "",
+
+        "check_circle_green": "",
+        "plus_circle_green": "",
+
+        "users": "",
+        "file_text": "",
+        "bar_chart": "",
+        "book": ""
+    },
+
     "standard_server_icon_url": "https://discord.com/assets/ca24969f2fd7a9fb03d5.png"
 }
 ```
+
 </details>
 
 ## 📄 Notes
@@ -125,8 +133,9 @@ To assign yourself a role, you have two options:
 1. Log into the database using a client like [MySQL Workbench](https://www.mysql.com/products/workbench/) and manually insert your user ID, role, and display role into the `user_roles` table.
 
 2. Alternatively, temporarily add the following code in the `setup_hook` of the `Client` class in `main.py` and replace 1234 with your user ID:
-   ```py
-   from database.models import UserRole
-   await UserRole(1234).change("admin")
-    ```
-Ensure that you have a permission level of at least 10 to use all commands.
+    ````py
+    from database.models import UserRole
+    await UserRole(1234).change("admin")
+     ```
+    Ensure that you have a permission level of at least 10 to use all commands.
+    ````
